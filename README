@@ -1,29 +1,41 @@
-Course Builder was born in July 2012 when we hosted a 2-week online,
-community-based course called Power Searching with Google. The course showcased
-search techniques and how to use them to solve real, everyday problems. We
-created Power Searching as a MOOC (Massive Open Online Course) by using a
-variety of Google's existing products and by writing an App Engine application
-for the course material and assessments.
-
-After running Power Searching, we decided to open source the code and provide
-documentation so others could replicate this experiment by creating and running
-their own courses.
-
+# GOOGLE COURSE BUILDER
 For more information on Course Builder, see the documentation at
 https://www.google.com/edu/openonline/course-builder/index.html
 
-Course Builder uses an HTML5 icon (found at
-coursebuilder/modules/core_tags/resources/html5-badge-h-solo.png)
-from w3.org, as licensed under the Creative Commons Attribution 3.0 Unported
-license version. For more information on HTML5, see http://www.w3.org/html5
+# Commands to run project on localhost:
 
-Course Builder also uses several Material icons provided by Google under the
-Apache 2.0 license.
+1) Activate Virtual environment
+2) Install all dependencies using:
+> pip install -r requirements.txt 
+3) Run the app using :
+> ./scripts/start_in_shell.sh -f -s
 
-Course Builder automatically downloads a number of third-party libraries. Some
-are for use during development and deployment of software.  These are stored in
-your home directory under coursebuilder_resources_<version>.  Other libraries
-are included and deployed when your application is pushed to the App Engine
-servers.  These libraries are placed in a lib/ directory alongside the Course
-Builder source files.  All of these third-party packages are governed by their
-respective licenses found in the packages' respective directories or .zip files.
+
+# TASK
+add another column called "Admin Emails" , and for each course have a 
+text input with the current admin email pre-filled up, along with a "Save" 
+button next to it. On changing the data in the field and clicking "Save", 
+the setting should get updated in the database. This means that after saving, 
+if you open "Settings -> Course" once again, you should see the new admin emails.
+
+#Files where changes have been made
+modules > admin > admin.py
+modules > admin > ststic > js > courses.js
+modules > admin > templates > courses.html
+controllers > sites.py 
+
+#Files used and referenced but not made changes to
+modules > admin > config.py
+modules > courses > settings.py
+modules > courses > courses.py
+modules > dashboard > templates > view.html
+modules > dashboard > dashboard.py
+controllers > utils.py 
+common > safe_dom.py
+common > jinja_utils.py
+common > schema_fields.py
+models > models.py
+models > courses.py
+
+
+
