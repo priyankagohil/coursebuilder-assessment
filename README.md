@@ -20,21 +20,34 @@ if you open "Settings -> Course" once again, you should see the new admin emails
 
 ## Files where changes have been made
 modules > admin > admin.py
+
 modules > admin > ststic > js > courses.js
+
 modules > admin > templates > courses.html
+
 controllers > sites.py 
 
 ## Files used and referenced but not made changes to
 modules > admin > config.py
+
 modules > courses > settings.py
+
 modules > courses > courses.py
+
 modules > dashboard > templates > view.html
+
 modules > dashboard > dashboard.py
+
 controllers > utils.py 
+
 common > safe_dom.py
+
 common > jinja_utils.py
+
 common > schema_fields.py
+
 models > models.py
+
 models > courses.py
 
 
