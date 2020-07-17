@@ -186,6 +186,8 @@
               </div>
             </div>
           </td>
+
+          <!-- ################# added admin emails column ########################### -->
           {% for item in course.additional_columns %}
           <td class="gcb-courses-title">
             <div 
@@ -193,12 +195,10 @@
             data-xsrf-token="{{ edit_course_settings_xsrf_token }}"
             data-course-namespace="{{ course.namespace_name }}">
               {{ item }}
-            </div> 
-                 
-                                
-          </td>
-            
+            </div>                                
+          </td>            
           {% endfor %}
+          <!-- ################ end of admin emails column #############################-->
           <td>
             {% if course.namespace_name != '' %}
               <form

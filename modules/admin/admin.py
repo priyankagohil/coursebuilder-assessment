@@ -212,6 +212,8 @@ def admin_action_can_view(action):
         return can_view_admin_action(action)
     return can_view
 
+# ------------------------------------ Admin emails Column view ------------------------------------
+# updated all three methods of this class
 
 class AbstractAdditionalAllCoursesColumn(object):
     """Derive from this class to add additional columns to the all-courses list.
@@ -243,8 +245,7 @@ class AbstractAdditionalAllCoursesColumn(object):
 
         This function is called back once for each course in the installation.
         """
-        # import pdb 
-        # pdb.set_trace()
+        
         admin_email = app_context.get_admin_email()
         namespace = app_context.get_namespace_name()
         email_id = "admin_email_"+namespace 
@@ -278,7 +279,9 @@ class AbstractAdditionalAllCoursesColumn(object):
         return ""
         raise NotImplementedError()
 
+# --------------------------- end of Admin emails column view --------------------------------
 
+# ---------------------added callback to additional column in this class ----------------------------
 class BaseAdminHandler(ConfigPropertyEditor):
     """Base class holding methods required for administration of site."""
 

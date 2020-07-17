@@ -883,12 +883,15 @@ class ApplicationContext(object):
             return self.get_environ()['course']['title']
         except KeyError:
             return 'UNTITLED'
-    
+            
+    # -----------------getter for admin emails ---------------------------------------
+    #added get method to fetch admin emails corresponding to a course
     def get_admin_email(self):
         try:            
             return self.get_environ()['course']['admin_user_emails']
         except KeyError:
             return 'UNTITLED'
+    # -------------------end of getter -----------------------------------------------
 
     def get_namespace_name(self):
         return self.namespace

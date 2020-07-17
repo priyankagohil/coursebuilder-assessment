@@ -116,20 +116,19 @@ $(function() {
     new AddCoursePanel('Add Sample Course...', xsrfToken, email, 'sample')
         .open();
   }
+  // ------------------------- Onclick function call and AJAX request ----------------------------
+  // added this function to extract input value of admin emails and make put request to a function
+  // that will update admin emails for current course
 
   $('.save_admin_email').click(function(){
     var xsrfToken = $('#email_div').data('xsrfToken');
-    //var id = $(this).attr("id");s
     var namespace = $(this).attr("name");
     var admin_email = $("[id*='admin_email_" + namespace+ "']").val();
-    //var admin_email = $('.admin_email').val();
     var payload = {
       'homepage': {
         'course:admin_user_emails': admin_email
-      }
-           
-    };
-    
+      }           
+    };    
     var request = {
       key:"/course.yaml",
       xsrf_token: xsrfToken,
@@ -144,10 +143,10 @@ $(function() {
       
     });
     
-    cbShowMsg(admin_email);
+    cbShowMsg("Changes saved!");
   });
 
-  
+  //----------------------------------- End of function -------------------------------------------- 
 
   function setMultiCourseActionAllowed(isAvailable) {
     if (isAvailable) {
