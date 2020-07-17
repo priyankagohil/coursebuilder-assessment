@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+  Content for the iframe which presents the lesson editor inside the lesson
+  view.
+-->
+<html>
+  <head>
+
+    <link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.0/material.teal-indigo.min.css" />
+    <script src="//storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- import jQuery -->
+    <script src="/static/jquery/jquery.min.js"></script>
+    <script src="/modules/oeditor/_static/js/butterbar.js"></script>
+
+    <link rel="stylesheet" href="/modules/dashboard/_static/css/view.css"/>
+    <link rel="stylesheet" href="/modules/dashboard/_static/css/mdl_undo.css"/>
+    <link rel="stylesheet" href="/static/material-design-icons/css/material-design-iconic-font.min.css">
+
+    {% for href in extra_css_href_list %}
+      <link rel="stylesheet" type="text/css" href="{{ href }}">
+    {% endfor %}
+
+    {% for href in extra_js_href_list %}
+      <script src="{{ href }}"></script>
+    {% endfor %}
+
+    <style>
+      body {
+        overflow: hidden;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    {{ form_html }}
+  </body>
+</html>

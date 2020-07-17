@@ -1,0 +1,97 @@
+{% extends 'base_course.html' %}
+
+{% block gcb_page_info %}
+  if ('gcbSetPageInfo' in window) {
+    gcbSetPageInfo({
+      'page_type': 'review_dashboard',
+      'unit_id': '{{ unit_id }}'
+    });
+  }
+{% endblock %}
+
+{% block subtitle %}
+  {# I18N: Title of the webpage. #}
+  - {{ gettext('Review Dashboard') }}
+{% endblock subtitle %}
+
+{% block top_content %}
+{% endblock %}
+
+{% block main_content %}
+
+<div id="gcb-main">
+  <div class="gcb-article">
+    {# I18N: Header text for a list of assignments that can be reviewed by the student. #}
+    <h2>{{ gettext('Assignments for your review') }}</h2>
+
+    {% if due_date_exceeded %}
+      <p>
+        <strong>
+          {# I18N: Text shown to students when they visit their list of reviews to be done, but the due date has passed. #}
+          {{ gettext('The due date for submitting reviews has passed.') }}
+        </strong>
+      </p>
+    {% endif %}
+
+    <p>
+      <em>
+        {# I18N: Instructions for a student being asked to do a review. #}
+        {% if review_due_date %}
+          {{ gettext('All reviews are due by %(review_due_date)s.', review_due_date=review_due_date) }}
+        {% endif %}
+
+        {% if review_min_count == 1 %}
+          {# I18N: Instructions for a student being asked to do a review. #}
+          {{ gettext('In order to earn credit for this assignment, you must complete at least 1 review by then.') }}
+        {% elif review_min_count > 1 %}
+          {# I18N: Instructions for a student being asked to do a review. #}
+          {{ gettext('In order to earn credit for this assignment, you must complete at least %(review_min_count)d reviews by then.', review_min_count=review_min_count) }}
+        {% endif %}
+      </em>
+    </p>
+
+    <ol>
+      {% for review_step in review_steps %}
+        <li>
+          {# I18N: An item in a list of assignments. #}
+          <a href="review?unit={{unit_id}}&amp;key={{review_step.key}}">{{ gettext('Assignment %(index)s', index=loop.index) }}</a>
+          {% if review_step.state == REVIEW_STATE_COMPLETED %}
+            {# I18N: Text shown after an assignment whose review has been completed. #}
+            ({{ gettext('Completed') }})
+          {% else %}
+            {# I18N: Text shown after an assignment whose review is still in draft state. #}
+            ({{ gettext('Draft') }})
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+
+    {% if not due_date_exceeded %}
+      <form action="reviewdashboard?unit={{unit_id}}" method="post">
+        <input type="hidden" name="xsrf_token"
+               value="{{ review_dashboard_xsrf_token | escape }}">
+        <input type="hidden" name="unit_id" value="{{ unit_id }}">
+        <button class="gcb-button" type="submit"
+          {% if not can_request_new_review %}
+            disabled="true"
+          {% endif %}
+        >
+          {# I18N: Button that a student can click to request a new assignment to review. #}
+          {{ gettext('Review a new assignment') }}
+        </button>
+        {# I18N: Button that a student can click to navigate back to review an assignment in a class. #}
+        <a href="{{ back_link }}" class="gcb-button" >{{ gettext('Back to assignment') }}</a>
+      </form>
+
+      {% if no_submissions_available is defined and no_submissions_available %}
+        <p>
+          {# I18N: Text shown after a student has asked for a new assignment to review when there are no assignments left to review. #}
+          {{ gettext('Sorry, there are no new submissions available for you to review at this time.') }}
+        </p>
+      {% endif %}
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

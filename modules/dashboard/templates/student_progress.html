@@ -1,0 +1,67 @@
+{% if content %}
+  {% if progress %}
+    <style type="text/css">
+      .chart-container {
+        margin: 20px 0;
+      }
+    </style>
+
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script src="/static/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+      google.setOnLoadCallback(drawVisualization);
+      var content = JSON.parse("{{content | js_string}}");
+      var progress = JSON.parse("{{progress | js_string}}");
+      var entityCodes = JSON.parse("{{entity_codes | js_string}}");
+      function drawVisualization() {
+        // Create and populate the data table.
+        var table = new google.visualization.DataTable();
+        table.addColumn('string', 'Students');
+        table.addColumn('number', 'Completed');
+        table.addColumn('number', 'In Progress');
+        var rows = [];
+        // TODO(juliaoh): Generalize this function to take in user queries.
+        for (var entity in content) {
+          if ($.inArray(entity, entityCodes) != -1) {
+            for (i = 0; i < content[entity].length; i++) {
+              var key = entity + '.' + content[entity][i]['child_id'];
+              var label = content[entity][i]['child_val']['label'].toString();
+              if (key in progress) {
+                rows.push(
+                [label, progress[key].completed, progress[key].progress]);
+              } else {
+                rows.push([label, 0, 0]);
+              }
+            }
+          }
+        }
+        table.addRows(rows);
+
+        // Create and draw the visualization.
+        new google.visualization.ColumnChart(document.getElementById('visualization')).
+        draw(table,
+             {title: "Student Progress for Units & Assessments",
+              isStacked: true,
+              width: 800, height: 400,
+              vAxis: {title: "Students"},
+              hAxis: {title: "Units & Assessments"},
+              colors: getGVColorPallet(),
+              dataOpacity: 0.85
+            }
+            );
+      }
+      </script>
+
+      <div id="visualization" class="chart-container"></div>
+
+  {% else %}
+    <p>No student progress has been recorded for this course.</p>
+  {% endif %}
+{% endif %}
+
+<p>
+  <strong>Important:</strong> In order for all student progress to be
+          recorded, you need to enable "Record Student Progress" in the
+          course's settings.
+</p>

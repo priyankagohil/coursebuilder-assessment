@@ -1,0 +1,28 @@
+{{ title }}
+{% if is_lesson_available(unit, lesson) or can_see_drafts %}
+  <div {% if lesson.notes %}class="gcb-cols"{% endif %}>
+    {% if lesson.notes %}
+    <div id="get-text-button">
+      <p style="float:right; margin-top: 0px;">
+        <a role="button" class="gcb-button" id="lessonNotesLink"
+           href="{{ lesson.notes }}" target="_blank">
+          {# I18N: Link to a text version of a lesson video. #}
+          {{ gettext('Text Version') }}
+        </a>
+      </p>
+    </div>
+    {% endif %}
+  </div><!-- /gcb-cols -->
+
+  {% if activity %}
+    {% include 'activity.html' %}
+  {% else %}
+    {% include 'lesson.html' %}
+  {% endif %}
+
+{% else %}
+  <div>
+    {# I18N: Text shown for a lesson that has not been made public. #}
+    {{ gettext('This lesson is not available.')}}
+  </div>
+{% endif %}

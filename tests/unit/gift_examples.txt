@@ -1,0 +1,95 @@
+Who created Course Builder?{~Coursera ~Udacity =Google}
+
+Course Builder is {~difficult =easy ~impossible} to use.
+
+Course Builder is written in Java.{FALSE}
+
+How is Course Builder deployed?{=on app engine =in the cloud}
+
+When was Course Builder launched?{#2012:1}
+
+Who created Course Builder?{~Coursera ~Udacity ~edX =Google Inc.}
+
+Course Builder is {~difficult =easy ~impossible} to use.
+
+Course Builder is written in {
+    ~Scala
+    ~Go
+    =Python
+}, CSS, HTML, and JavaScript.
+
+Course Builder was originally developed at which company? {
+    ~Coursera
+    =Google
+    ~edX
+    ~Udacity}
+
+One plus one equals {=two =2}.
+
+Course Builder is written in java.{F}
+
+Course Builder is written in python.{T}
+
+Match Course Builder facts. {
+    =written in -> Python
+    =deployed on to -> cloud
+    =supported by -> Google
+    }
+
+Match countries to capitals. {
+    =U.S. -> Washington, D.C.
+    =Spain  -> Madrid
+    =China  -> Beijing
+    =Poland  -> Warsaw
+    }
+
+When was Course Builder launched? {#2012}
+
+What is the value of the Erdos-Borwein constant (to 3 decimal places)?
+{#1.6066:0.0005}.
+
+What is the value of the Erdos-Borwein constant (to 3 decimal places)?
+{#1.606..1.607}.
+
+What's 1 plus 1? {#2}
+
+::Course Builder::Course Builder was originally
+developed by which company? {=Google}
+
+::Course Builder::Course Builder was launched
+in {~January ~February, =September} of 2012.
+
+Which company developed Course Builder?{
+~Coursera#wrong answer
+~Udacity#another wrong answer
+=Google#Great!}
+
+How can Course Builder be run?{
+=in the cloud#great!
+=on a dev machine#great!}
+
+[markdown]**Course Builder** is written in?{
+=Python#excellent answer!
+=JavaScript#excellent answer!}
+
+Course Builder is.{~not awesome ~%50%good =great}
+
+::Google's Headquarters::Google's Headquarters is in {
+    ~San Francisco#This city is close, but the wrong answer.
+    ~%25%Bay Area#You need to be more specific.
+    ~%50%Silicon Valley#You need to be more specific.
+    =Mountain View#Correct! Great!}.
+
+::Google's Headquarters:: Google's Headquarters is in {
+    =Mountain View#Yes! That's right!
+    =%75%Mountain Views#Right, but misspelled.
+    =%25%Bay Area#Yes, but too broad.}
+
+Course Builder {
+    ~%-50%difficult to use
+    ~%50%easy to use
+    ~%50%requires reading the docs
+    ~%-50%impossible to use }
+
+Match countries to capitals.
+{=U.S.->Washington, D.C. =Spain->Madrid =China->Beijing =Poland->Warsaw}

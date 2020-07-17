@@ -1,0 +1,8 @@
+registration:
+  main_module: modules.mapreduce.mapreduce_module
+
+files:
+  - modules/mapreduce/__init__.py
+  - modules/mapreduce/manifest.yaml
+  - modules/mapreduce/mapreduce_module.py
+  - modules/mapreduce/messages.py

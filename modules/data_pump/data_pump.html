@@ -1,0 +1,205 @@
+{% if need_settings %}
+<p>Data pump functionality is not currently enabled.  To enable it, please
+configure the
+<a href="dashboard?action=settings_data_pump&amp;{{ exit_url }}">
+Data Pump settings</a> with
+information about the Google Cloud Computing project where you will use
+BigQuery to analyze your data.  You will need to specify the application ID
+and generate a JSON client key to authorize this instance of CourseBuilder.</p>
+{% else %}
+
+<style>
+
+td.status-column {
+  width: 400px;
+  overflow: auto;
+}
+
+td.schema-column {
+  padding: 0px;
+}
+
+td.schema-column table {
+  border: none;
+}
+
+td.schema-column td {
+  border: none;
+}
+
+div.settings-link {
+  float: right;
+  font-size: larger;
+  font-weight: bold;
+}
+
+div.warning {
+  min-width: 300px;
+  text-align: center;
+  padding: 0 16px;
+  background: #FFFFB7;
+  border: 1px solid #BFBA26;
+  margin-bottom: -35px;
+  position: relative;
+  display: inline-block;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+</style>
+
+{% macro schema_rows(schema, depth) -%}
+  {% for field in schema %}
+    <tr>
+      <td style="padding-left: {{ 8 + depth * 25 }}px">{{ field }}</td>
+      <td>{{ schema[field].type }}</td>
+      <td>{{ schema[field].description }}</td>
+    </tr>
+    {% if schema[field].type == 'array' %}
+      {% if schema[field]['items']['type'] == 'object' %}
+        {{ schema_rows(schema[field]['items']['properties'], depth + 1) }}
+      {% else %}
+        {{ schema_rows({'': schema[field]['items']}, depth + 1) }}
+      {% endif %}
+    {% elif schema[field].type == 'object' %}
+      {{ schema_rows(schema[field]['properties'], depth + 1) }}
+    {% endif %}
+  {% endfor %}
+{%- endmacro %}
+
+<div class="settings-link">
+  <p>
+    <a href="dashboard?action=settings_data_pump&amp;{{ exit_url }}">
+      Settings
+    </a>
+  </p>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data Source</th>
+      <th>Dependencies</th>
+      <th>Schema</th>
+      <th>Sample Data</th>
+    </tr>
+  </thead>
+  <tdata>
+    {% for pump in pumps %}
+      <tr style="vertical-align: top" id="{{pump.name}}">
+        <td class="status-column">
+          <p>
+            {% if pump.bigquery_url %}
+              <a target="_blank" href="{{ pump.bigquery_url }}">
+            {% endif %}
+            {{ pump.title }}
+            {% if pump.bigquery_url %}
+              </a>
+            {% endif %}
+          </p>
+          <form
+             id="data_pump_form_{{pump.name}}"
+             action="dashboard?action=data_pump"
+             method="POST">
+            <input type="hidden" name="data_source" value="{{ pump.name }}">
+            <input type="hidden" name="xsrf_token" value="{{ xsrf_token }}">
+            <p>
+              Pump status: {{ pump.status }}
+            </p>
+            {% if pump.duration and pump.last_updated %}
+              <p>
+                The pump ran for {{ pump.duration }}
+                at {{ pump.last_updated }}
+              </p>
+            {% endif %}
+            {% if pump.status == 'Completed' %}
+              {% if pump.pii_secret_is_out_of_date %}
+                 <div class="warning">
+                 WARNING: This data source was last uploaded when a
+                 different secret for encoding personal data was in use.
+                 Data from this source will not be correlatable with
+                 other data sources uploaded using the latest secret.
+                 You may wish to re-upload this data.
+                 </div>
+              {% endif %}
+            {% endif %}
+
+            {% if pump.status == 'Started' or pump.status == 'Completed' %}
+              <p>
+                Uploaded {{ pump.job_context.items_uploaded }} items.
+              </p>
+            {% endif %}
+            {% if pump.status == 'Failed' %}
+              <p>{{ pump.job_context.failure_reason }}</p>
+            {% endif %}
+            {% if pump.status == 'Started' or pump.status == 'Failed' %}
+              {% for item in pump.job_context.consecutive_failures %}
+                <p>{{ item }}</p>
+              {% endfor %}
+            {% endif %}
+            {% if pump.message %}
+              <p>{{ pump.message }}</p>
+            {% endif %}
+
+            {% if pump.available %}
+              {% if pump.active %}
+                <input type="hidden" name="pump_action" value="cancel_pump">
+                <input type="submit" value="Cancel BigQuery Data Pump">
+              {% else %}
+                <input type="hidden" name="pump_action" value="start_pump">
+                <div>
+                  <input type="checkbox" name="send_uncensored_pii_data"
+                         value="True">
+                  Do not encrypt PII data for this upload
+                </div>
+                <div>
+                  <input type="checkbox" name="no_expiration_date" value="True">
+                  Uploaded data never expires
+                  (default expiration is {{ default_lifetime }})
+                </div>
+                <input type="submit" value="Start BigQuery Data Pump">
+              {% endif %}
+            {% endif %}
+         </form>
+        </td>
+        <td>
+          <form action="dashboard?action=data_pump" method="POST">
+            <input type="hidden" name="data_source" value="{{ pump.name }}">
+            <input type="hidden" name="xsrf_token" value="{{ xsrf_token }}">
+            {% for status in pump.generator_statuses %}
+              <p>{{ status.message }}</p>
+              {% if status.link %}
+                <p>{{ status.link }}</p>
+              {% endif %}
+            {% endfor %}
+            {% if not pump.active and pump.has_any_generators %}
+              {% if pump.any_generator_running %}
+                <input type="hidden"
+                       name="pump_action"
+                       value="cancel_generators">
+                <input type="submit" value="Cancel Generator(s)">
+              {% else %}
+                  <input type="hidden"
+                         name="pump_action"
+                         value="run_generators">
+                  <input type="submit" value="Run Generator(s)">
+              {% endif %}
+            {% endif %}
+          </form>
+        </td>
+        <td class="schema-column">
+          <table>
+            {{ schema_rows(pump.schema, 0) }}
+          </table>
+        </td>
+        <td>
+          <a href="{{ pump.source_url }}">Sample</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tdata>
+</table>
+
+{% endif %}

@@ -1,0 +1,34 @@
+{% extends 'base_course.html' %}
+
+{% block gcb_page_info %}
+  if ('gcbSetPageInfo' in window) {
+    gcbSetPageInfo({
+      'page_type': 'test_confirmation',
+      'unit_id': '{{ unit_id }}',
+    });
+  }
+{% endblock %}
+
+{% block top_content %}
+{% endblock %}
+
+{% block main_content %}
+
+<div class="gcb-cols">
+  <div class="gcb-col-1">
+  </div>
+  <div class="gcb-col-7 gcb-aside gcb-button-box">
+
+    {% include 'test_confirmation_content.html' %}
+
+    <p>
+      <a class="gcb-button" href="course">
+        {# I18N: Shown after the student has submitted an assessment. This button allows the student to navigate back to the main course page. #}
+        {{ gettext('Back to Course page') }}
+      </a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

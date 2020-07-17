@@ -1,0 +1,37 @@
+{% extends 'base_course.html' %}
+
+{% block gcb_page_info %}
+  if ('gcbSetPageInfo' in window) {
+    gcbSetPageInfo({
+      'page_type': 'unenroll_confirmation',
+    });
+  }
+{% endblock %}
+
+{% block top_content %}
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block main_content %}
+<div id="gcb-main">
+  <div class="gcb-article tab-content">
+    <div class="gcb-aside">
+
+      <h3>
+        {# I18N: Text shown after a student has unenrolled from a course. It is followed by a course name. #}
+        {{ gettext('You have been unenrolled from ') }}
+        {{course_info.course.title}}.
+      </h3>
+      <form action='/' method='get'>
+        <button class="gcb-button" type="submit">
+          {# I18N: Confirmation button, shown when a student has unenrolled from a course. #}
+          {{ gettext('OK') }}
+        </button>
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

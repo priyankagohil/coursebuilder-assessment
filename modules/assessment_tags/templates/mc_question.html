@@ -1,0 +1,45 @@
+{% extends 'templates/base_assessment_tag.html' %}
+
+{% block question %}
+  <div id="{{instanceid}}"
+      class="qt-mc-question {% if embedded %}qt-embedded{% else %}qt-standalone{% endif %}">
+    <div class="qt-points">
+      <em>
+        {% if displayed_weight == 1 %}
+          {# I18N: Displayed next to a question. Indicates that the question is worth 1 point. #}
+          {{ gettext('1 point') }}
+        {% else %}
+          {# I18N: Displayed next to a question to indicate its point value. In this particular message, the number of points will be plural. #}
+          {{ gettext('%(points)s points', points=displayed_weight) }}
+        {% endif %}
+      </em>
+    </div>
+
+    <div class="qt-question">{{ question | gcb_tags }}</div>
+    <div class="qt-choices">
+      {% for choice in choices %}
+        <div>
+          <input type="{{button_type}}"
+              name="{{instanceid}}"
+              id="{{instanceid}}.{{loop.index0}}"
+              data-index="{{loop.index0}}"/>
+          <label for="{{instanceid}}.{{loop.index0}}">
+            {{ choice['text'] | gcb_tags }}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if not embedded %}
+      <div class="qt-check-answer">
+        <button class="gcb-button qt-check-answer-button">
+          {# I18N: Text on the button for checking a student's answer. #}
+          {{ gettext(' Check Answer ') }}
+        </button>
+      </div>
+    {% endif %}
+
+    <div class="qt-feedback qt-hidden" role="alert">
+    </div>
+  </div>
+{% endblock question %}

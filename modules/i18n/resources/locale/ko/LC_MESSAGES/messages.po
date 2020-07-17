@@ -1,0 +1,1607 @@
+# Korean translations for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-10-10 06:57-0700\n"
+"PO-Revision-Date: 2016-10-10 06:58-0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#. Message displayed as title for unit within a course.
+#. Note that the items %(index) and %(title).  The %(index)
+#. will be replaced with a number indicating the unit's
+#. sequence I18N: number within the course, and the %(title)
+#. with the unit's title.
+#: experimental/coursebuilder/models/resources_display.py:1196
+#, python-format
+msgid "Unit %(index)s - %(title)s"
+msgstr "%(index)s단원 - %(title)s"
+
+#. Message displayed as title for unit within a course.  The
+#. "%s" will be replaced with the index number of the unit within
+#. the course.  E.g., "Unit 1", "Unit 2" and so on.
+#: experimental/coursebuilder/models/resources_display.py:1217
+#, python-format
+msgid "Unit %s"
+msgstr "단원 %s"
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:8
+msgid "Correct. "
+msgstr "정답입니다. "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:10
+msgid "Incorrect. "
+msgstr "오답입니다. "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:12
+msgid "Partially Correct. "
+msgstr "부분적으로 정답입니다. "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:15
+msgid " Yes, the answer is correct. "
+msgstr " 예. 정답입니다. "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:17
+msgid " No, the answer is incorrect. "
+msgstr " 아니요. 오답입니다. "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:19
+msgid " The answer is partially correct. "
+msgstr " 부분적으로 정답입니다. "
+
+#. The title for section showing the correct answer
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:22
+msgid "The correct answer is:"
+msgstr "올바른 답변:"
+
+#. The title for section showing feedback related to the answer given
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:24
+msgid "Targeted Feedback:"
+msgstr "답변 관련 의견:"
+
+#. The title for section showing overall feedback
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:26
+msgid "Feedback:"
+msgstr "의견:"
+
+#. Text appearing at the bottom of a lesson page after the student asks for it
+#. to be graded.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:29
+msgid " Your score is: "
+msgstr " 점수: "
+
+#. Error message that is shown to a student when they are using a browser that
+#. does not have JavaScript enabled.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:36
+msgid " JavaScript should be enabled to grade this question. "
+msgstr " 이 질문에 점수를 매기려면 자바스크립트를 사용 설정해야 합니다. "
+
+#. Alt text for image representing student progress.
+#. Alt text for image showing student progress.
+#. Text shown after an assignment whose review has been completed.
+#. Shown in the student profile page, next to an assessment title. States
+#. whether the assessment has been completed.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:44
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:45
+#: experimental/coursebuilder/views/macros.html:22
+#: experimental/coursebuilder/views/review_dashboard.html:60
+#: experimental/coursebuilder/views/student_data_table.html:40
+msgid "Completed"
+msgstr "완료"
+
+#. Alt text for image representing student progress.
+#. Alt text for image showing student progress.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:49
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:50
+#: experimental/coursebuilder/views/macros.html:11
+msgid "Not yet started"
+msgstr "시작하지 않음"
+
+#. Displayed next to a question. Indicates that the question is worth 1 point.
+#: experimental/coursebuilder/modules/assessment_tags/templates/mc_question.html:10
+#: experimental/coursebuilder/modules/assessment_tags/templates/sa_question.html:10
+msgid "1 point"
+msgstr "1포인트"
+
+#. Displayed next to a question to indicate its point value. In this particular
+#. message, the number of points will be plural.
+#: experimental/coursebuilder/modules/assessment_tags/templates/mc_question.html:13
+#: experimental/coursebuilder/modules/assessment_tags/templates/sa_question.html:13
+#, python-format
+msgid "%(points)s points"
+msgstr "%(points)s포인트"
+
+#. Text on the button for checking a student's answer.
+#. Text on the button for checking an answer.
+#: experimental/coursebuilder/modules/assessment_tags/templates/mc_question.html:37
+#: experimental/coursebuilder/modules/assessment_tags/templates/question_group.html:20
+#: experimental/coursebuilder/modules/assessment_tags/templates/sa_question.html:41
+#: experimental/coursebuilder/views/base.html:19
+msgid " Check Answer "
+msgstr " 정답 확인 "
+
+#. Text on the button for requesting a hint to a question.
+#: experimental/coursebuilder/modules/assessment_tags/templates/sa_question.html:32
+msgid " Hint "
+msgstr " 힌트 "
+
+#. This is an error message to an author of an online course.
+#. The problem is that course assignments that are to be graded
+#. by other students (peers) cannot be configured to be added
+#. as content to external web pages. (I.e., some external site wants
+#. to use this assignment as part of a page's content, but this
+#. is not permitted)
+#: experimental/coursebuilder/modules/assessments/assessments.py:123
+msgid "Peer-review assignments cannot be embedded in external pages."
+msgstr "외부 페이지에 동료가 검토한 과제를 삽입할 수 없습니다."
+
+#. Text shown to students when they visit an assignment page for which the due
+#. date has passed.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:39
+#, python-format
+msgid ""
+"The due date for submitting this assignment has passed. It was due on "
+"%(submission_due_date)s."
+msgstr "과제물 제출 마감 시한이 지났습니다. 마감 시한은 %(submission_due_date)s이었습니다."
+
+#. Shown to the student on the assignment page.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:44
+msgid "Due date for this assignment: "
+msgstr "과제 제출 마감 시한: "
+
+#. Text telling students what their recorded email address is.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:53
+msgid "Your answers have been recorded under the email"
+msgstr "답변이 이메일 주소를 사용하여 기록되었습니다."
+
+#. Text telling students there are not answers recorded for them.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:57
+msgid "You have not submitted any answers to this assignment under the email"
+msgstr "이메일 주소를 사용하여 과제에 대해 제출한 답변이 없습니다."
+
+#. Text telling students what their recorded email address is.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:62
+msgid "Your answers will be recorded under the email"
+msgstr "답변이 이메일 주소를 사용하여 기록됩니다."
+
+#. Text telling students what their total score is.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:72
+msgid "Score:"
+msgstr "점수:"
+
+#. Instructions to the student for a peer-reviewed assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:83
+msgid ""
+"You may only submit this assignment once. After you submit it, the "
+"assignment will become read-only, and you will not be able to modify your"
+" answers. The answers you submit here will be reviewed by your peers."
+msgstr ""
+"이 과제는 한 번만 제출할 수 있습니다. 과제를 제출하고 나면 읽기전용으로 바뀌며 답안을 수정할 수 없게 됩니다. 여기서 제출한 "
+"답안은 다른 사람이 검토할 것입니다."
+
+#. Header text for a previously-submitted assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:98
+msgid "Submitted assignment"
+msgstr "제출한 과제"
+
+#. Text telling students the date their answers were submitted
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:103
+msgid "Submitted on"
+msgstr "제출 날짜:"
+
+#. Header text for the list of reviews received for an assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:128
+msgid "Reviews received"
+msgstr "수신한 검토물"
+
+#. Text shown below a student's peer-reviewed assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:135
+msgid ""
+"After you have completed the required number of peer reviews for this "
+"assignment, the reviews you have received will appear here."
+msgstr "이 과제에 대한 필수 상호 검토 횟수가 충족되면 수신한 검토물이 여기 표시됩니다."
+
+#. Text shown on a button that allows the student to navigate from an
+#. assignment submission page to the peer review dashboard for that assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:142
+msgid "Go to the review dashboard"
+msgstr "검토 대시보드로 이동"
+
+#. Text shown below a student's peer-reviewed assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:147
+msgid "You have not received any peer reviews yet."
+msgstr "수신한 상호 검토물이 아직 없습니다."
+
+#. Text shown for an assessment that has not been made public.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:180
+msgid "This assessment is not available."
+msgstr "사용할 수 없는 평가입니다."
+
+#. Text on the button for saving a draft answer.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_html_content.html:38
+#: experimental/coursebuilder/views/base.html:35
+msgid " Save Draft "
+msgstr " 임시저장 "
+
+#. Text on the button for submitting a peer review.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_html_content.html:41
+#: experimental/coursebuilder/views/base.html:47
+msgid " Submit Review "
+msgstr " 검토물 제출 "
+
+#. Text on the button for checking a set of answers.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_html_content.html:49
+#: experimental/coursebuilder/views/base.html:23
+msgid " Check Answers "
+msgstr " 정답 확인 "
+
+#. Text on the button for submitting answers.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_html_content.html:58
+#: experimental/coursebuilder/views/base.html:39
+msgid " Submit Answers "
+msgstr " 답안 제출 "
+
+#. Title of the webpage.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_page.html:15
+msgid "Assessment"
+msgstr "평가"
+
+#. Message to a student taking a course that they have
+#. successfully submitted answers to an assessment (an assessment
+#. is an examination, test, quiz, or similar.)
+#: experimental/coursebuilder/modules/assessments/templates/assessment_page.html:39
+msgid "Assessment submitted."
+msgstr "과제가 제출되었습니다."
+
+#. Shown on the assignment submission confirmation page when the student has
+#. submitted a duplicate assignment.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:25
+msgid ""
+"You have already submitted this assignment. Your latest attempt has not "
+"been saved."
+msgstr "이미 이 과제를 제출했습니다. 최근 시도는 저장되지 않았습니다."
+
+#. Shown on the assignment submission confirmation page when the student has
+#. successfully submitted an assignment.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:28
+msgid ""
+"Thank you for completing this assignment. Your work was successfully "
+"submitted."
+msgstr "과제를 완료해 주셔서 감사합니다. 과제가 제출되었습니다."
+
+#. Text shown on the assignment submission confirmation page after the student
+#. has submitted a peer-reviewed assignment.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:32
+msgid "Review your peers' assignments by clicking on the button below."
+msgstr "아래 버튼을 클릭하여 다른 사람의 과제를 검토하세요."
+
+#. Text for the button on the assignment submission confirmation page.
+#. Displayed in the course contents page. Indicates a page to
+#. which students can go to review other students' assignments.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:39
+#: experimental/coursebuilder/modules/courses/unit_outline.py:439
+msgid "Review peer assignments"
+msgstr "과제 검토"
+
+#. Text for the button on the assignment submission confirmation page.
+#. Shown after the student has submitted an assessment. This button allows the
+#. student to navigate back to the main course page.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:44
+#: experimental/coursebuilder/modules/assessments/templates/test_confirmation.html:27
+msgid "Back to Course page"
+msgstr "교육 과정 페이지로 돌아가기"
+
+#. Message fragment on a certificate of course completion.
+#. Title line indicating what this page is.
+#. Title on page certifying that user has satisfied the requirements of a
+#. class.
+#: experimental/coursebuilder/modules/certificate/certificate.py:133
+#: experimental/coursebuilder/modules/certificate/templates/certificate.html:18
+msgid "Certificate of Completion"
+msgstr "수료증"
+
+#. Message fragment on a certificate of course completion.
+#. On a separate line, preceding the name of the student.  Indicates
+#. that the certificate is being presented to someone.
+#. Phrase introducing the name of a student to whom a certificate is being
+#. awarded.
+#: experimental/coursebuilder/modules/certificate/certificate.py:141
+#: experimental/coursebuilder/modules/certificate/templates/certificate.html:21
+msgid "Presented to"
+msgstr "이름:"
+
+#. Message fragment on a certificate of course completion.
+#. Indicates that the student has successfully completed something.
+#. Phrase signifying that a student has successfully completed a course.
+#: experimental/coursebuilder/modules/certificate/certificate.py:146
+#: experimental/coursebuilder/modules/certificate/templates/certificate.html:28
+msgid "for successfully completing the"
+msgstr "수료 과정:"
+
+#. Message fragment on a certificate of course completion.
+#. Gives the name of the course, followed by the word "course".
+#. Phrase giving the name of an instructional course.
+#: experimental/coursebuilder/modules/certificate/certificate.py:149
+#: experimental/coursebuilder/modules/certificate/templates/certificate.html:32
+#, python-format
+msgid "%(course)s course"
+msgstr "%(course)s 과정"
+
+#. Title of section on page showing certificates for course completion.
+#: experimental/coursebuilder/modules/certificate/certificate.py:281
+msgid "Certificate"
+msgstr "수료증"
+
+#. Label on control to navigate to page showing certificate
+#: experimental/coursebuilder/modules/certificate/certificate.py:291
+msgid "Click for certificate"
+msgstr "수료증을 보려면 클릭"
+
+#. Link for a PDF.
+#: experimental/coursebuilder/modules/certificate/certificate.py:299
+msgid "Download PDF"
+msgstr "PDF 다운로드"
+
+#. Text indicating student has not yet completed a course.
+#: experimental/coursebuilder/modules/certificate/certificate.py:307
+msgid ""
+"You have not yet met the course requirements for a certificate of "
+"completion."
+msgstr "수료증을 받는 데 필요한 과정 요건을 아직 충족하지 못했습니다."
+
+#. Shown in list of news item titles (short descriptions)
+#. when student has earned a course completion certificate.
+#: experimental/coursebuilder/modules/certificate/certificate.py:510
+msgid "Course completion certificate earned!"
+msgstr "과정 수료 인증서를 취득했습니다."
+
+#. Shown when a student is attempting to re-enroll in a
+#. course soon after un-enrolling.  It takes up to several
+#. hours to remove their data, and they are prevented from
+#. re-enrolling during that time to prevent problems.
+#: experimental/coursebuilder/modules/data_removal/data_removal.py:273
+msgid ""
+"You cannot re-register for this course at the current time, because "
+"deletion of your previous data is still in progress.  Please try again in"
+" in a few hours."
+msgstr "현재는 이전 데이터를 삭제하는 중이므로 이 교육 과정에 재등록할 수 없습니다. 몇 시간 후에 다시 시도해 주세요."
+
+#. Gives a link on the footer of the page to permit the user
+#. to delete their personal data.  This link only appears for users
+#. who are currently enrolled in the course or who were enrolled
+#. but still have personal data present in the course.
+#: experimental/coursebuilder/modules/data_removal/data_removal.py:427
+msgid "Delete My Data"
+msgstr "내 데이터 삭제"
+
+#. Shown when a student is unenrolling from a
+#. course.  Gives the student the option to have all
+#. their data permanently removed.
+#: experimental/coursebuilder/modules/data_removal/data_removal.py:446
+msgid "Delete all associated data"
+msgstr "모든 관련 데이터 삭제"
+
+#. Warns a student that they are about to remove all of              data
+#. collected from this student during the course.  This              deletion
+#. cannot be un-done.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:27
+msgid "Once you delete your data, there is no way to recover it."
+msgstr "데이터를 삭제한 후에는 복구할 수 없습니다."
+
+#. When a student deletes their data, this warning appears
+#. indicating that the deletion applies only to the current course,
+#. not anything else.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:32
+msgid ""
+"Deleting your content in this course will not delete your content from "
+"other courses.  You must delete your content for each course separately."
+msgstr "이 코스에서 콘텐츠를 삭제해도 다른 코스에서 콘텐츠가 삭제되지는 않습니다. 각 코스에서 개별적으로 콘텐츠를 삭제해야 합니다."
+
+#. When a student deletes their data from a course, this              warning
+#. appears to indicate that data is removed only for that              specific
+#. course, not other courses and not other Google              products or
+#. services.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:38
+msgid ""
+"This will also not delete your content in other products and services.  "
+"For example, if you made a post in Google Groups or shared a Google Drive"
+" document, you may wish to delete those posts or update your sharing "
+"settings in those products."
+msgstr ""
+"또한 다른 제품 및 서비스에서도 콘텐츠가 삭제되는 것은 아닙니다. 예를 들어 Google 그룹스에 게시물을 올리거나 Google "
+"드라이브 문서를 공유한 경우 원하면 이러한 제품에서 게시물을 삭제하거나 공유 설정을 업데이트해야 합니다."
+
+#. Confirmation button, indicating that the student does              want to
+#. have all data about them removed from the course.
+#. Confirmation button, shown when a student has unenrolled from a course.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:58
+#: experimental/coursebuilder/views/unenroll_confirmation.html:30
+msgid "OK"
+msgstr "확인"
+
+#. Cancellation button, indicating that the student does not              want
+#. to have all data about them removed from the course.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:63
+msgid "Cancel"
+msgstr "취소"
+
+#. Page title when there is a problem enrolling the user in the course
+#. that contains their requested content.
+#: experimental/coursebuilder/modules/embed/templates/v1/enroll_error.html:7
+msgid "Enrollment error"
+msgstr "등록 오류"
+
+#. Sentence fragment printed after the current user's email address,
+#. indicating they have no rights to see the requested content, and
+#. that they should contact an administrator to ask for access if they
+#. think they should be able to see the content.
+#: experimental/coursebuilder/modules/embed/templates/v1/enroll_error.html:15
+msgid ""
+"has no rights to see this content. Please contact the content\n"
+"                owner to request access."
+msgstr ""
+
+#. When a user is authenticating with an external identity provider    (e.g.,
+#. Facebook, Twitter), this prompt indicates the user should select    one of
+#. these accounts to use to continue the login process.
+#: experimental/coursebuilder/modules/gitkit/templates/branding.html:4
+msgid "Pick an account to continue."
+msgstr "계속하려면 계정을 선택하세요."
+
+#. Page title for the email confirmation HTML message, starting with
+#. a parenthesized note that this is an example implementation.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:6
+msgid "(SAMPLE) Please confirm your email change"
+msgstr "(샘플) 이메일 변경사항 확인 요청"
+
+#. Page header text indicating that this is an example
+#. implementation.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:12
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:12
+msgid "SAMPLE"
+msgstr "샘플"
+
+#. sentence fragment beginning the message that an email address
+#. has changed from one value to another.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:16
+msgid "An email change has been requested from"
+msgstr "이메일 주소를 다음과 같이 변경해 주시기 바랍니다."
+
+#. sentence fragment connecting the old email address and the new email
+#. address.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:19
+msgid "to"
+msgstr "->"
+
+#. sentence fragment beginning the text of the sentence providing the
+#. link for users to confirm email change.
+#. link for users to confirm the password change.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:22
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:19
+msgid "Please visit"
+msgstr "다음 링크를 방문하시기 바랍니다."
+
+#. sentence fragment concluding the text of the sentence providing the
+#. link for users to confirm email change.
+#. link for users to confirm the password change.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:26
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:23
+msgid "to confirm this change."
+msgstr "그리고 변경사항을 확인해 주세요."
+
+#. message introducing the list of available diagnostic pieces of
+#. information.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:32
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:29
+msgid "Diagnostic information:"
+msgstr "진단 정보"
+
+#. Page title for the password reset HTML message, starting with a
+#. parenthesized note that this is an example implementation.
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:6
+msgid "(SAMPLE) Password reset confirmation"
+msgstr "(샘플) 비밀번호 재설정 확인"
+
+#. sentence fragment beginning the message that a password reset has
+#. been requested.
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:16
+msgid "A password change has been requested for"
+msgstr "다음 계정의 비밀번호를 변경해 주시기 바랍니다."
+
+#. Error indicating no email addresses were submitted.
+#: experimental/coursebuilder/modules/invitation/invitation.py:276
+msgid "Error: Empty email list"
+msgstr "오류: 비어 있는 이메일 목록"
+
+#. Error indicating that the user cannot add the desired
+#. list of additional email addresses to the list of invitations;
+#. the total size of the list with the additions would be more
+#. than any single user is allowed to send.  No email addresses
+#. were added to the list to send, and no further email messages
+#. were sent.
+#: experimental/coursebuilder/modules/invitation/invitation.py:290
+#, python-format
+msgid ""
+"This exceeds your email cap. Number of remaining invitations: %s. No "
+"messages sent."
+msgstr "이메일 전송 한도를 초과하여 메시지를 보내지 못했습니다. 초대장 전송 잔여 개수는 %s개입니다."
+
+#. Error indicating an email addresses is not well-formed.
+#: experimental/coursebuilder/modules/invitation/invitation.py:299
+#, python-format
+msgid "Error: Invalid email \"%s\""
+msgstr "오류: 잘못된 이메일 주소 - '%s'"
+
+#. Error indicating an email addresses is already known.
+#: experimental/coursebuilder/modules/invitation/invitation.py:303
+#, python-format
+msgid "Error: You have already sent an invitation email to \"%s\""
+msgstr "오류: 이미 '%s' 주소로 초대 이메일을 전송함"
+
+#. Error indicating not all email messages were sent.
+#: experimental/coursebuilder/modules/invitation/invitation.py:320
+#, python-format
+msgid "Not all messages were sent (%s / %s):"
+msgstr "일부 메일이 전송되지 않음(%s개/%s개):"
+
+#. Success message indicating number of emails sent.
+#: experimental/coursebuilder/modules/invitation/invitation.py:328
+#, python-format
+msgid "OK, %s messages sent"
+msgstr "메일 %s개 전송 완료"
+
+#. Title encouraging user to invite friends to join a course
+#: experimental/coursebuilder/modules/invitation/invitation.py:374
+msgid "Invite Friends"
+msgstr "친구 초대"
+
+#. Label on control asking user to invite friends to join.
+#: experimental/coursebuilder/modules/invitation/invitation.py:379
+msgid "Click to send invitations to family and friends"
+msgstr "가족 및 친구에게 초대장을 전송하려면 클릭"
+
+#. Inviting friends to join a course is not currently enabled.
+#: experimental/coursebuilder/modules/invitation/invitation.py:383
+msgid "Invitations not currently available"
+msgstr "현재 초대장을 사용할 수 없음"
+
+#. Control allowing user to subscribe/unsubscribe from email invitation
+#: experimental/coursebuilder/modules/invitation/invitation.py:395
+msgid "Subscribe/Unsubscribe"
+msgstr "수신허용/거부"
+
+#. Message - user has unsubscribed from email invitations.
+#: experimental/coursebuilder/modules/invitation/invitation.py:402
+msgid "You are currently unsubscribed from course-related emails."
+msgstr "강의 관련 이메일을 수신 거부했습니다."
+
+#. Control allowing user to re-subscribe to email invitations.
+#: experimental/coursebuilder/modules/invitation/invitation.py:406
+msgid "Click here to re-subscribe."
+msgstr "다시 수신하려면 여기를 클릭하세요."
+
+#. Text indicating user has opted in to email invitations.
+#: experimental/coursebuilder/modules/invitation/invitation.py:411
+msgid "You are currently receiving course-related emails. "
+msgstr "강의 관련 이메일을 수신하고 있습니다. "
+
+#. Control allowing user to unsubscribe from email invitations.
+#: experimental/coursebuilder/modules/invitation/invitation.py:415
+msgid "Click here to unsubscribe."
+msgstr "수신거부하려면 여기를 클릭하세요."
+
+#. Title of the course progress webpage.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:19
+#: experimental/coursebuilder/views/student_profile.html:13
+msgid "Course Progress"
+msgstr "교육 과정 진행 상황"
+
+#. title on page requesting user to invite friends to a course.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:30
+msgid "Invite friends or family members to join the course"
+msgstr "친구나 가족이 과정에 등록하도록 초대"
+
+#. Block of text inviting users to invite friends to a course.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:33
+msgid ""
+"Do you know other people who might want to join this course? Enter their "
+"email addresses below and click \"Send\". They will receive an email from"
+" you with the text shown below."
+msgstr ""
+"주위에 이 과정에 관심 있을 것 같은 사람이 있나요? 아래에 그 이메일 주소를 입력하고 '보내기'를 클릭하세요. 그러면 아래에 "
+"표시된 텍스트와 함께 내가 보낸 이메일을 받게 됩니다."
+
+#. Instructions on how to fill out email addresses in a form.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:43
+msgid ""
+"Enter recipients' email addresses separated by commas. E.g., "
+"alice@gmail.com, ben@gmail.com"
+msgstr "수신자의 이메일 주소를 쉼표로 구분하여 입력하세요. 예: kim@gmail.com, lee@gmail.com"
+
+#. Label on control submitting a form with email addresses
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:52
+msgid "Send"
+msgstr "보내기"
+
+#. Section title indicating an example of an email.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:57
+msgid "Sample Email"
+msgstr "샘플 이메일"
+
+#. Example subject line of an email to be sent.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:60
+msgid "Subject:"
+msgstr "제목:"
+
+#. Text for a button allowing user to manually mark themselves          as
+#. having completed a lesson in an educational course.
+#: experimental/coursebuilder/modules/manual_progress/templates/manual_progress.html:12
+msgid "I have completed this lesson."
+msgstr "이 강의 완료"
+
+#. Text for a button allowing user to manually mark themselves          as
+#. having completed a unit in an educational course.
+#: experimental/coursebuilder/modules/manual_progress/templates/manual_progress.html:26
+msgid "I have completed this unit."
+msgstr "이 단원 완료"
+
+#. Text for a button allowing user to manually mark themselves          as
+#. having completed an educational course.
+#: experimental/coursebuilder/modules/manual_progress/templates/manual_progress.html:41
+msgid "I have completed this course."
+msgstr "이 과정 완료"
+
+#. Message to show the user was not allowed to access to resource
+#. Message displayed to non-logged in user
+#: experimental/coursebuilder/modules/questionnaire/questionnaire.py:198
+#: experimental/coursebuilder/modules/rating/rating.py:96
+msgid "Access denied."
+msgstr "액세스가 거부되었습니다."
+
+#. Message to acknowledge successful submission of the
+#. questionnaire
+#: experimental/coursebuilder/modules/questionnaire/questionnaire.py:202
+msgid "Response submitted."
+msgstr "응답이 제출되었습니다."
+
+#. This message appears on a page where a student could            submit
+#. answers to a questionnaire.  Students may only submit            the
+#. questionnaire once.  This message appears when viewing            the page
+#. after the first subission.
+#: experimental/coursebuilder/modules/questionnaire/templates/questionnaire.html:15
+msgid "Only one submission of this form is allowed."
+msgstr "이 설문지를 한 번만 제출할 수 있습니다."
+
+#. This message appears on a page where a student could            submit
+#. answers to a questionnaire.  The user viewing the            page is not a
+#. registered student, and gets a message            indicating the situation.
+#: experimental/coursebuilder/modules/questionnaire/templates/questionnaire.html:28
+msgid "Only registered students can submit answers."
+msgstr "등록한 학생만 답변을 제출할 수 있습니다."
+
+#. Button label to submit the responses to a questionnaire.
+#: experimental/coursebuilder/modules/questionnaire/templates/questionnaire.html:34
+msgid "Submit answers"
+msgstr "답변 제출"
+
+#. Message displayed when user submits written comments
+#: experimental/coursebuilder/modules/rating/rating.py:156
+msgid "Thank you for your feedback."
+msgstr "의견을 보내 주셔서 감사합니다."
+
+#. Header on 5-point scale for student feedback on the lesson.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:5
+msgid "Rate this lesson:"
+msgstr "이 강의 평가:"
+
+#. Lowest rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:12
+msgid "Not at all useful"
+msgstr "전혀 유용하지 않음"
+
+#. Second-lowest rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:18
+msgid "Not very useful"
+msgstr "그다지 유용하지 않음"
+
+#. Middle rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:24
+msgid "Somewhat useful"
+msgstr "보통"
+
+#. Second-highest rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:30
+msgid "Very useful"
+msgstr "유용함"
+
+#. Highest rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:36
+msgid "Extremely useful"
+msgstr "매우 유용함"
+
+#. Indicate location to type additional comments
+#: experimental/coursebuilder/modules/rating/templates/widget.html:42
+msgid "Additional comments..."
+msgstr "추가 의견"
+
+#. Label on a button to submit feedback.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:45
+msgid "Submit"
+msgstr "제출"
+
+#. Displayed in search results; denotes a lesson link.
+#. Navigation breadcrumb.
+#: experimental/coursebuilder/modules/search/resources.py:358
+#: experimental/coursebuilder/views/unit.html:84
+msgid "Lesson"
+msgstr "강의"
+
+#. Displayed in search results; denotes an announcement link.
+#: experimental/coursebuilder/modules/search/resources.py:725
+msgid "Announcement"
+msgstr "공지사항"
+
+#. Title of the webpage.
+#: experimental/coursebuilder/modules/search/search.html:5
+msgid "Search"
+msgstr "검색"
+
+#. Status message above search results.
+#: experimental/coursebuilder/modules/search/search.html:17
+#, python-format
+msgid "Results for \"%(query)s\""
+msgstr "'%(query)s'에 대한 검색결과"
+
+#. The amount of time the search took, displayed above search results.
+#: experimental/coursebuilder/modules/search/search.html:20
+#, python-format
+msgid "Search took %(num_seconds)s seconds."
+msgstr "검색에 %(num_seconds)s초 소요되었습니다."
+
+#. Link to the previous page.
+#: experimental/coursebuilder/modules/search/search.html:31
+msgid "Previous"
+msgstr "이전"
+
+#. Indicator for current page in search results.
+#: experimental/coursebuilder/modules/search/search.html:36
+#, python-format
+msgid "Page %(number)s of %(total)s"
+msgstr "%(number)s페이지/총 %(total)s페이지"
+
+#. Link to the next page.
+#: experimental/coursebuilder/modules/search/search.html:42
+msgid "Next"
+msgstr "다음"
+
+#. The search returned no results.
+#: experimental/coursebuilder/modules/search/search.html:49
+#, python-format
+msgid "No results for \"%(query)s\""
+msgstr "'%(query)s'에 대한 검색결과 없음"
+
+#. Message displayed on search results page when error occurs.
+#: experimental/coursebuilder/modules/search/search.py:81
+msgid "Search is currently unavailable."
+msgstr "현재 검색을 사용할 수 없습니다."
+
+#. Title of a link on a search result page.  Link goes to        the part of
+#. the course where the search result, which is a        video, is part of a
+#. unit or lesson.
+#: experimental/coursebuilder/modules/search/results_templates/youtube.html:6
+msgid "View In Course"
+msgstr "강의로 보기"
+
+#. Header describing the skills for this lesson
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:20
+msgid "Taught in this lesson:"
+msgstr "강의 내용:"
+
+#. Header describing list of skills this lesson depends on
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:44
+msgid "Depends on:"
+msgstr "시작에 앞서 요구되는 기술:"
+
+#. Describe an empty set of prerequisite skills
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:48
+msgid "This lesson doesn't have any prerequisites."
+msgstr "강의에 선수 지식이 필요하지 않습니다."
+
+#. Header describing list of skills this lesson leads to
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:63
+msgid "Leads to:"
+msgstr "습득하게 될 기술:"
+
+#. Describe an empty set of follow-on skills
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:67
+msgid "This lesson isn't a prerequisite for any other lesson."
+msgstr "이 강의는 다른 강의의 선수 강의가 아닙니다."
+
+#. Header for list of links to lessons
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:18
+#: experimental/coursebuilder/modules/student_skills_ui/javascript_tests/fixture.html:25
+#: experimental/coursebuilder/modules/student_skills_ui/templates/unit_header.html:25
+msgid "Lessons"
+msgstr "강의"
+
+#. Text for empty list of lessons
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:31
+#: experimental/coursebuilder/modules/student_skills_ui/javascript_tests/fixture.html:28
+#: experimental/coursebuilder/modules/student_skills_ui/templates/unit_header.html:29
+msgid "Not taught"
+msgstr "강의 없음"
+
+#. Header for skill proficiency legend
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:42
+msgid "Proficiency level"
+msgstr "숙련도"
+
+#. Label for low skill proficiency
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:48
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:51
+msgid "low"
+msgstr "낮음"
+
+#. Label for high skill proficiency
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:55
+msgid "high"
+msgstr "높음"
+
+#. Header for skills progress section
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:19
+msgid "Skills Progress"
+msgstr "기술 습득 상황"
+
+#. List of acquired skills for a student
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:30
+msgid "Achievements"
+msgstr "습득한 기술"
+
+#. Describe an empty set of acquired skills
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:34
+msgid "Currently, no acquired skills."
+msgstr "현재 습득한 기술이 없습니다."
+
+#. List of skills recommended to a student to learn
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:51
+msgid "Recommended Next"
+msgstr "다음 권장 기술"
+
+#. Describe an empty set of recommended skills
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:55
+msgid "Currently, you have no recommended skills."
+msgstr "현재 권장 기술이 없습니다."
+
+#. Notification indicating that the user has subscribed to email notifications
+#. from an instructional course.
+#: experimental/coursebuilder/modules/unsubscribe/templates/resubscribe.html:17
+msgid ""
+"The following email address has been subscribed to receive emails for "
+"this course:"
+msgstr "이 과정에 대한 이메일을 수신허용한 이메일 주소:"
+
+#. Indicates that a user will no longer recieve email about a course
+#: experimental/coursebuilder/modules/unsubscribe/templates/unsubscribe.html:25
+msgid ""
+"The following email address has been unsubscribed from emails for this "
+"course:"
+msgstr "이 과정에 대한 이메일을 수신거부한 이메일 주소:"
+
+#. After a user has unsubscribed from email notifications, indicate that
+#. re-subscribing is possible using a control lower on the page.
+#: experimental/coursebuilder/modules/unsubscribe/templates/unsubscribe.html:34
+msgid ""
+"If you prefer to continue receiving notifications, please click below to "
+"resubscribe."
+msgstr "알림을 계속 수신하려면 아래를 클릭하여 다시 수신허용하세요."
+
+#. Button at the bottom of the page to resubscribe to notifications.
+#: experimental/coursebuilder/modules/unsubscribe/templates/unsubscribe.html:44
+msgid "Resubscribe"
+msgstr "재구독"
+
+#. Error message for failed student file upload.
+#. The selected file was empty.
+#: experimental/coursebuilder/modules/upload/upload.py:90
+msgid "File is empty."
+msgstr "파일이 비어 있습니다."
+
+#. Error message for failed student file upload.
+#. The selected file was not a text file.
+#: experimental/coursebuilder/modules/upload/upload.py:102
+msgid ""
+"Wrong file format, only text files (.txt) with unicode contents are "
+"allowed."
+msgstr "파일 형식이 잘못되었습니다. 유니코드 콘텐츠를 포함한 텍스트 파일(.txt)만 허용됩니다."
+
+#. Error message for failed student file upload.
+#. The selected file was too large.
+#: experimental/coursebuilder/modules/upload/upload.py:110
+msgid "File too large, only files smaller than 1MB are allowed."
+msgstr "파일이 너무 큽니다. 1MB 미만의 파일만 허용됩니다."
+
+#. Error message for failed student file upload.
+#. Generic upload error.
+#: experimental/coursebuilder/modules/upload/upload.py:117
+msgid "Unable to save student submission."
+msgstr "학생 제출물을 저장할 수 없습니다."
+
+#. Message shown to the user telling them they have already submitted an item,
+#. and submitting a new item will overwrite their previous item.
+#: experimental/coursebuilder/modules/upload/templates/form.html:18
+msgid "You have already submitted; submit again to replace your previous entry."
+msgstr "이미 제출했습니다. 다시 제출하면 기존 제출물이 대체됩니다."
+
+#. Warning shown to the user telling them that the file they select for upload
+#. should be at most 1MB in size
+#: experimental/coursebuilder/modules/upload/templates/form.html:23
+msgid "Maximum file size is 1MB."
+msgstr "최대 파일 크기는 1MB입니다."
+
+#. Shown when a user submits a file successfully.
+#: experimental/coursebuilder/modules/upload/templates/result.html:7
+msgid "Your file has been successfully uploaded."
+msgstr "파일이 업로드되었습니다."
+
+#. Shown to tell the user an error occurred during submission.
+#: experimental/coursebuilder/modules/upload/templates/result.html:10
+msgid "An error occurred."
+msgstr "오류가 발생했습니다."
+
+#. Text of the link to take the user back to the previous page.
+#: experimental/coursebuilder/modules/upload/templates/result.html:20
+msgid "Return to the previous page."
+msgstr "이전 페이지로 돌아가기"
+
+#. Text of the link to take the user back to the previous page so they can try
+#. submitting again.
+#: experimental/coursebuilder/modules/upload/templates/result.html:25
+msgid "Go back and try again."
+msgstr "이전으로 돌아가 다시 시도"
+
+#. Text after the link to take the user back to the previous page so they can
+#. try submitting again.
+#: experimental/coursebuilder/modules/upload/templates/result.html:28
+msgid "If the problem persists, contact your administrator."
+msgstr "문제가 지속되면 관리자에게 문의하세요."
+
+#. Message on page indicating that a resource is not available.        The
+#. current user is not logged in with a Google identity, which        is very
+#. likely the reason the resource is not available to this        person.
+#: experimental/coursebuilder/views/404.html:7
+msgid ""
+"This resource does not exist, or access to it requires that you be logged"
+" in."
+msgstr "존재하지 않거나 로그인해야만 액세스할 수 있는 리소스입니다."
+
+#. Message on page indicating that a resource is not available.        Either
+#. the requested item really does not exist, or the currently        logged-in
+#. user does not have access to the requested item.  It may        be that
+#. logging in as a different user would grant access.
+#: experimental/coursebuilder/views/404.html:16
+msgid ""
+"This resource does not exist, or cannot be accessed by the current user."
+"  You are currently logged in as {email}."
+msgstr "존재하지 않거나 현재 사용자는 액세스할 수 없는 리소스입니다. 현재 {이메일}(으)로 로그인되어 있습니다."
+
+#. Text for a link on a page indicating that some desired       resource was
+#. not available.  Suggest that the user should log in       in the hopes that
+#. that will grant additional access to the item.
+#: experimental/coursebuilder/views/404.html:27
+msgid "Log in as another user"
+msgstr "다른 사용자로 로그인"
+
+#. Text for a link on a page indicating that some desired          resource was
+#. not available.  Following the link will log out the          current user
+#. for this site only (by unsetting cookies), and then          forward them to
+#. a page where they may log in with a different          identity.
+#: experimental/coursebuilder/views/404.html:34
+msgid "Log in"
+msgstr "로그인"
+
+#. Text for a link on a page indicating that some desired        resource was
+#. not available.  Following the link will go to the        base page in the
+#. course.  It may be the that the current user has        access to that
+#. pgage.
+#: experimental/coursebuilder/views/404.html:44
+msgid "Go to the home page for {course_title}"
+msgstr "{course_title} 홈페이지로 이동"
+
+#. Title of the webpage.
+#. Navbar tab.
+#: experimental/coursebuilder/views/announcements.html:5
+#: experimental/coursebuilder/views/base_course.html:38
+msgid "Announcements"
+msgstr "공지사항"
+
+#. Shown if the list of announcements is empty.
+#: experimental/coursebuilder/views/announcements.html:37
+msgid "Currently, there are no announcements."
+msgstr "현재 공지사항이 없습니다."
+
+#. Text on the button for showing the answer to a question.
+#: experimental/coursebuilder/views/base.html:27
+msgid " Skip and Show Answer "
+msgstr " 건너뛰고 정답 보기 "
+
+#. Text on the button for saving answers to a question.
+#: experimental/coursebuilder/views/base.html:31
+msgid " Save Answers "
+msgstr " 답 저장 "
+
+#. Text on the button for submitting a peer-reviewed assignment.
+#: experimental/coursebuilder/views/base.html:43
+msgid " Submit Assignment "
+msgstr " 과제 제출 "
+
+#. Text to prompt the student to select a multiple-choice answer.
+#: experimental/coursebuilder/views/base.html:51
+msgid " Please click one of the buttons for your answer. "
+msgstr " 버튼 중 하나를 클릭하여 답을 고르세요. "
+
+#. Text appearing after the student has answered all questions correctly.
+#: experimental/coursebuilder/views/base.html:55
+msgid " All your answers are correct! "
+msgstr " 모두 정답입니다. "
+
+#. Text appearing after the student has answered all questions correctly.
+#: experimental/coursebuilder/views/base.html:59
+msgid " Number of questions you answered correctly "
+msgstr " 정답을 맞춘 문항의 수 "
+
+#. Text appearing after the student has submitted an assessment.
+#: experimental/coursebuilder/views/base.html:63
+msgid " You received a score on this assessment of "
+msgstr " 평가 점수 "
+
+#. Text appearing after the student has checked his/her answers to an
+#. assessment.
+#: experimental/coursebuilder/views/base.html:67
+msgid " Here are lessons you could review to improve your score "
+msgstr " 점수를 올리기 위해 복습할 강의 "
+
+#. Text appearing after the student has checked his/her answers to an
+#. assessment.
+#: experimental/coursebuilder/views/base.html:71
+msgid ""
+" Congratulations! Press the \\'Submit Answers\\' button to submit your "
+"grade. "
+msgstr " 축하합니다! 등급을 제출하려면 \\'답안 제출\\' 버튼을 누르세요. "
+
+#. Text appearing after the student has checked his/her answers to an
+#. assessment.
+#: experimental/coursebuilder/views/base.html:75
+msgid ""
+" Press the \\'Submit Answers\\' button below to save your scores. You can"
+" also edit your answers above before clicking \\'Submit Answers\\'. "
+msgstr ""
+" 점수를 저장하려면 아래에 있는 \\'답안 제출\\' 버튼을 누르세요. \\'답안 제출\\'을 클릭하기 전에는 위에 있는 답안을 "
+"수정할 수 있습니다. "
+
+#. Text appearing in a confirmation dialog after the student has tried to
+#. submit an assignment.
+#: experimental/coursebuilder/views/base.html:79
+msgid " Are you sure you want to submit this assignment? "
+msgstr " 이 과제물을 제출하시겠습니까? "
+
+#. Text appearing in a confirmation dialog after the student has tried to
+#. submit a review.
+#: experimental/coursebuilder/views/base.html:83
+msgid " Are you sure you want to submit this review? "
+msgstr " 이 검토물을 제출하시겠습니까? "
+
+#. Text appearing in a confirmation dialog after 'Are you sure you want to
+#. submit this assignment/review?'
+#: experimental/coursebuilder/views/base.html:87
+msgid " You cannot edit or delete it after you have done so. "
+msgstr " 제출을 완료한 후에는 수정하거나 삭제할 수 없습니다. "
+
+#. Text shown in parentheses next to the student's email address at the
+#. top-right of all course pages, if the student is logged in but not
+#. registered for the course he/she is currently browsing.
+#: experimental/coursebuilder/views/base.html:240
+msgid "Not registered"
+msgstr "미등록"
+
+#. Navbar text.
+#: experimental/coursebuilder/views/base.html:249
+msgid "Logout"
+msgstr "로그아웃"
+
+#. Navbar text.
+#: experimental/coursebuilder/views/base.html:255
+msgid "Login"
+msgstr "로그인"
+
+#. Link at the bottom of each page to the privacy and 'Terms and Conditions'
+#. pages.
+#: experimental/coursebuilder/views/base.html:295
+msgid "Privacy & Terms"
+msgstr "개인정보 보호 및 약관"
+
+#. Text describing the locale selector.
+#: experimental/coursebuilder/views/base.html:302
+msgid "Language:"
+msgstr "언어:"
+
+#. Title of the webpage.
+#. Navbar tab.
+#. Navigation breadcrumb.
+#: experimental/coursebuilder/views/base_course.html:7
+#: experimental/coursebuilder/views/base_course.html:42
+#: experimental/coursebuilder/views/unit.html:75
+msgid "Course"
+msgstr "교육 과정"
+
+#. Navbar tab.
+#. Title of the webpage.
+#: experimental/coursebuilder/views/base_course.html:47
+#: experimental/coursebuilder/views/forum.html:13
+msgid "Forum"
+msgstr "포럼"
+
+#. Navbar tab.
+#: experimental/coursebuilder/views/base_course.html:53
+msgid "Progress"
+msgstr "진행 상황"
+
+#. Navbar tab.
+#: experimental/coursebuilder/views/base_course.html:58
+msgid "Registration"
+msgstr "등록"
+
+#. Text for title of navigation bar tab to reach list of
+#. courses the current user is enrolled in or whitelisted for.
+#: experimental/coursebuilder/views/base_course.html:86
+msgid "My Courses"
+msgstr "내 교육 과정"
+
+#. Text for title of navigation bar tab to reach list of all
+#. available courses when user is logged out.
+#: experimental/coursebuilder/views/base_course.html:92
+msgid "Explore Courses"
+msgstr "교육 과정 둘러보기"
+
+#. This is shown to the student in a popup after registration.
+#: experimental/coursebuilder/views/course.html:14
+msgid ""
+"Thank you for registering for the course. Click the Announcements tab for"
+" important information."
+msgstr "교육 과정에 등록해 주셔서 감사합니다. 공지사항 탭을 클릭하여 중요한 정보를 확인하세요."
+
+#. This is shown to the student in a popup if registrations for the course are
+#. not open.
+#: experimental/coursebuilder/views/course.html:19
+msgid "Registrations for this course are not open."
+msgstr "이 교육 과정 등록이 개시되지 않았습니다."
+
+#. Title for the course syllabus on the main contents page.
+#: experimental/coursebuilder/views/course.html:45
+msgid "Syllabus"
+msgstr "강의 계획서"
+
+#. Error text for when a student has submitted a review after the deadline.
+#: experimental/coursebuilder/views/error.html:16
+#, python-format
+msgid ""
+"Your review has not been saved, because it was submitted on %(time_now)s."
+" The deadline for submitting reviews was %(review_due_date)s."
+msgstr ""
+"검토물이 %(time_now)s에 제출되었기 때문에 저장되지 않았습니다. 검토물 제출 마감 시한은 "
+"%(review_due_date)s이었습니다."
+
+#. Error text for when a student submits an assignment after the deadline.
+#: experimental/coursebuilder/views/error.html:21
+#, python-format
+msgid ""
+"Your assignment has not been saved, because it was submitted on "
+"%(time_now)s. The deadline for submitting assignments was "
+"%(submission_due_date)s."
+msgstr ""
+"과제물이 %(time_now)s에 제출되었기 때문에 저장되지 않았습니다. 과제물 제출 마감 시한은 "
+"%(submission_due_date)s이었습니다."
+
+#. Error text for when a student tries to get a new assignment to review before
+#. submitting his/her own assignment.
+#: experimental/coursebuilder/views/error.html:26
+msgid ""
+"You must submit the assignment for this unit before you can request new "
+"assignments to review."
+msgstr "이 단원에 대한 과제물을 제출해야만 검토할 새 과제물을 요청할 수 있습니다."
+
+#. Error text for when a student tries to request a new assignment to review
+#. after the review submission deadline.
+#: experimental/coursebuilder/views/error.html:31
+msgid ""
+"The deadline for submitting reviews has already passed, so you cannot "
+"request a new assignment to review."
+msgstr "검토물 제출 마감 시한이 이미 지났으므로 검토할 새 과제물을 요청할 수 없습니다."
+
+#. Error text for when a student requests a new assignment to review, but needs
+#. to complete more peer reviews first before a new review can be allocated to
+#. him/her.
+#: experimental/coursebuilder/views/error.html:36
+msgid "You must complete all assigned reviews before you can request a new one."
+msgstr "배정된 검토물을 모두 완료해야만 새 검토물을 요청할 수 있습니다."
+
+#. Error text for when a student has already submitted a review, and tries to
+#. submit it again.
+#: experimental/coursebuilder/views/error.html:41
+msgid "You have already submitted this review. Your latest review was not saved."
+msgstr "이미 이 검토물을 제출했습니다. 최근 검토물은 저장되지 않았습니다."
+
+#. Button at the bottom of a lesson page offering the student the opportunity
+#. to grade his/her answers.
+#: experimental/coursebuilder/views/lesson.html:10
+msgid "Grade Questions"
+msgstr "문항 채점"
+
+#. Alt text for an embedded YouTube video player.
+#: experimental/coursebuilder/views/lesson.html:23
+#: experimental/coursebuilder/views/summary.html:26
+msgid "YouTube Video Player"
+msgstr "YouTube 동영상 플레이어"
+
+#. Link to a text version of a lesson video.
+#: experimental/coursebuilder/views/lesson_common.html:10
+msgid "Text Version"
+msgstr "텍스트 버전"
+
+#. Text shown for a lesson that has not been made public.
+#: experimental/coursebuilder/views/lesson_common.html:26
+msgid "This lesson is not available."
+msgstr "이 강의는 사용할 수 없습니다."
+
+#. Alt text for image showing student progress.
+#: experimental/coursebuilder/views/macros.html:8
+msgid "Not yet submitted"
+msgstr "제출하지 않음"
+
+#. Alt text for image showing student progress.
+#: experimental/coursebuilder/views/macros.html:17
+msgid "In progress"
+msgstr "진행 중"
+
+#. Text appearing just before an input field containing a student's answer.
+#: experimental/coursebuilder/views/readonly_assessment.html:31
+#: experimental/coursebuilder/views/readonly_assessment.html:35
+msgid "Answer:"
+msgstr "답안:"
+
+#. A question in the registration form.
+#: experimental/coursebuilder/views/register.html:54
+#: experimental/coursebuilder/views/register.html:60
+msgid "What is your name?"
+msgstr "이름이 무엇입니까?"
+
+#. Button at the end of the registration form for a course.
+#: experimental/coursebuilder/views/register.html:72
+msgid "Enroll"
+msgstr "등록"
+
+#. Registration button on the main course page.
+#: experimental/coursebuilder/views/registration_module.html:7
+#: experimental/coursebuilder/views/registration_module.html:15
+msgid "Register"
+msgstr "등록"
+
+#. Title of the webpage.
+#: experimental/coursebuilder/views/review.html:15
+msgid "Review"
+msgstr "검토"
+
+#. Link to return to the list of peer reviews.
+#: experimental/coursebuilder/views/review.html:54
+msgid "Back to the review dashboard."
+msgstr "검토 대시보드로 돌아갑니다."
+
+#. Text shown to students when they visit a review submission page for which
+#. the due date has passed.
+#: experimental/coursebuilder/views/review.html:62
+#, python-format
+msgid ""
+"The due date for submitting this review has passed. It was due on "
+"%(review_due_date)s."
+msgstr "검토물 제출 마감 시한이 지났습니다. 마감 시한은 %(review_due_date)s이었습니다."
+
+#. Shown to a student who is asked to complete a peer review of another
+#. student's assignment.
+#: experimental/coursebuilder/views/review.html:67
+msgid "Due date for this review: "
+msgstr "검토 마감 시한: "
+
+#. Instructions to a student who is asked to complete a peer review of another
+#. student's assignment.
+#: experimental/coursebuilder/views/review.html:76
+msgid ""
+"The scores and comments you submit here will be viewed by your peers. "
+"Once you submit your review, you may not edit it."
+msgstr "여기에 제출한 점수 및 의견은 다른 사람이 볼 수 있습니다. 일단 검토물을 제출하면 수정할 수 없습니다."
+
+#. Header text for a reviewed assignment.
+#: experimental/coursebuilder/views/review.html:85
+msgid "Reviewed assignment"
+msgstr "검토한 과제"
+
+#. Header text for an assignment that a student still needs to review.
+#: experimental/coursebuilder/views/review.html:88
+msgid "Assignment to review"
+msgstr "검토할 과제"
+
+#. Header text for a review the student has previously submitted.
+#: experimental/coursebuilder/views/review.html:115
+msgid "Submitted review"
+msgstr "제출한 검토물"
+
+#. Header text for a review form that a student has to complete when reviewing
+#. another student's assignment.
+#: experimental/coursebuilder/views/review.html:130
+msgid "Review form"
+msgstr "검토 양식"
+
+#. Shown as confirmation to a reviewer that his/her review draft has been
+#. saved.
+#: experimental/coursebuilder/views/review_confirmation.html:15
+msgid "Your review has been saved."
+msgstr "검토물이 저장되었습니다."
+
+#. Shown as confirmation to a reviewer that his/her review draft has been
+#. submitted.
+#: experimental/coursebuilder/views/review_confirmation.html:18
+msgid "Your review has been submitted successfully."
+msgstr "검토물이 제출되었습니다."
+
+#. Text for the button shown on the review submission confirmation page that
+#. allows the student to return to the list of reviews.
+#: experimental/coursebuilder/views/review_confirmation.html:25
+msgid "Back to the review dashboard"
+msgstr "검토 대시보드로 돌아가기"
+
+#. Title of the webpage.
+#: experimental/coursebuilder/views/review_dashboard.html:14
+msgid "Review Dashboard"
+msgstr "검토 대시보드"
+
+#. Header text for a list of assignments that can be reviewed by the student.
+#: experimental/coursebuilder/views/review_dashboard.html:25
+msgid "Assignments for your review"
+msgstr "검토할 과제"
+
+#. Text shown to students when they visit their list of reviews to be done, but
+#. the due date has passed.
+#: experimental/coursebuilder/views/review_dashboard.html:31
+msgid "The due date for submitting reviews has passed."
+msgstr "검토물 제출 마감 시한이 지났습니다."
+
+#. Instructions for a student being asked to do a review.
+#: experimental/coursebuilder/views/review_dashboard.html:40
+#, python-format
+msgid "All reviews are due by %(review_due_date)s."
+msgstr "모든 검토물의 마감 시한이 %(review_due_date)s입니다."
+
+#. Instructions for a student being asked to do a review.
+#: experimental/coursebuilder/views/review_dashboard.html:45
+msgid ""
+"In order to earn credit for this assignment, you must complete at least 1"
+" review by then."
+msgstr "이 과제에 대해 학점을 획득하려면 기한 내에 검토를 최소 1회 완료해야 합니다."
+
+#. Instructions for a student being asked to do a review.
+#: experimental/coursebuilder/views/review_dashboard.html:48
+#, python-format
+msgid ""
+"In order to earn credit for this assignment, you must complete at least "
+"%(review_min_count)d reviews by then."
+msgstr "이 과제에 대해 학점을 획득하려면 기한 내에 검토를 최소 %(review_min_count)d회 완료해야 합니다."
+
+#. An item in a list of assignments.
+#: experimental/coursebuilder/views/review_dashboard.html:57
+#, python-format
+msgid "Assignment %(index)s"
+msgstr "과제 %(index)s"
+
+#. Text shown after an assignment whose review is still in draft state.
+#: experimental/coursebuilder/views/review_dashboard.html:63
+msgid "Draft"
+msgstr "임시"
+
+#. Button that a student can click to request a new assignment to review.
+#: experimental/coursebuilder/views/review_dashboard.html:80
+msgid "Review a new assignment"
+msgstr "새 과제물 검토"
+
+#. Button that a student can click to navigate back to review an assignment in
+#. a class.
+#: experimental/coursebuilder/views/review_dashboard.html:83
+msgid "Back to assignment"
+msgstr "과제로 돌아가기"
+
+#. Text shown after a student has asked for a new assignment to review when
+#. there are no assignments left to review.
+#: experimental/coursebuilder/views/review_dashboard.html:89
+msgid ""
+"Sorry, there are no new submissions available for you to review at this "
+"time."
+msgstr "현재는 검토할 수 있는 새로운 제출물이 없습니다."
+
+#. Table header that states when a student enrolled in a course.
+#: experimental/coursebuilder/views/student_data_table.html:9
+msgid "Date enrolled"
+msgstr "등록된 날짜"
+
+#. Table header for the student's email address. This is a noun.
+#: experimental/coursebuilder/views/student_data_table.html:15
+msgid "Email"
+msgstr "이메일 주소"
+
+#. Table header for the student's name.
+#: experimental/coursebuilder/views/student_data_table.html:21
+msgid "Name"
+msgstr "이름"
+
+#. Table header for the student's assessment scores.
+#: experimental/coursebuilder/views/student_data_table.html:28
+msgid "Assessment scores"
+msgstr "평가 점수"
+
+#. Shown in the student profile page, next to an assignment title, as the link
+#. text for a self- or peer-reviewed assignment.
+#: experimental/coursebuilder/views/student_data_table.html:43
+msgid "View assignment"
+msgstr "과제물 보기"
+
+#. Table header for the student's overall score.
+#: experimental/coursebuilder/views/student_data_table.html:56
+msgid "Overall course score"
+msgstr "교육 과정 총점"
+
+#. Title of the student progress page.
+#: experimental/coursebuilder/views/student_profile.html:26
+msgid "Student Progress"
+msgstr "학생 진행 상황"
+
+#. Label for the input field that allows the student to change the name on
+#. his/her certificate.
+#: experimental/coursebuilder/views/student_profile.html:39
+#: experimental/coursebuilder/views/student_profile.html:44
+msgid "New Name"
+msgstr "새 이름"
+
+#. Text for a button that allows the student to save changes to his/her name
+#. for the certificate.
+#: experimental/coursebuilder/views/student_profile.html:52
+msgid "Change Name"
+msgstr "이름 변경"
+
+#. Shown on the student profile page.
+#: experimental/coursebuilder/views/student_profile.html:59
+msgid "To leave the course permanently, click on Unenroll"
+msgstr "교육 과정에서 완전히 나가려면 등록 취소를 클릭하세요."
+
+#. Button that allows the student to unenroll from a course.
+#: experimental/coursebuilder/views/student_profile.html:65
+msgid "Unenroll"
+msgstr "등록 취소"
+
+#. Shown when the student profile cannot be found in the database.
+#: experimental/coursebuilder/views/student_profile.html:71
+msgid "Student profile not found ..."
+msgstr "학생 프로필이 없습니다..."
+
+#. Shown after the student has submitted an assessment.
+#: experimental/coursebuilder/views/test_confirmation_content.html:3
+#, python-format
+msgid ""
+"Thank you for taking the %(assessment_name)s. Your score for this "
+"assessment is %(score)s%%. If you wish, you may return to the assessment "
+"and take it again."
+msgstr ""
+"%(assessment_name)s을(를) 제출해 주셔서 감사합니다. 제출하신 평가의 점수는 %(score)s%%입니다. 원하신다면"
+" 평가로 돌아가서 다시 풀어볼 수도 있습니다."
+
+#. Shown after the student has submitted an assessment in a unit that contains
+#. assessments and where all unit contents are shown on a single HTML page.
+#. This button allows the student to navigate back to the unit main page.
+#: experimental/coursebuilder/views/test_confirmation_content.html:23
+msgid "Return to Unit"
+msgstr "단원 기본 페이지로 돌아가기"
+
+#. Title shown on the student profile page
+#: experimental/coursebuilder/views/track_selection.html:13
+msgid "Course Tracks"
+msgstr "교육과정"
+
+#. Text indicating which units will be shown for the course
+#: experimental/coursebuilder/views/track_selection.html:28
+msgid "Course Components"
+msgstr "교육과정 구성요소"
+
+#. Text indicating which course tracks the student has selected
+#: experimental/coursebuilder/views/track_selection.html:59
+msgid "My Tracks"
+msgstr "내 교육과정"
+
+#. Text for a button to save selected course tracks for student.
+#: experimental/coursebuilder/views/track_selection.html:82
+msgid "Set Tracks"
+msgstr "교육과정 설정"
+
+#. Text shown after a student has unenrolled from a course. It is followed by a
+#. course name.
+#: experimental/coursebuilder/views/unenroll_confirmation.html:24
+msgid "You have been unenrolled from "
+msgstr "등록 취소한 교육 과정: "
+
+#. Shown when a student has asked to unenroll from a course.
+#. Followed by a course name.
+#: experimental/coursebuilder/views/unenroll_confirmation_check.html:25
+msgid "Are you sure you want to unenroll from "
+msgstr "등록 취소하시겠습니까? 교육 과정 이름: "
+
+#. Response option to              'Are you sure you want to unenroll from
+#. COURSE_NAME'?
+#: experimental/coursebuilder/views/unenroll_confirmation_check.html:42
+msgid "Yes"
+msgstr "예"
+
+#. Response option to              'Are you sure you want to unenroll from
+#. COURSE_NAME'?
+#: experimental/coursebuilder/views/unenroll_confirmation_check.html:47
+msgid "No"
+msgstr "아니요"
+
+#. Label on a control to show a class syllabus.
+#: experimental/coursebuilder/views/unit.html:48
+msgid "Show Syllabus"
+msgstr "강의 계획서 표시"
+
+#. Label on a control to hide a class syllabus.
+#: experimental/coursebuilder/views/unit.html:52
+msgid "Hide Syllabus"
+msgstr "강의 계획서 숨기기"
+
+#. Navigation breadcrumb.
+#: experimental/coursebuilder/views/unit.html:86
+msgid "Activity"
+msgstr "활동"
+
+#. Text shown for a unit that contains no assessments, lessons, header or
+#. footer.
+#: experimental/coursebuilder/views/unit.html:112
+msgid "This unit has no content."
+msgstr "이 단원에는 콘텐츠가 없습니다."
+
+#. Text on the navigation button at the end of a lesson page.
+#: experimental/coursebuilder/views/unit.html:138
+msgid "Previous Page"
+msgstr "이전 페이지"
+
+#. Text on the navigation button at the end of a lesson page.
+#: experimental/coursebuilder/views/unit.html:144
+msgid "Next Page"
+msgstr "다음 페이지"
+
+#. Text on the navigation button at the end of a lesson. It signals that the
+#. student has completed a unit (which is a series of lessons).
+#: experimental/coursebuilder/views/unit.html:147
+msgid "End"
+msgstr "종료"
+
+

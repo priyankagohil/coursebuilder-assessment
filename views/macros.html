@@ -1,0 +1,79 @@
+{% macro render_progress(outline_element) %}
+  {% if outline_element.is_progress_recorded %}
+    {% if outline_element.progress == 0 or outline_element.progress is none %}
+      {% set progress_src = 'assets/img/not_started.png' %}
+      {% set progress_id_prefix = 'progress-notstarted-' %}
+      {% if outline_element.kind == 'assessment' %}
+        {# I18N: Alt text for image showing student progress. #}
+        {% set progress_alt = gettext('Not yet submitted') %}
+      {% else %}
+        {# I18N: Alt text for image showing student progress. #}
+        {% set progress_alt = gettext('Not yet started') %}
+      {% endif %}
+    {% elif outline_element.progress == 1 %}
+      {% set progress_src = 'assets/img/in_progress.png' %}
+      {% set progress_id_prefix = 'progress-inprogress-' %}
+      {#- I18N: Alt text for image showing student progress. #}
+      {% set progress_alt = gettext('In progress') %}
+    {% elif outline_element.progress == 2 %}
+      {% set progress_src = 'assets/img/completed.png' %}
+      {% set progress_id_prefix = 'progress-completed-' %}
+      {#- I18N: Alt text for image showing student progress. #}
+      {% set progress_alt = gettext('Completed') %}
+    {% endif %}
+    <img src="{{ progress_src }}"
+         alt="{{ progress_alt }}"
+         title="{{ progress_title }}"
+         class="gcb-progress-icon"
+         id="{{ progress_id_prefix }}{{ outline_element.id }}">
+  {% else %}
+    <span class="gcb-progress-empty"></span>
+  {% endif %}
+{% endmacro %}
+
+{% macro render_outline_element(outline_element,
+                                can_see_drafts,
+                                course_availability,
+                                outer_element_tag,
+                                outer_element_class,
+                                inner_element_tag,
+                                inner_element_class,
+                                suppress_link=False,
+                                suppress_description=False) %}
+  {% if outline_element.link_is_last_page_visited %}
+    {% set outer_element_class = outer_element_class + ' gcb-last-location' %}
+  {% endif %}
+
+  <{{ outer_element_tag }} class="{{ outer_element_class|trim }}">
+    <{{ inner_element_tag }} class="{{ inner_element_class|trim }}">
+      {{ render_progress(outline_element) }}
+      {% if outline_element.link and not suppress_link %}
+        <a href="{{ outline_element.link|escape }}">
+      {% endif %}
+      {{ outline_element.title }}
+      {% if outline_element.link and not suppress_link %}
+        </a>
+      {% endif %}
+
+      {# When registration is required, then add annotations to items that
+         are strictly-private or strictly-public.  (For courses that are
+         private, all items are private, and for courses that are
+         registration-optional, all items are public, so don't bother
+         redundantly adding markup.) #}
+      {% if can_see_drafts %}
+        {% if not outline_element.is_available_to_students %}
+          <span class="gcb-grayed">(Private)</span>
+        {% endif %}
+        {% if course_availability == 'registration_required' and
+              outline_element.is_available_to_visitors %}
+          <span class="gcb-grayed">(Public)</span>
+        {% endif %}
+      {% endif %}
+      {% if outline_element.description and not suppress_description%}
+        <span class="gcb-unit-description">
+          {{ outline_element.description }}
+        </span>
+      {% endif %}
+    </{{ inner_element_tag }}>
+  </{{ outer_element_tag }}>
+{% endmacro %}

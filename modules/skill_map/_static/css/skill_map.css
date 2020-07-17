@@ -1,0 +1,152 @@
+.skill-map-table th.skill {
+  width: 185px;
+}
+.skill-map-table th.lessons {
+  width: 5em;
+}
+.skill-map-table .diagnosis.error:before {
+  color: #c00;
+  content: 'error';
+}
+.skill-map-table .diagnosis.warning:before {
+  color: #aaaaaa;
+  content: 'warning';
+}
+table.skill-map-table tr td span.related-skills {
+  background: #5cb85c;
+  border-color: #1B7C1B;
+  color: white;
+  font-weight: normal;
+  border-radius: 0.3em;
+  padding: 0.1em 0.4em;
+  margin: 0 0.2em !important;
+}
+.skill-map-table button:focus {
+  outline: none;
+}
+table.skill-map-table ol.comma-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+table.skill-map-table ol.comma-list li {
+  display: inline-block;
+}
+table.skill-map-table ol.comma-list li:after {
+  content: ', ';
+}
+table.skill-map-table ol.comma-list li:last-child:after {
+  content: '';
+}
+.skill-map-diagnosis-report .hidden {
+  display: none;
+}
+.skill-map-diagnosis-report .elem-list .elem:after {
+  content: '" \27f6 "'; /* long right arrow */
+}
+.skill-map-diagnosis-report > div.diagnosis {
+  margin: 10px 0;
+}
+.skill-map-diagnosis-report .elem-list .elem:first-child:before,
+.skill-map-diagnosis-report .elem-list .elem:last-child:after {
+  content: '"';
+}
+
+.chart-container {
+  margin: 50px;
+}
+.required-label:after {
+  content: "*";
+  color: #f00;
+}
+
+/*
+ * Skill competency analytics styles.
+ */
+.empty-skill-map {
+  font-size: large;
+  color: #888;
+}
+.competencies {
+  overflow: hidden;
+}
+.units-filter {
+  line-height: 30px;
+  height: 300px;
+  width: 200px;
+  float: left;
+  padding: 5px;
+}
+.units-filter .units .unit-label .skill-count {
+  font-size: smaller;
+  color: #444444;
+}
+.container {
+  float: left;
+  padding: 10px;
+}
+.legend {
+  float: right;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+#competencies-container {
+  clear: both;
+}
+.skill-competency-table {
+  border: none;
+  max-width: 900px;
+  table-layout: auto;
+}
+.skill-competency-table td.hist {
+  background-color: #fdfdfd;
+  width: 250px;
+  border-color: #bbb;
+  padding: 0px;
+  margin: 0px;
+}
+.skill-competency-table td.hist div.name {
+  padding: 12px 9px 6px 9px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #f7f7f7;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.skill-competency-table .hist div.description {
+  padding: 6px 12px 6px 12px;
+  margin: 0 0 6px 0;
+  line-height: 16px;
+  height: 40px;
+  position: relative;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+}
+.skill-competency-table .hist .histogram {
+  float: none;
+}
+.skill-competency-table .hist .histogram svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Styles supporting buttons for switching b/n tabular and skills graph views */
+.gcb-button-toolbar .clickable {
+  border: solid 1px #fff;
+  background-color: #fff;
+}
+.gcb-button-toolbar .clickable:hover {
+  border: solid 1px #ddd;
+}
+.gcb-button-toolbar .selected {
+  background-color: #ddd;
+}
+.gcb-button-toolbar .add-new-skill {
+  border: solid 1px #fff;
+  background-color: #fff;
+}

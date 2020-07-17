@@ -1,0 +1,111 @@
+<script src ="/modules/dashboard/resources/js/course_outline.js"></script>
+<link href="/modules/dashboard/_static/css/course_outline.css" rel="stylesheet">
+{% macro render_row(item) -%}
+  <div class="gcb-list__row gcb-list__row--flex {{ item.component_type }}">
+    <div class="gcb-list__cell gcb-list__cell--icon">
+      {% if course.can_reorder and not item.not_reorderable %}
+        <a class="gcb-list__icon gcb-list__icon--rowhover material-icons reorder">reorder</a>
+      {% else %}
+        <div class="gcb-list__icon gcb-list__icon--rowhover inactive"></div>
+      {% endif %}
+    </div>
+
+    <div class="gcb-list__cell gcb-list__cell--icon">
+      <a href="{{ item.view_url }}" target="_blank" class="gcb-list__icon gcb-list__icon--rowhover material-icons view-icon">open_in_new</a>
+    </div>
+
+    <div class="name gcb-list__cell indent-{{ item.component_type}}">
+      {% if item.can_view_props %}
+        <a href="{{ item.href }}" data-title="{{ item.title }}">{{ item.title }}</a>
+      {% else %}
+        {{ item.title }}
+      {% endif %}
+    </div>
+
+    <div class="extras gcb-list__cell">
+      {% for extra in item.extras %}
+        {{ extra }}
+      {% endfor %}
+    </div>
+  </div>
+{%- endmacro %}
+
+<div class="course-outline gcb-list xsrf-token-holder {% if course.can_add_or_remove %}editable{% else %}read-only{% endif %} {% if course.can_reorder %}reorderable{% endif %}"
+    data-status-xsrf-token-unit="{{ status_xsrf_token_unit }}"
+    data-status-xsrf-token-assessment="{{ status_xsrf_token_assessment }}"
+    data-status-xsrf-token-link="{{ status_xsrf_token_link }}"
+    data-status-xsrf-token-lesson="{{ status_xsrf_token_lesson }}"
+    data-unit-lesson-title-xsrf-token={{ unit_lesson_title_xsrf_token }}
+    data-unit-title-template="{{ unit_title_template }}">
+  <div class="course-outline__content">
+  <div class="gcb-list__header-row gcb-list__row--flex">
+    <div class="gcb-list__cell gcb-list__cell--header gcb-list__cell--icon"></div>
+    <div class="gcb-list__cell gcb-list__cell--header gcb-list__cell--icon"></div>
+    <div class="gcb-list__cell gcb-list__cell--header name indent-course">
+      Course Outline
+    </div>
+    <div class="gcb-list__cell gcb-list__cell--header">
+      {{ extra_info_title }}
+    </div>
+  </div>
+  <div class="gcb-list__row gcb-list__row--flex">
+    <div class="gcb-list__cell gcb-list__cell--icon"></div>
+
+    <div class="gcb-list__cell gcb-list__cell--icon">
+      <a href="course" target="_blank" class="gcb-list__icon gcb-list__icon--rowhover material-icons">open_in_new</a>
+    </div>
+
+    <div class="gcb-list__cell name indent-course">
+      {% if course.settings_viewable %}
+        <a id="edit-course" href="dashboard?action=settings_homepage">Course - {{ course.title }}</a>
+      {% else %}
+        <span id="edit-course">Course - {{ course.title }}</span>
+      {% endif %}
+    </div>
+  </div>
+  <ol class="course">
+    {% for unit in units %}
+      <li data-unit-id="{{ unit.id }}">
+        {{ render_row(unit) }}
+        {% if unit.component_type == 'unit' %}
+          {% if unit.pre_assessment %}
+            <ol class="unit pre">
+              <li data-unit-id="{{ unit.pre_assessment.id }}">
+                {{ render_row(unit.pre_assessment) }}
+              </li>
+            </ol>
+          {% endif %}
+          <ol class="unit">
+            {% for lesson in unit.lessons %}
+              <li data-lesson-id="{{ lesson.id }}"
+                  data-auto-index="{{ lesson.auto_index }}">
+                {{ render_row(lesson) }}
+              </li>
+            {% endfor %}
+          </ol>
+          <ol class="unit post">
+            {% if unit.post_assessment %}
+              <li data-unit-id="{{ unit.post_assessment.id }}">
+                {{ render_row(unit.post_assessment) }}
+              </li>
+            {% endif %}
+            {% if course.can_add_or_remove %}
+              <li class="add-lesson">
+                <div class="gcb-list__row gcb-list__row--flex">
+                  <div class="gcb-list__cell">
+                    <form action="dashboard?action=add_lesson" method="POST">
+                      <input type="hidden" name="xsrf_token" value="{{ add_lesson_xsrf_token }}">
+                      <input type="hidden" name="unit_id" value="{{ unit.id }}">
+                      <button class="" type="submit">+ Add Lesson</button>
+                  </form>
+                  </div>
+                </div>
+              </li>
+            {% endif %}
+          </ol>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+  </div>
+</div>

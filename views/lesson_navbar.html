@@ -1,0 +1,89 @@
+{% import 'macros.html' as macros %}
+
+{% macro render_sub_element(sub_element, can_see_drafts) %}
+  {% if sub_element.is_active %}
+    {% set outer_element_class = 'active' %}
+  {% else %}
+    {% set outer_element_class = '' %}
+  {% endif %}
+  {% if sub_element.is_progress_recorded %}
+    {% set inner_element_class = 'gcb-lesson-title-with-progress' %}
+  {% else %}
+    {% set inner_element_class = 'gcb-lesson-title-no-progress' %}
+  {% endif %}
+  {{ macros.render_outline_element(
+         sub_element, can_see_drafts, course_availability,
+         'li', outer_element_class, 'div', inner_element_class,
+         suppress_link=sub_element.is_active, suppress_description=True) }}
+{% endmacro %}
+
+{% macro render_elements_list(elements, can_see_drafts) %}
+
+{% endmacro %}
+
+<div class="gcb-nav left-menu" id="gcb-nav-y" role="navigation">
+  <ul>
+    {{html_hooks.insert('unit.after_leftnav_begins') | safe}}
+
+    {% if not course_info.unit.show_unit_links_in_leftnav %}
+      {% for outline_element in course_outline %}
+        {% if outline_element.is_active %}
+          {% for sub_element in outline_element.contents recursive %}
+            {{ render_sub_element(sub_element, can_see_drafts) }}
+            {% if sub_element.contents %}
+              <ul>
+                {{ loop(sub_element.contents) }}
+              </ul>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% for outline_element in course_outline %}
+        {% if outline_element.is_active %}
+          {% set outer_element_class = 'gcb-unit-title expanded' %}
+        {% elif outline_element.contents %}
+          {% set outer_element_class = 'gcb-unit-title' %}
+        {% else %}
+          {% set outer_element_class = 'gcb-unit-title expanded leaf' %}
+        {% endif %}
+        {{ macros.render_outline_element(
+               outline_element, can_see_drafts, course_availability,
+               'li', outer_element_class, 'p', 'gcb-top-content', suppress_description=True,
+               suppress_link=outline_element.is_active) }}
+
+        <div id="gcb-lesson-container"
+             {% if outline_element.is_active %}
+               class="gcb-lesson-container expanded"
+             {% else %}
+               class="gcb-lesson-container"
+             {% endif %}>
+          {% for sub_element in outline_element.contents recursive %}
+            {{ render_sub_element(sub_element, is_progress_recorded) }}
+            {% if sub_element.contents %}
+              <ul>
+                {{ loop(sub_element.contents) }}
+              </ul>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+      <script>
+        $('li.gcb-unit-title').click(function() {
+          if ($(this).hasClass('leaf')) {
+            return;
+          }
+          if ($(this).hasClass('expanded')) {
+            $(this).removeClass('expanded');
+            $(this).next().removeClass('expanded');
+          } else {
+            $(this).addClass('expanded');
+            $(this).next().addClass('expanded');
+          }
+        });
+      </script>
+    {% endif %}
+    {{html_hooks.insert('unit.before_leftnav_ends') | safe}}
+  </ul>
+</div>

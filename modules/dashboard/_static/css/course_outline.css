@@ -1,0 +1,44 @@
+.course-outline {
+  overflow: hidden;
+}
+.course-outline ol.course,
+.course-outline ol.unit {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.course-outline .placeholder {
+  border: solid #ffffc0 1px;
+  background-color: #f8f8f0;
+}
+.course-outline li {
+  margin: 0 !important;
+  padding: 0;
+}
+.course-outline button {
+  background-color: inherit;
+  border: none;
+  padding: 0;
+}
+.course-outline .add-lesson button {
+  font-style: italic;
+  color: #777;
+  margin-left: 110px;
+}
+.reorder {
+  cursor: move;
+}
+.course-outline .gcb-list__cell--header {
+  white-space: nowrap;
+}
+.name {
+  flex: 0 0 580px !important;
+  box-sizing: border-box;
+  padding-left: 30px;
+}
+.name.indent-course {
+  padding-left: 8px;
+}
+.name.indent-lesson, .name.indent-pre-assessment, .name.indent-post-assessment {
+  padding-left: 50px;
+}

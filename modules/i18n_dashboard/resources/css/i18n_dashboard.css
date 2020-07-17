@@ -1,0 +1,15 @@
+.i18n-progress-table .resource-locale-entry.done {
+  background-color: rgba(204, 255, 204, 0.5);
+}
+.i18n-progress-table .resource-locale-entry.in-progress {
+  background-color: rgba(255, 251, 0, 0.5);
+}
+.i18n-progress-table .not-translatable td {
+  color: rgb(119, 119, 199);
+}
+.i18n-progress-table .not-translatable .resource-locale-entry.done {
+  background-color: rgba(221, 255, 221, 0.5);
+}
+.i18n-progress-table .not-translatable .resource-locale-entry.in-progress {
+  background-color: rgba(255, 255, 160, 0.5);
+}

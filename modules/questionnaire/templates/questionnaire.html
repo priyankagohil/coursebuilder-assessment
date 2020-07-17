@@ -1,0 +1,42 @@
+<link rel="stylesheet" type="text/css"
+    href="/modules/questionnaire/resources/css/button.css">
+<div class="gcb-questionnaire">
+  <button
+      class="gcb-button questionnaire-button"
+      data-form-id="{{ form_id }}"
+      data-xsrf-token="{{ xsrf_token }}"
+      data-disabled="{% if disabled %}true{% else %}false{% endif %}"
+      {% if single_submission %}
+        data-single-submission="true"
+        {# I18N: This message appears on a page where a student could
+           submit answers to a questionnaire.  Students may only submit
+           the questionnaire once.  This message appears when viewing
+           the page after the first subission. #}
+        data-single-submission-message="{{ gettext("Only one submission of this form is allowed.") }}"
+      {% else %}
+        data-single-submission="false"
+      {% endif %}
+      {% if registered %}
+        data-registered="true"
+      {% else %}
+        data-registered="false"
+        {# I18N: This message appears on a page where a student could
+           submit answers to a questionnaire.  The user viewing the
+           page is not a registered student, and gets a message
+           indicating the situation. #}
+        data-registered-message="{{
+          gettext("Only registered students can submit answers.") }}"
+      {% endif %}>
+    {% if button_label %}
+      {{ button_label }}
+    {% else %}
+      {# I18N: Button label to submit the responses to a questionnaire. #}
+      {{ gettext('Submit answers') }}
+    {% endif %}
+  </button>
+  {% if post_message %}
+  <div class="post-message hidden">
+    <div>{{post_message}}</div>
+  </div>
+  {% endif %}
+</div>

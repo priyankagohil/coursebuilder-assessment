@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+    <link href="/modules/certificate/resources/css/certificate.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+      #container {
+        background-image: url('/modules/certificate/resources/images/cert.png');
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="content">
+        <div id="cert-top">
+          <div id="cert-top-content">
+            <p id="certificate-title">
+              {# I18N: Title on page certifying that user has satisfied the requirements of a class. #}
+              {{ gettext('Certificate of Completion') }}
+            </p>
+              {# I18N: Phrase introducing the name of a student to whom a certificate is being awarded. #}
+            <p>{{ gettext('Presented to') }}</p>
+          </div>
+        </div>
+        <p id="student-name">{{ student.name }}</p>
+        <div id="cert-bottom">
+          <p>
+            {# I18N: Phrase signifying that a student has successfully completed a course. #}
+            {{ gettext('for successfully completing the') }}
+          </p>
+          <p>
+            {# I18N: Phrase giving the name of an instructional course. #}
+            {{ gettext('%(course)s course', course=course) }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <p></p>
+    <div id="print-button-div">
+      <input type="button" onClick="window.print()" class="printbutton" value="Print Certificate"/>
+    </div>
+
+    {% import 'ga.html' as ga %}
+    {{ ga.render_google_analytics_script(google_analytics_id) }}
+
+  </body>
+</html>

@@ -1,0 +1,64 @@
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS-IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# FIXME: You can use this configuration file to customize Course Builder
+# for a specific course. More information on YAML can be found at:
+#
+#     http://www.yaml.org/spec/1.2/spec.html#id2759963
+#
+# Note that the values in this file can contain arbitrary HTML.
+
+#########################################
+#       TEMPLATE FOR ALL COURSES        #
+#########################################
+
+course:
+  can_student_change_locale: true
+  can_record_student_events: true
+
+
+####################
+# Base page template
+####################
+
+html_hooks:
+  base:
+    # HTML to be included in all course pages. For example: if you want to
+    # include any analytics code that covers all your course webpages, you can
+    # do so here: see
+    #
+    # https://www.google.com/edu/openonline/edukit/create.html
+    #
+    # for details.
+    before_head_tag_ends: '<!-- base.before_head_tag_ends -->'
+    after_body_tag_begins: '<!-- base.after_body_tag_begins -->'
+    after_navbar_begins: '<!-- base.after_navbar_begins -->'
+    before_navbar_ends: '<!-- base.before_navbar_ends -->
+      <!-- Here we enable the search module. -->
+      <script src="/modules/search/assets/search.js"></script>
+      <link rel="stylesheet" type="text/css"
+          href="/modules/search/assets/search.css" />
+      <li class="gcb-pull-right">
+        <form class="gcb-search-form" action="search" method="get">
+          <input class="gcb-search-box" name="query" type="text"
+                 aria-label="Enter a search term">
+          <input value="Search"
+              class="gcb-button gcb-search-button" type="submit">
+        </form>
+      </li>'
+    after_top_content_ends: '<!-- base.after_top_content_ends -->'
+    after_main_content_ends: '<!-- base.after_main_content_ends -->'
+    before_body_tag_ends: '<!-- base.before_body_tag_ends -->'
+
+base:
+  # Whether to show a G+ button on the header of all pages.
+  show_gplus_button: True

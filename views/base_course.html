@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>
+    {{course_info.course.title}} -
+    {% block subtitle %}
+      {# I18N: Title of the webpage. #}
+      {{ gettext('Course') }}
+    {% endblock %}
+  </title>
+{% endblock %}
+
+{% block assets %}
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/minimal.mobile.css" rel="stylesheet" type="text/css"
+        media="only screen and (max-device-width: 1024px)">
+
+  <!-- jQuery should be imported first -->
+  <script src="/static/jquery/jquery.min.js"></script>
+
+  <script src="assets/lib/activity-generic-1.3.js"></script>
+
+  <script src="/modules/oeditor/_static/js/butterbar.js"></script>
+  <link rel="stylesheet" href="/modules/oeditor/_static/css/butterbar.css" media="screen" />
+{% endblock %}
+
+{% block navbar %}
+  <!-- nav bar -->
+  <div class="gcb-nav gcb-complex" id="gcb-nav-x">
+    <div class="gcb-aux">
+      <ul class="clearfix">
+
+        <!-- left-aligned links in order -->
+        {{ html_hooks.insert('base.after_navbar_begins') }}
+        <li {% if navbar.announcements %}class='active'{% endif %}>
+          {# I18N: Navbar tab. #}
+          <a href="announcements">{{ gettext('Announcements') }}</a>
+        </li>
+        <li {% if navbar.course %}class='active'{% endif %}>
+          {# I18N: Navbar tab. #}
+          <a href="course">{{ gettext('Course') }}</a>
+        </li>
+        {% if course_info.course.forum_email %}
+          <li {% if navbar.forum %}class='active'{% endif %}>
+            {# I18N: Navbar tab. #}
+            <a href="forum">{{ gettext('Forum') }}</a>
+          </li>
+        {% endif %}
+        {% if not transient_student %}
+          <li {% if navbar.progress %}class='active'{% endif %}>
+            {# I18N: Navbar tab. #}
+            <a href="student/home">{{ gettext('Progress') }}</a>
+          </li>
+        {% elif can_register %}
+          <li {% if navbar.registration %}class='active'{% endif %}>
+            {# I18N: Navbar tab. #}
+            <a href="register">{{ gettext('Registration') }}</a>
+          </li>
+        {% endif %}
+        {% for item in left_links %}
+          <li>
+            {% if item is string %}
+              {{ item }}
+            {% else %}
+              {# For convenience for simple items, leftnavs can be
+                 2-tuples of href and link text.  More complex things
+                 can be injected as template evaluations, SafeDOM, etc. #}
+              {% set href, link = item %}
+              <a href="{{ href }}">{{ link }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+
+        <!-- right-aligned links are in order -->
+        {% for href, link in right_links %}
+          <li class="gcb-pull-right">
+            <a href="{{ href }}">{{ link }}</a>
+          </li>
+        {% endfor %}
+        {% if show_course_explorer_tab %}
+          {% if logoutUrl %}
+            <li class="gcb-pull-right">
+              {# I18N: Text for title of navigation bar tab to reach list of
+                 courses the current user is enrolled in or whitelisted for. #}
+              <a href="/">{{ gettext('My Courses') }}</a>
+            </li>
+          {% else %}
+            <li class="gcb-pull-right">
+              {# I18N: Text for title of navigation bar tab to reach list of all
+                 available courses when user is logged out. #}
+              <a href="/explorer">{{ gettext('Explore Courses') }}</a>
+            </li>
+          {% endif %}
+        {% endif %}
+        {{ html_hooks.insert('base.before_navbar_ends') }}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

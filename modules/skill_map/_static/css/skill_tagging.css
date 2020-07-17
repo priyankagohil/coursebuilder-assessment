@@ -1,0 +1,169 @@
+/*
+ * Styles for ItemSelector
+ */
+div.item-selector-root {
+  position: relative;
+}
+div.inputEx-Field div.new-skill button.add,
+div.item-selector-root button.add {
+  background-color: inherit;
+  color: #00776a;
+  font-size: 120%;
+  border: none;
+  outline: none;
+}
+div.item-selector-root button.add[disabled] {
+  color: #b8b8b8;
+}
+div.item-selector-root div.selector {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 20em;
+  background-color: #fff;
+  border: solid 1px #e0e0e0;
+  border-radius: 0.2em;
+  z-index: 20;
+}
+div.item-selector-root ol.item-list {
+  max-height: 15em;
+  overflow-y: scroll;
+  list-style-type: none;
+  padding: 5px;
+  border-top: solid 1px #e0e0e0;
+  border-bottom: solid 1px #e0e0e0;
+  margin: 0;
+}
+div.item-selector-root input {
+  width: inherit !important;
+}
+div.item-selector-root input.search {
+  width: 18em !important;
+  margin: 1em;
+  padding: 7px 8px;
+  border: solid 1px #e0e0e0;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+div.item-selector-root a.create {
+  display: inline-block;
+  margin: 0 0 10px 5px;
+  text-decoration: none;
+  color: #00f;
+}
+div.item-selector-root a.create:hover {
+  text-decoration: underline;
+}
+div.item-selector-root button.action,
+div.item-selector-root button[disabled].action:hover {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 2em;
+}
+div.item-selector-root button.action:hover {
+  background: #f0f0f0;
+}
+
+
+/*
+ * Style for the EditSkillPopup.
+ */
+div.edit-skill-popup h2 {
+  font-size: 1.5em;
+  font-weight: normal;
+  margin: 0 0 20px;
+}
+div.edit-skill-popup div.form-row {
+  margin: 12px 0;
+}
+div.edit-skill-popup div.form-row > label {
+  display: block;
+  font-weight: normal;
+  margin: 0 0 6px 0;
+}
+div.edit-skill-popup div.form-row > label.strong {
+  font-weight: bold;
+}
+div.edit-skill-popup div.form-row > label.invalid {
+  color: #f00;
+}
+div.edit-skill-popup div.form-row > input,
+div.edit-skill-popup div.form-row > textarea {
+  width: 300px;
+  padding: 10px;
+  border: solid 1px #e0e0e0;
+  border-radius: 3px;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+/* keep the error style in sync with oeditor.css error style */
+div.edit-skill-popup div.form-row > input.invalid,
+div.edit-skill-popup div.form-row > textarea.invalid {
+  border: solid 1px red;
+  box-shadow: 0 0 5px #f00;
+}
+div.edit-skill-popup div.form-row > textarea {
+  height: 5em;
+}
+div.edit-skill-popup ol.skill-display-root {
+  width: 322px; /* match the total width of the text areas. */
+}
+div.inputEx-Field ol.skill-display-root li.skill,
+div.edit-skill-popup ol.skill-display-root li.skill {
+  margin-bottom: 10px !important;
+}
+.skill-display-root .skill.removable {
+  padding-right: 0;
+}
+div.edit-skill-popup ol.location-display-root {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+div.edit-skill-popup ol.location-display-root li {
+  height: 25px;
+}
+div.edit-skill-popup ol.question-display-root {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+div.edit-skill-popup ol.question-display-root li {
+  height: 25px;
+}
+div.edit-skill-popup ol.location-display-root button.close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #aaa;
+}
+div.edit-skill-popup ol.question-display-root button.close {
+  margin-left: 1em;
+}
+div.edit-skill-popup div.controls {
+  text-align: right;
+}
+
+/*
+ * Styles for the skill widget in the lesson editor.
+ */
+div.inputEx-Field div.skill-map-buttons > div {
+  display: inline-block;
+}
+
+/*
+ * Disable all of the ListField elements inside the skill-panel <div>,
+ * except for the inputEx-description <div>.
+ */
+div.skill-panel span,
+div.skill-panel div.inputEx-ListField-childContainer,
+div.skill-panel a.inputEx-List-link {
+  display: none;
+}
+
+div.skill-panel div.inputEx-description {
+  display: block;
+  max-width: 500px;
+}

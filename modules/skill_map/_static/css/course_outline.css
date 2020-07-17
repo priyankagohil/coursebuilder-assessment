@@ -1,0 +1,8 @@
+/* Specific styles for the layout of skills within the Dashboard's course
+ * outline table.
+ */
+.skill-list-tooltip .ui-tooltip-content li.skill {
+  margin-top: 5px !important;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}

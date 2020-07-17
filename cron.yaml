@@ -1,0 +1,40 @@
+cron:
+- description: expires old assigned review steps
+  url: /cron/expire_old_assigned_reviews
+  schedule: every 15 minutes  # Max execution is 10 minutes.
+- description: process pending notifications
+  url: /cron/process_pending_notifications
+  schedule: every 1 hours
+- description: indexes all courses
+  url: /cron/search/index_courses
+  schedule: every day 06:00
+- description: clean up resources from map/reduce jobs.
+  url: /cron/mapreduce/cleanup
+  schedule: every day 03:45
+- description: Run job to update total enrollment counters.
+  url: /cron/site_admin_enrollments/total
+  schedule: every sunday 01:00
+  retry_parameters:
+    min_backoff_seconds: 3600
+- description: Run job to check for missing enrollment counters.
+  url: /cron/site_admin_enrollments/missing
+  schedule: every 1 hours
+  retry_parameters:
+    min_backoff_seconds: 120
+- description: Run job to report count of courses and students to CourseBuilder.
+  url: /cron/usage_reporting/report_usage
+  schedule: every sunday 05:00
+- description: Runs batch jobs to delete items not indexable by user ID.
+  url: /cron/data_removal/batch_delete
+  # Compromise between keeping costs due to batch run down versus preventing
+  # user re-registration while deletion is not yet complete.
+  schedule: every sunday 05:30
+- description: Sync Google Drive documents
+  url: /cron/drive/sync
+  schedule: every 1 hours
+- description: Deletes any leftover temporary rows used to discover user ID.
+  url: /cron/student_groups/batch_delete
+  schedule: every day 06:00
+- description: Hourly update of date/time availability triggers.
+  url: /cron/availability/update
+  schedule: every 30 minutes

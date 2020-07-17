@@ -1,0 +1,83 @@
+application: mycourse  # FIXME: Replace this with your application id
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: false
+
+instance_class: F1
+
+env_variables:
+  GCB_PRODUCT_VERSION: '1.11.x'
+
+  # Enable collection of stats on numbers of calls to the datastore,
+  # memcache, and email-sending backends.  Used for profiling CourseBuilder
+  # to improve performance.  See
+  # https://cloud.google.com/appengine/docs/python/tools/appstats
+  GCB_APPSTATS_ENABLED: false
+  GCB_TEST_MODE: false
+
+  # Some core modules are used by other modules at registration time. We
+  # register them first in the order declared here. Adding items to this list
+  # is discouraged; new modules should avoid these dependencies.
+  GCB_PRELOADED_MODULES:
+    modules.help_urls.help_urls
+    modules.dashboard.dashboard
+
+includes:
+- custom.yaml
+- static.yaml
+
+inbound_services:
+- warmup
+
+builtins:
+- remote_api: on
+- deferred: on
+
+libraries:
+- name: jinja2
+  version: "2.6"
+- name: PIL
+  version: "1.1.7"
+- name: pycrypto
+  version: "2.6"
+- name: webapp2
+  version: "2.5.2"
+- name: webob
+  version: "1.2.3"
+- name: lxml
+  version: "2.3"
+
+handlers:
+- url: /modules/([^/]*)/_static/(.*)
+  upload: modules/([^/]*)/_static/(.*)
+  static_files: modules/\1/_static/\2
+  expiration: 10m
+  application_readable: true # TODO(nretallack): deprecate this
+- url: .*/favicon\.ico
+  static_files: assets/img/favicon.ico
+  upload: assets/img/favicon\.ico
+- url: /remote_api
+  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
+  secure: always
+- url: /cron/.*
+  script: main.app
+  login: admin
+  secure: always
+- url: /mapreduce/worker/.*
+  script: main.app
+  login: admin
+  secure: always
+- url: /.*
+  script: main.app
+  secure: always
+
+skip_files:
+# GAE default patterns.
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+# CB-specific patterns.
+- ^internal/.*$

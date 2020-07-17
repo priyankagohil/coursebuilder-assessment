@@ -1,0 +1,63 @@
+div.skill-panel {
+  border: solid 1px #ddd;
+  text-align: left;
+  margin-top: 6px;
+  margin-bottom: 15px;
+}
+div.skill-panel .margins {
+  padding: 5px 20px;
+}
+div.skill-panel .skill-details .margins {
+  padding-top: 15px;
+}
+.skill-panel-tooltip .ui-tooltip-content {
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+div.skill-panel .section-title {
+  font-weight: bold;
+}
+div.skill-panel .empty-skill-list-message {
+  font-style: italic;
+}
+div.skill-panel div.skills-in-this-lesson ol.skill-display-root {
+  display: inline-block;
+  overflow-x: inherit;
+}
+div.skill-panel div.open-control {
+  margin-top: 3px;
+}
+div.skill-panel div.open-control button {
+  width: 100%;
+  border: none;
+  border-top: solid 1px #ccc;
+  background-color: #f0f0f0;
+  line-height: 8px;
+  font-size: 16px;
+}
+div.skill-panel div.open-control button:focus {
+  outline: none;
+}
+div.skill-panel div.open-control button:hover {
+  background-color: #e8e8e8;
+}
+div.skill-panel .skills-in-this-lesson ol.skill-display-root > li.skill {
+  margin-top: 7px !important;
+}
+div.skill-panel .skills-in-this-lesson ol.skill-display-root > li.skill.clickable {
+  cursor: pointer;
+}
+div.skill-panel .skill-card {
+  opacity: 1.0;
+  transition: opacity 400ms;
+  vertical-align: top;
+}
+div.skill-panel .skill.highlighted,
+div.skill-panel .skill-card.highlighted {
+  box-shadow: 0px 0px 11px 3px #e0c289;
+}
+div.skill-panel .skill.shaded,
+div.skill-panel .skill-card.shaded {
+  opacity: 0.5;
+  box-shadow: none;
+}

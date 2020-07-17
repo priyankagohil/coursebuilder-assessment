@@ -1,0 +1,899 @@
+div#oeditor-container {
+  position: relative;
+}
+
+div.form > div {
+  width: 700px;
+  margin: 20px;
+  padding: 15px;
+  text-align: left;
+}
+#formContainer fieldset {
+  border: none;
+  border-top: solid 1px #e0e0e0;
+  border-bottom: solid 1px #e0e0e0;
+  margin-bottom: 16px;
+}
+div#formContainer fieldset legend span {
+  color: #505050;
+  font-weight: bold;
+  padding: 4px;
+}
+div#formContainer fieldset fieldset {
+  border-top: solid #e0e0e0 1px;
+  border-bottom: none;
+}
+div#formContainer fieldset fieldset legend span {
+  color: #505050;
+}
+div.split-from-main-group-parent {
+  margin: 0 0 20px 70px !important;
+}
+
+div.inputEx-Field {
+  width: 500px;
+  padding-top: 0.2em;
+  color: #000;
+}
+div.inputEx-fieldWrapper {
+  position: relative; /* so we can absolutely position the rte control */
+}
+div.inputEx-Field textarea {
+  width: 496px;
+  height: 200px;
+  border: solid 1px #e0e0e0;
+  padding: 4px;
+  white-space: pre;
+  word-wrap: normal;
+  overflow: scroll;
+}
+div.inputEx-Field > select {
+  max-width: 100%;
+}
+.inputEx-StringField-wrapper {
+  display: inline-block;
+}
+div.inputEx-StringField-wrapper input {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 2px;
+  text-align: left;
+  border: solid 1px #e0e0e0;
+}
+div.inputEx-Field div.inputEx-StringField-wrapper > input {
+  /* Ensure the selector is narrow enough that it does not hit the inputs in the
+   * popup panels with class yui-editor-container.
+   */
+  width: 100%;
+}
+div.inputEx-CheckBox input {
+  width: auto;
+}
+
+
+/* Styles for the gcb-datetime component */
+
+.gcb-datetime > .inputEx-label {
+  margin-top: 7px;
+}
+.gcb-datetime .inputEx-description {
+  margin-left: 140px;
+}
+.gcb-datetime > .inputEx-CombineField {
+  margin-top: 5px;
+}
+.inputEx-DateField .inputEx-StringField-wrapper {
+  position: relative;
+}
+.inputEx-DateField .inputEx-StringField-wrapper > input[type="text"],
+.new-form-layout .inputEx-DateField .inputEx-StringField-wrapper > input[type="text"] {
+  width: 85px;
+  background-color: #f9f9f9;
+  padding: 5px 5px 5px 25px;
+  border-left: solid 1px #e0e0e0;
+}
+.inputEx-DateField .inputEx-DatePicker-button {
+  position: absolute;
+  left: 0px;
+  top: 8px;
+  border: none;
+  background-color: transparent;
+}
+.gcb-datetime .inputEx-Field {
+  width: inherit;
+}
+.gcb-datetime .inputEx-CombineField-separator + .inputEx-fieldWrapper + .inputEx-CombineField-separator,
+.gcb-datetime .inputEx-CombineField-separator + .inputEx-fieldWrapper + .inputEx-CombineField-separator + .inputEx-fieldWrapper {
+  /* Hide the seconds selector for datetime. */
+  display: none;
+}
+.yui3-calendar-grid th,
+.yui3-calendar-grid td {
+  /* Override styles from main.css for all th, td */
+  border: inherit;
+  padding: inherit;
+  vertical-align: inherit;
+}
+
+.new-form-layout .gcb-datetime > .inputEx-label {
+  margin-top: 8px;
+}
+.new-form-layout .gcb-datetime > .inputEx-CombineField {
+  margin-top: 5px;
+}
+.new-form-layout .gcb-datetime > .inputEx-DatePicker-ClearButton {
+  margin-top: 7px;
+  margin-left: 2em;
+}
+
+
+.gcb-datetime.date-only select,
+.gcb-datetime.date-only .inputEx-CombineField-separator {
+  /* Hide the time selector for date-only. */
+  display: none;
+}
+
+/* End styles for the gcb-datetime component */
+
+
+.inputEx-required > .inputEx-label > label:after {
+  /* Mark required fields */
+  content: "*";
+  color: #f00;
+}
+div.inputEx-invalid > div.inputEx-label label {
+  /* Supress inputEx's error-bang image. */
+  background: inherit;
+  padding-left: inherit;
+}
+div.inputEx-invalid > div.inputEx-label {
+  /* Supress inputEx's changes to label style. */
+  color: inherit;
+  font-weight: inherit;
+}
+.inputEx-invalid > .inputEx-Field > .inputEx-StringField-wrapper > input[type="text"],
+.inputEx-invalid > .cb-editor-field .editors-div {
+  border: solid 1px red !important;
+  box-shadow: 0 0 5px #f00;
+}
+div.inputEx-message {
+  display: none;
+  margin-left: 136px;
+  margin-top: 4px;
+}
+.new-form-layout .inputEx-message {
+  margin-top: 1.2em;
+  margin-left: 4px;
+}
+.inputEx-invalid > .inputEx-message {
+  display: block;
+}
+
+button.oeditor-control,
+a.inputEx-Button,
+div.inputEx-Button,
+button.inputEx-Button,
+div.inputEx-Field input.inputEx-Button,
+/* all of the following are matched by a.inputEx-List-link */
+div.mc-choice + a,
+div.mc-choice-container > a,
+div.sa-grader + a,
+div.sa-grader-container > a,
+div.question-group-items a {
+  display: inline-block;
+  width: auto;
+  background-color: #00776a;
+  color: #FFFFFF;
+  padding: 4px 12px;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size: 12px;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  transition: background 200ms;
+  -webkit-transition: background 200ms;
+  -moz-transition: background 200ms;
+}
+a.inputEx-Button.inputEx-Button-disabled {
+  background-color: #ccc;
+  transition: background 200ms;
+  -webkit-transition: background 200ms;
+  -moz-transition: background 200ms;
+}
+.required-fields-message {
+  margin: 10px 0;
+}
+.required-fields-message .asterisk {
+  color: #f00;
+}
+
+.gcb-pull-right {
+  float: right;
+}
+
+.gcb-pull-left {
+  float: left;
+}
+/*
+ * CSS for the unit/lesson organizer
+ * TODO(jorr): Rework this CSS to have clearer headers for nested properties
+ */
+
+div#formContainer div.organizer fieldset {
+  border: none;
+  min-width: 300px;
+  margin-bottom: 0;
+  -webkit-padding-before: 0;
+  -webkit-padding-after: 0;
+}
+div#formContainer div.organizer div.inputEx-label {
+  width: auto;
+}
+div.organizer div.inputEx-ListField-subFieldEl > fieldset > div.inputEx-fieldWrapper {
+  white-space: nowrap;
+}
+div.organizer div.inputEx-ListField-subFieldEl > fieldset > div.inputEx-fieldWrapper > div {
+  float: none;
+  display: inline;
+  vertical-align: top;
+}
+div.organizer div.inputEx-ListField-childContainer > div {
+  white-space: nowrap;
+  border-top: solid 1px #e0e0e0;
+}
+div.organizer div.inputEx-ListField-Arrow {
+  float: none;
+  display: inline-block;
+  float: right;
+}
+div.organizer a.inputEx-List-link {
+  display: none;
+}
+
+
+img.framed {
+  border: 1px solid #e0e0e0;
+  padding: 3px;
+  max-width: 400px;
+}
+
+/*
+ * CSS for the lightbox used by the GCB Rich Text Editor.
+ */
+
+#modal-editor > .background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  z-index: 1000;
+}
+#modal-editor > iframe {
+  position: fixed;
+  top: 50%;
+  height: 500px;
+  margin-top: -250px;
+  left: 50%;
+  width: 780px;
+  margin-left: -350px;
+  z-index: 1001;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: height 500ms, margin-top 500ms;
+  -webkit-transition: height 500ms, margin-top 500ms;
+  -moz-transition: height 500ms, margin-top 500ms;
+}
+.hidden {
+  display: none;
+}
+
+/*
+ * CSS for the GCB Rich Text Editor.
+ */
+div.cb-editor-field div.buttonbar-div {
+  margin-bottom: 10px;
+  position: relative;
+}
+.editors-div {
+  z-index: inherit;
+  height: 200px;
+  min-width: 200px;
+}
+div.cb-editor-field div.editors-div > div {
+  /* The sub-editors must be positioned absolutely so that their size doesn't
+   * directly affect the size of the editor-div. */
+  position: absolute;
+}
+div.cb-editor-field {
+  width: 510px;
+}
+div.cb-editor-field div.preview-div iframe {
+  width: 100%;
+  height: 100%;
+}
+
+div.cb-editor-field div.preview-div .ajax-spinner {
+  z-index: 1000;
+  text-align: center;
+}
+div.cb-editor-field div.preview-div .ajax-spinner > .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+div.cb-editor-field div.preview-div .ajax-spinner > .spinner {
+  font-size: 400%;
+  position: absolute;
+  top: 40%;
+}
+
+/*
+ * CSS for the Code field
+ */
+
+.new-form-layout .inputEx-Field.cb-code-field {
+  width: inherit;
+  float: none;
+  margin-left: 150px;
+}
+
+/*
+ * Common CSS for multiple choice and short answer
+ */
+
+.mc-choice-container,
+.sa-grader-container {
+  clear: both;
+}
+
+.mc-choice-container > .inputEx-ListField-childContainer > div,
+.sa-grader-container > .inputEx-ListField-childContainer > div {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+#formContainer .mc-choice > fieldset,
+#formContainer .sa-grader > fieldset {
+  margin-bottom: 5px;
+  padding-bottom: 0;
+}
+
+.mc-choice-container > .inputEx-ListField-childContainer,
+.sa-grader-container > .inputEx-ListField-childContainer {
+  margin-bottom: 20px;
+}
+
+.sa-container fieldset > .inputEx-fieldWrapper,
+.mc-container fieldset > .inputEx-fieldWrapper {
+  margin-top: 14px;
+}
+
+/*
+ * CSS for multiple choice question creation.
+ */
+
+form.mc-container > fieldset {
+  padding: 15px 0;
+}
+div.mc-container a:hover {
+  text-decoration: none;
+}
+div.mc-container div.cb-editor-field {
+  width: 550px;
+}
+div.mc-container div.CodeMirror {
+  /* The question statement. */
+  height: 45px;
+  margin: 0;
+  padding: 0;
+}
+div.mc-question,
+div.mc-description,
+div.mc-selection,
+div.set-scores-toggle,
+div.sa-question,
+div.sa-hint,
+div.sa-feedback,
+div.sa-description,
+div.sa-rows,
+div.sa-columns,
+.toggle-feedback {
+  margin-left: 110px;
+  float: none;
+}
+div.mc-bool-option {
+  margin-left: 150px;
+}
+div.mc-bool-option .inputEx-description {
+  display: inline-block;
+  line-height: 16px;
+  vertical-align: top;
+}
+div.mc-container div.inputEx-label {
+  width: inherit;
+}
+
+.mc-choice > fieldset > .inputEx-fieldWrapper {
+  /* Fieldset contributes 10px so this is really the same as above */
+  margin-left: 77px;
+}
+.mc-choice-feedback .editors-div,
+.mc-choice-text .editors-div {
+  height: 100px;
+}
+
+#cb-oeditor-form .mc-description input {
+  width: 546px;  /* allow for 2px padding */
+  margin: 0;
+}
+div.set-scores-toggle {
+  margin-top: 10px;
+}
+
+div.mc-choice {
+  float: none;
+  margin: 0;
+}
+
+.mc-choice > fieldset > .inputEx-fieldWrapper > .inputEx-label {
+  /* Score label */
+  display: none;
+}
+
+.mc-choice-score {
+  position: absolute;
+  top: 39px;
+  left: -50px; /* Counteracts the fieldWrapper's margin */
+}
+
+.mc-choice-score input {
+  width: 25px;
+}
+
+.mc-choice > fieldset > legend + div + div + div {
+  /* The feedback editor */
+  margin-top: 15px;
+}
+
+.toggle-feedback > button,
+div.mc-choice + a {
+  /* The show-feedback and the delete-choice button */
+  color: #fff;
+  background-color: #bf5100;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.mc-choice .toggle-feedback {
+  margin-left: 77px;
+}
+div.mc-choice + a {
+  /* The delete-choice button */
+  float: right;
+  margin-top: -24px;
+}
+
+
+/*
+ * CSS for short answer question creation.
+ */
+
+div.sa-container a:hover {
+  text-decoration: none;
+}
+div.sa-container div.tabbar > button {
+  padding: 0;
+}
+div.sa-container div.cb-editor-field {
+  width: 540px;
+}
+div.sa-question,
+div.sa-hint,
+div.sa-feedback,
+div.sa-grader-text,
+div.sa-grader-feedback {
+  margin-top: 5px;
+}
+#cb-oeditor-form .sa-description input,
+#cb-oeditor-form .sa-grader-text input {
+  width: 506px;  /* allow for 2px padding */
+  margin: 0;
+}
+div.sa-grader-text,
+div.sa-grader-feedback,
+.sa-grader-container .toggle-feedback {
+  margin-left: 82px;
+  float: none;
+}
+div.sa-grader-question {
+  width: 660px;
+}
+div.sa-grader {
+  width: 650px;
+}
+div.sa-grader > fieldset > div.inputEx-fieldWrapper > div.inputEx-label {
+  width: 75px;
+}
+div.sa-grader + a { /* The delete choice button */
+  float: right;
+}
+div.sa-grader-score input {
+  width: 50px;
+}
+
+/*
+ * CSS for GIFT questions creation.
+ */
+div.gift-container > fieldset > div.inputEx-fieldWrapper > div.inputEx-label {
+  width: 80px;
+}
+div.gift-container a:hover {
+  text-decoration: none;
+}
+div.gift-container textarea {
+  height: 375px;
+  width: 510px;
+  margin: 0;
+  padding: 0;
+}
+div.gift-questions,
+div.gift-description {
+  margin-left: 87px;
+}
+div.gift-questions,
+div.gift-description {
+  margin-top: 10px;
+}
+div.gift-description input {
+  width: 506px;  /* allow for 2px padding */
+  margin: 0;
+}
+
+/*
+ * CSS for question group creation.
+ */
+
+div.question-group-question select {
+  width: 250px;
+}
+div.question-group-item {
+  width: 650px;
+}
+div.question-group-item div.inputEx-fieldWrapper {
+  display: inline-block;
+  margin-right: 20px;
+}
+div.question-group-item div.inputEx-label {
+  width: 60px;
+}
+div.question-group-weight,
+div.question-group-question {
+  float: left;
+}
+div.question-group-weight input {
+  width: 50px;
+}
+div.question-group-items a:hover {
+  text-decoration: none;
+}
+div.question-group-items div.inputEx-ListField-childContainer > div {
+  position: relative;
+  width: 650px;
+}
+div.question-group-items div.inputEx-ListField-ArrowUp,
+div.question-group-items div.inputEx-ListField-ArrowDown,
+div.question-group-items div.inputEx-ListField-ArrowDown + a {
+  position: absolute;
+  top: 25px;
+}
+div.question-group-items div.inputEx-ListField-ArrowUp {
+  left: 500px;
+}
+div.question-group-items div.inputEx-ListField-ArrowDown {
+  left: 520px;
+}
+div.question-group-items div.inputEx-ListField-ArrowDown + a {
+  left: 540px;
+}
+
+/*
+ * CSS for assignment creation.
+ */
+div.assessment-editor-button-holder {
+  text-align: right;
+  margin: 0 0 5px 0;
+}
+div.assessment-editor-check-answers > input[type=checkbox] {
+  width: auto;
+}
+
+/*
+ * CSS for label selection.
+ */
+
+div#formContainer div.label-group-list {
+  border: solid 1px #e0e0e0;
+  padding: 3px;
+}
+
+div.label-group-list > span, div.label-group-list a, div.label-group span {
+  display: none;
+}
+
+div#formContainer div.label-group-list div.inputEx-Group {
+  margin-left: 0;
+}
+
+div#formContainer div.label-group-list div.inputEx-Group fieldset {
+  border-top: none;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+div#formContainer div.label-group fieldset {
+  border-top: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+div#formContainer div.label-group div.inputEx-fieldWrapper {
+  float: left;
+  display: inline-block;
+}
+div#formContainer div.label-group div.inputEx-Field {
+  width: auto;
+  margin-left: 0.5em;
+}
+
+div.label-group div.label-description {
+  padding-top: 0.2em;
+  margin-left: 1.0em;
+}
+
+div.label-none-in-group {
+  padding-top: 0.33em;
+  margin-left: -3.0em;
+  background-color: #fff
+}
+
+div.CodeMirror {
+  height: 200px;
+}
+
+/* Styling for YUI and InputEx components. */
+
+.yui-resize .yui-resize-handle-br {
+  z-index: 10;
+}
+
+#cb-oeditor-form .editors-div {
+  /* Add a border to the CB Editor Field */
+  border: solid 1px #e0e0e0;
+  border-radius: 2px;
+}
+#cb-oeditor-form .yui-editor-container,
+.preview-editor > iframe,
+.CodeMirror {
+  /* Remove borders from the CB Editor Field subcomponents */
+  border: none;
+}
+#cb-oeditor-form .first-child > .yui-toolbar-container {
+  height: 0;
+  position: relative;
+  overflow-y: hidden;
+  background-color: #f9f9f9;
+}
+#cb-oeditor-form .first-child > .yui-toolbar-container.slid-in {
+  overflow-y: inherit;
+}
+#cb-oeditor-form .first-child > .yui-toolbar-container,
+#cb-oeditor-form .yui-editor-editable-container.slow-transition {
+  -webkit-transition: height 300ms cubic-bezier(.4,0,.2,1);
+  -moz-transition: height 300ms cubic-bezier(.4,0,.2,1);
+  transition: height 300ms cubic-bezier(.4,0,.2,1);
+}
+#cb-oeditor-form .first-child > .yui-toolbar-container > fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0 !important;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+#cb-oeditor-form .first-child > .yui-toolbar-container .yui-toolbar-subcont {
+  border-bottom-color: #ccc;
+}
+#cb-oeditor-form .first-child .yui-toolbar-titlebar {
+  /* Hide the top titlebar on the RTE. */
+  display: none;
+}
+#cb-oeditor-form .first-child .yui-toolbar-group {
+  margin: 2px 0;
+}
+#cb-oeditor-form .first-child .yui-toolbar-group > h3 {
+  display: none;
+}
+#cb-oeditor-form .first-child .yui-toolbar-group .yui-button {
+  background: none;
+  border-radius: 4px;
+  border: solid #000 1px;
+  border-color: transparent;
+  margin-right: 4px;
+  background-color: inherit;
+  color: #888;
+  outline: 0;
+}
+#cb-oeditor-form .first-child .yui-toolbar-group .yui-button-selected {
+  background-color: #ddd;
+  border-color: #ccc;
+}
+#cb-oeditor-form .first-child .yui-toolbar-group .yui-button:hover {
+  border-color: #ccc;
+  color: #444;
+}
+#cb-oeditor-form .first-child .yui-toolbar-group .yui-button .first-child{
+  border: none;
+}
+
+/*
+ * Styles for the "new form layout".
+ */
+
+div#formContainer > div.inputEx-Group.new-form-layout {
+  width: 100%;
+  min-width: 750px;
+  margin: 0;
+  padding: 0;
+}
+div#formContainer > div.inputEx-Group.new-form-layout > form > fieldset {
+  border: none;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+div#formContainer > div.inputEx-Group.new-form-layout > form > fieldset > legend > span {
+  font-size: 20px;
+}
+div#formContainer > div.inputEx-Group.new-form-layout > form > fieldset > div > fieldset {
+  /* For nested groups. */
+  border: none;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+div#formContainer > div.inputEx-Group.new-form-layout > form > fieldset > div > fieldset > legend {
+  /* For nested groups. */
+  font-size: 15px;
+  padding: 40px 0 0 0;
+}
+div.new-form-layout div.split-from-main-group-parent {
+  margin: 0 0 20px 0 !important;
+}
+div.new-form-layout div.inputEx-Field {
+  width: auto;
+}
+div.new-form-layout div.inputEx-label {
+  text-align: left;
+  padding: 0;
+  margin-top: 3px;
+  margin-right: 10px;
+}
+div.new-form-layout div.inputEx-label > label {
+  font-weight: bold !important;
+  font-size: 12px;
+}
+div.new-form-layout div.inputEx-fieldWrapper.gcb-text-input > div.inputEx-label {
+  margin-top: 13px;
+}
+div.new-form-layout div.inputEx-fieldWrapper.gcb-checkbox-input > div.inputEx-label {
+  margin-top: 6px;
+}
+div.new-form-layout div.inputEx-fieldWrapper.gcb-select > div.inputEx-label {
+  margin-top: 5px;
+}
+div.new-form-layout > form > fieldset > div.inputEx-fieldWrapper,
+div.new-form-layout > form > fieldset > div > fieldset > div.inputEx-fieldWrapper,
+div.split-from-main-group-parent {
+  margin: 20px 0 0 0;
+  padding: 20px 20px 20px 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: solid #e0e0e0 1px;
+}
+div.new-form-layout div.inputEx-description {
+  color: #b0b0b0;
+  margin-top: 6px;
+  max-width: 500px;
+}
+div.new-form-layout div.inputEx-Field.inputEx-CheckBox > div.inputEx-description {
+  display: inline-block;
+  margin-left: 5px;
+}
+div.new-form-layout div.inputEx-Field input[type=checkbox] {
+  vertical-align: top;
+}
+.inputEx-CheckboxListField-wrapper > .inputEx-CheckboxListField-subFieldEl > .inputEx-Field.inputEx-CheckBox > * {
+  vertical-align: middle;
+}
+div.new-form-layout div.inputEx-StringField-wrapper > input[type=text],
+div.new-form-layout div.inputEx-Field textarea {
+  /* Ensure the selector is narrow enough that it does not hit the inputs in the
+   * popup panels with class yui-editor-container.
+   */
+  width: 500px;
+  padding: 7px 8px;
+  border: solid 1px #e0e0e0;
+  border-radius: 3px;
+  font-size: 12px;
+}
+div#formContainer  > div.inputEx-Group.new-form-layout div.label-group-list {
+  background-color: #fff;
+  border-radius: 3px;
+  border: solid 1px #e0e0e0;
+  padding: 5px 15px;;
+}
+div.new-form-layout div.inputEx-Form-buttonBar {
+  max-width: 500px;
+  margin: 20px 0 0 0;
+}
+div.new-form-layout div.cb-editor-field {
+  width: inherit;
+  float: none;
+  margin-left: 139px;
+}
+div.new-form-layout div.cb-editor-field div.CodeMirror {
+  height: 400px;
+}
+div.new-form-layout div.cb-editor-small div.CodeMirror {
+  height: 200px;
+}
+.hidden-header > fieldset > .inputEx-Group-legend {
+  display:none;
+}
+div.new-form-layout .inputEx-Field.embed-code-snippet-display {
+  width: inherit;
+  margin-left: 140px;
+  margin-right: 10px;
+  float: none;
+}
+div.new-form-layout .inputEx-Field.embed-code-snippet-display .inputEx-StringField-wrapper {
+  width: 100%;
+}
+div.new-form-layout .inputEx-Field.embed-code-snippet-display textarea {
+  width: 100%;
+  height: 3em;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.mdl-tooltip.gcb-form-tooltip {
+  text-align: left;
+  max-width: 400px;
+  margin-left: -110px !important;
+  will-change: unset;
+}
+.mdl-tooltip.gcb-form-tooltip a {
+  color: rgb(255, 162, 94);
+}
+.gcb-form-help-icon {
+  float: right;
+}
+.icon {
+  display: inline-block;
+  border: none;
+  vertical-align: middle;
+  font-size: 16px;
+  margin: 0;
+  padding: 0 4px;
+  color: #555;
+  background-color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}

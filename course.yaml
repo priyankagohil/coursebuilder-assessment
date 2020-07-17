@@ -1,0 +1,179 @@
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS-IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# FIXME: You can use this configuration file to customize Course Builder
+# for a specific course. More information on YAML can be found at:
+#
+#     http://www.yaml.org/spec/1.2/spec.html#id2759963
+#
+# Note that the values in this file can contain arbitrary HTML.
+
+############################
+# General course information
+############################
+
+course:
+  # A new line or a space separated list of email addresses of course
+  # administrative users. Each email address must be placed between '[' and ']',
+  # for example: '[test@example.com]'. Regular expressions are not supported,
+  # exact match only.
+  admin_user_emails: ''
+
+  # Course title
+  title: 'Power Searching with Google'
+
+  # Main page blurb. (The '|' at the beginning enables multi-line input.)
+  blurb: |
+    Google Search makes it amazingly easy to find information. Come learn about
+    the powerful advanced tools we provide to help you find just the right
+    information when the stakes are high.
+
+  # Information about the instructor to display on the main page.
+  instructor_details: 'Daniel Russell <br> Senior Research Scientist <br> Google, Inc.'
+
+  # You can choose whether you want a video or an image on the main page.
+  # If you specify a URL for a YouTube video then the video will be displayed
+  # in a video player. Otherwide the URL will be shown as an image. The image
+  # alt text allows the image to be understood by text-only screen readers.
+  main_image:
+    url: https://www.youtube.com/embed/Kdg2drcUjYI?rel=0
+    alt_text:
+
+  # Forum email. For details, see
+  # https://www.google.com/edu/openonline/edukit/forums.html
+  forum_email: My-Course@googlegroups.com
+
+  # Locale for internationalization. See modules/i18n/resources/locale for
+  # available locales.
+  locale: 'en_US'
+
+  # Whether the course is open to the students.
+  now_available: true
+
+  # Whether the course material can be accessed without requiring users to log
+  # in or register.
+  browsable: true
+
+  # Google Analytics tag: Fill this in with a value obtained by signing up
+  # at http://www.google.com/analytics.  Note that you may wish instead to
+  # use Google Tag Manager, which can forward event notifications to Google
+  # Analytics, as well as to any other user-activity-watcher you like.
+  # Change the value below to replace the '#' with the full text of your
+  # individual ID number, which will start with 'UA-'.  When set, pages will
+  # notify Google Analytics that they have loaded.  See views/base.html.
+  #
+  # If this tag is not present, boilerplate JavaScript to notify Google
+  # Analytics is not emitted.  Not having a value here is harmless.
+  google_analytics_id: ''
+
+  # Google Tag Manager ID: Fill this in with a value obtained by signing up
+  # at http://www.google.com/tagmanager.  When this ID is present, pages will
+  # notify the tag manager (see views/base.html).  This will load a script
+  # from Tag Manager which can then emit notifications to other user activity
+  # trackers.  This neatly decouples changes to the source code of your
+  # course and CourseBuilder deployment from whatever tracking analytics
+  # you wish to perform.  (Note that if you wish to track activities more
+  # granular than page loads, you will need to mark up your course
+  # to send notifications to the tag manager.)
+  #
+  # If this tag is not present, boilerplate JavaScript to notify Google
+  # Tag Manager is not emitted.  Not having a value here is harmless.
+  google_tag_manager_id: ''
+
+
+##########################
+# Course registration form
+##########################
+
+reg_form:
+  # Header text for the course registration form.
+  header_text: >
+    Welcome!  Please answer the following question, and you will be
+    enrolled in the course.
+
+  # HTML representing additional fields to include in the course
+  # registration form, in addition to the student's name. These should
+  # be wrapped in <li></li> tags.
+  additional_registration_fields: '<!-- reg_form.additional_registration_fields -->'
+
+  # Whether to allow new students to register for the course.
+  can_register: True
+
+  # Whitelist of student email addresses who are allowed to register for
+  # the course.  Each email must be surrounded by '[' and ']'.  E.g,
+  # "[foo@bar.com] [quux@bar.com]"
+  whitelist: ''
+
+##############################
+# Assessment confirmation page
+##############################
+
+# HTML to be displayed on the final assessment's confirmation page (which is
+# displayed when the student has completed the final assessment). You can
+# optionally add code here to load or generate a Certificate of Completion
+# image. Note that the result text includes a '%s', which will be substituted
+# with the student's actual score. ('%%' results in a single '%'.)
+assessment_confirmations:
+  result_text:
+    pass: >
+      Based on your overall course score of %s%%, you have passed the course.
+      Congratulations!
+    fail: >
+      Unfortunately, based on your overall course score of %s%%, you did not
+      receive a sufficiently high score to obtain a certificate of completion.
+      We encourage you to review the lessons noted and to attempt the
+      assessment again before it closes. Certificate or not, we hope you
+      enjoyed taking the course and learned new skills!
+
+
+########################
+# Units and lessons page
+########################
+
+unit:
+  # Whether or not to hide the 'Previous Page' and 'Next Page' lesson
+  # navigation buttons at the bottom of lesson and activity pages.
+  hide_lesson_navigation_buttons: False
+
+  # Whether or not to hide the 'Previous Page' and 'Next Page' lesson
+  # navigation buttons below pre/post assessments within units.
+  hide_assessment_navigation_buttons: False
+
+  # Whether to show the unit links in the side bar.
+  show_unit_links_in_leftnav: True
+
+########################
+# HTML Hooks
+########################
+
+# HTML text that is inserted onto pages using the syntax:
+# {{ html_hooks.insert('container.container.container.item') }}
+# where "container" is, e.g., 'unit' or whatever other word
+# you'd like.  The final "item" gives a name to a fragment of
+# HTML.  This is a way of inserting small text fragments into
+# a page without having to make a separate Jinja template
+# or macro file.
+
+html_hooks:
+  unit:
+    # HTML to be included in the course unit/lesson pages.
+    after_leftnav_begins: '<!-- unit.after_leftnav_begins -->'
+    before_leftnav_ends: '<!-- unit.before_leftnav_ends -->'
+    after_content_begins: '<!-- unit.after_content_begins -->'
+    before_content_ends: '<!-- unit.before_content_ends -->'
+  preview:
+    # HTML to be included in the course preview page.
+    after_top_content_ends: '<!-- preview.after_top_content_ends -->'
+    after_main_content_ends: '<!-- preview.after_main_content_ends -->'
+
+
+
