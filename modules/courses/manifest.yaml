@@ -1,0 +1,56 @@
+registration:
+  main_module: modules.courses.courses
+
+tests:
+  functional:
+    - modules.courses.courses_tests.AvailabilityTests = 37
+    - modules.courses.courses_tests.BackgroundImportTests = 7
+    - modules.courses.courses_tests.CourseAccessPermissionsTests = 7
+    - modules.courses.courses_tests.CourseStartEndDatesTests = 1
+    - modules.courses.courses_tests.CourseSettingsRESTHandlerTests = 1
+    - modules.courses.courses_tests.EventRecordingRestHandlerTests = 3
+    - modules.courses.courses_tests.ReorderAccess = 2
+    - modules.courses.courses_tests.UnitLessonEditorAccess = 3
+    - modules.courses.triggers_tests.ContentTriggerTests = 22
+    - modules.courses.triggers_tests.CronHackTests = 5
+    - modules.courses.triggers_tests.DateTimeTriggerFunctionalTests = 1
+    - modules.courses.triggers_tests.MilestoneTriggerTests = 21
+  integration:
+    - modules.courses.courses_integration_tests.AvailabilityTests = 1
+  unit:
+    - modules.courses.triggers_tests.AvailabilityTriggerTests = 2
+    - modules.courses.triggers_tests.DateTimeTriggerTests = 7
+    - modules.courses.triggers_tests.FunctionsTests = 1
+
+files:
+  - modules/courses/__init__.py
+  - modules/courses/admin_preferences_editor.py
+  - modules/courses/assets.py
+  - modules/courses/availability.py
+  - modules/courses/availability_cron.py
+  - modules/courses/availability_options.py
+  - modules/courses/constants.py
+  - modules/courses/course_outline.html
+  - modules/courses/courses.py
+  - modules/courses/courses_pageobjects.py
+  - modules/courses/courses_integration_tests.py
+  - modules/courses/courses_tests.py
+  - modules/courses/graphql.py
+  - modules/courses/import_running.html
+  - modules/courses/lessons.py
+  - modules/courses/manifest.yaml
+  - modules/courses/messages.py
+  - modules/courses/outline.py
+  - modules/courses/roles.py
+  - modules/courses/settings.py
+  - modules/courses/templates/asset_list.html
+  - modules/courses/templates/availability.css
+  - modules/courses/templates/availability.js
+  - modules/courses/templates/label_list.html
+  - modules/courses/templates/question_group_list.html
+  - modules/courses/templates/question_list.html
+  - modules/courses/templates/question_location_macros.html
+  - modules/courses/triggers.py
+  - modules/courses/triggers_tests.py
+  - modules/courses/unit_lesson_editor.py
+  - modules/courses/unit_outline.py

@@ -1,0 +1,267 @@
+/*
+ * Styling common to various Course Availability settings page elements.
+ */
+/* Format text displayed when there is no course content. */
+.availability-manager .no-course-content {
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+}
+/* Hide some unused inputEx elements (and unhide specific labels later). */
+.availability-manager .inputEx-List-link,
+.availability-manager .inputEx-Group-legend,
+.availability-manager .inputEx-ListField-childContainer .inputEx-label,
+.availability-manager .inputEx-description {
+  display: none !important;
+}
+/* Remove 20px of margin from the very first field section on the form. */
+.form .availability-manager > fieldset > .inputEx-fieldWrapper:first-child {
+  margin-top: 0px;
+}
+/* Remove 20px of margin from the very first field section on the form. */
+.form .availability-manager > fieldset > .inputEx-fieldWrapper {
+  margin-top: 15px;
+}
+/* Add margin on the left to all but first field section sub-field. */
+.availability-manager .inputEx-ListField-subFieldEl > fieldset
+    > .inputEx-fieldWrapper +.inputEx-fieldWrapper {
+  margin-left: 20px;
+}
+/* Float the first sub-field in a field section to the left. */
+.availability-manager .inputEx-ListField-subFieldEl > fieldset
+    > .inputEx-fieldWrapper:first {
+  float: left;
+}
+/* Float the last sub-field in a field section to the right. */
+.availability-manager .inputEx-ListField-subFieldEl > fieldset
+    > .inputEx-fieldWrapper:last {
+  float: right;
+}
+/* Do not float the sub-field(s) in the middle of a field section. */
+.availability-manager .inputEx-ListField-subFieldEl > fieldset
+    > .inputEx-fieldWrapper {
+  float: none;
+}
+/* Hide some extraneous vertical whitespace. */
+.availability-manager > fieldset > .inputEx-fieldWrapper > .inputEx-label + div
+    > span:first-child {
+  display: none;
+}
+/* Style the field value div (just after the label) inside a field wrapper. */
+.availability-manager > fieldset > .inputEx-fieldWrapper > .inputEx-label
+    + div {
+  display: inline-block;
+  background-color: #fff;
+  border: solid #e0e0e0 1px;
+  border-radius: 3px;
+}
+/* Display the labels from the first row as list column headers. */
+.availability-manager .inputEx-ListField-childContainer > div:first-child
+    .inputEx-label {
+  display: block !important;
+  float: none;
+  margin: 0 0 10px 0;
+  width: 100%;
+  min-height: 20px;
+}
+.availability-manager .inputEx-ListField-childContainer .inputEx-label label {
+  font-weight: normal !important;
+  font-style: italic;
+  float: left;
+  margin-top: 2px;
+}
+/* Position tooltip help icons just to the right of list column labels. */
+.availability-manager .inputEx-ListField-childContainer .inputEx-label
+     .gcb-form-help-icon {
+  float: none;
+}
+/* Use label as section header to present complex fields as sub-sections. */
+.availability-manager .section-with-heading > .inputEx-label {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.availability-manager .section-with-heading > .inputEx-label > label {
+  float: left;
+}
+.availability-manager .section-with-heading > .inputEx-label
+    > .gcb-form-help-icon {
+  float: none;
+}
+/* Style individual items within a list. */
+.availability-manager .inputEx-ListField-childContainer
+    .inputEx-ListField-subFieldEl {
+  width: 100%;
+}
+.availability-manager .inputEx-ListField-childContainer
+    .inputEx-ListField-subFieldEl > fieldset {
+  border-top: none !important;
+  margin: 2px 0 !important;
+}
+/* Style sub-fields within each list item. */
+.availability-manager .inputEx-ListField-childContainer
+    .inputEx-ListField-subFieldEl > fieldset > .inputEx-fieldWrapper {
+  float: left;
+  vertical-align: top;
+}
+/* Indent by 20px if present. */
+.availability-manager .indent {
+  padding-left: 20px;
+}
+/* Hide white bordered element around <select> and <textarea> inputs. */
+.availability-manager > fieldset > .gcb-select > .inputEx-label
+    + div.inputEx-Field,
+.availability-manager > fieldset > .gcb-textarea > .inputEx-label
+    + div.inputEx-Field {
+  border: none !important;
+  background-color: #f9f9f9;
+}
+
+/*
+ * Styling for Course Start/End Availability Change Triggers subsections.
+ */
+/* Align the labels from the first row with the section label. */
+.availability-manager .course-trigger .inputEx-ListField-childContainer
+    > div:first-child .inputEx-label {
+  margin: 0 0 5px 0;
+  min-height: 20px;
+}
+.availability-manager .course-triggers .inputEx-ListField-childContainer
+    .inputEx-label label {
+  font-weight: bold !important;
+  font-style: normal;
+  float: left;
+  margin-top: 2px;
+}
+/* Remove margin and padding from milestone trigger singleton "list" item. */
+.form .availability-manager > fieldset > .course-triggers {
+  padding-bottom: 0;
+}
+.availability-manager .course-triggers .course-trigger > fieldset {
+  margin-top: 0 !important;
+  padding-top: 0;
+}
+.availability-manager .course-trigger > fieldset {
+  padding-left: 0;
+}
+/* Style the field value div (just after the label) inside a field wrapper. */
+.availability-manager > fieldset > .course-triggers > .inputEx-label
+    + div {
+  display: inline-block;
+  background-color: #f9f9f9;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+/* Cap width of "Change course availability to:" field. */
+.availability-manager .course-trigger .availability {
+  width: 200px;
+}
+/* Cap width of "...on this date & UTC hour:" field. */
+.availability-manager .course-trigger .when {
+  width: 300px;
+  margin-top: -7px;
+}
+
+/*
+ * Styling specific to the Content Availability subsection.
+ */
+.availability-manager .content-element > fieldset > .inputEx-fieldWrapper
+    +.inputEx-fieldWrapper {
+  float: right;
+  width: 150px;
+}
+
+/*
+ * Styling for Date/Time Availability Change Triggers subsection.
+*/
+/* Leave room for [Delete] by limiting width of a trigger to less than 100%. */
+.availability-manager .inputEx-ListField-childContainer
+    .content-trigger.inputEx-ListField-subFieldEl {
+  width: auto;
+}
+/* Align [Delete] button approximately its height above bottom of div. */
+.availability-manager .content-triggers
+    > .inputEx-ListField-childContainer > div {
+  display: block;
+  height: 100%;
+  vertical-align: bottom;
+  position: relative;
+}
+/* Duplicate gcb-button class for the [Delete] button. */
+.availability-manager .content-triggers
+    > .inputEx-ListField-childContainer > div > .inputEx-List-link {
+  display: block !important;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  float: none;
+  margin: 0;
+  padding: 4px 12px;
+  background-color: #00776A;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: normal;
+  cursor: default;
+}
+/* Display a thin ruling line between more than one content trigger. */
+.availability-manager .content-triggers .inputEx-ListField-childContainer
+    > div:first-child {
+  border: none;
+}
+.availability-manager .content-triggers .inputEx-ListField-childContainer
+    > div {
+  border-top: solid #e0e0e0 1px;
+}
+/* Flow [Add date/time/availability change] button below content triggers. */
+.availability-manager .add-content-trigger {
+  display: inline-block;
+  width: 100%;
+}
+/* Cap width of "For course content:" field, and the select it contains. */
+.availability-manager .content-trigger .content {
+  width: 250px;
+}
+/* Cap width of "Change availability to:" field. */
+.availability-manager .content-trigger .availability {
+  width: 140px;
+}
+.availability-manager .content-trigger .gcb-select {
+  margin-top: 4px;
+}
+/*
+ * Styling specific to the DateTimeTrigger 'when' fields.
+ */
+/* Cap width of "...this date & UTC hour:" field. */
+.availability-manager .when {
+  width: 250px;
+}
+/* Hide the "minutes" select of the "At this date & UTC hour:" value. */
+.availability-manager .gcb-datetime .inputEx-CombineField-separator
+    + .inputEx-fieldWrapper {
+  display: none;
+}
+/* Append hard-coded hour start ":00 UTC" to replace the "minutes" select. */
+.availability-manager .when .inputEx-CombineField .inputEx-Field::after {
+  content: ':00 UTC';
+}
+.availability-manager .when .inputEx-CombineField
+    +.inputEx-CombineField .inputEx-Field {
+  display: none;
+}
+/* Hide the now-unused ":" time parts separators. */
+.availability-manager .when .inputEx-CombineField
+    .inputEx-fieldWrapper + .inputEx-CombineField-separator {
+  display: none;
+}
+/* Remove some extraneous whitespace. */
+.availability-manager .when > .inputEx-clear-div {
+  display: none;
+}
+/* Hide [Clear] button for required datetime fields. */
+.availability-manager .when.inputEx-required .inputEx-DatePicker-ClearButton {
+  display: none;
+}

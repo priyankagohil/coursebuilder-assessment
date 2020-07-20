@@ -1,0 +1,1662 @@
+# Urdu translations for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-10-10 06:57-0700\n"
+"PO-Revision-Date: 2016-10-10 06:58-0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ur <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#. Message displayed as title for unit within a course.
+#. Note that the items %(index) and %(title).  The %(index)
+#. will be replaced with a number indicating the unit's
+#. sequence I18N: number within the course, and the %(title)
+#. with the unit's title.
+#: experimental/coursebuilder/models/resources_display.py:1196
+#, python-format
+msgid "Unit %(index)s - %(title)s"
+msgstr "یونٹ %(index)s - %(title)s"
+
+#. Message displayed as title for unit within a course.  The
+#. "%s" will be replaced with the index number of the unit within
+#. the course.  E.g., "Unit 1", "Unit 2" and so on.
+#: experimental/coursebuilder/models/resources_display.py:1217
+#, python-format
+msgid "Unit %s"
+msgstr "یونٹ ‎%s"
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:8
+msgid "Correct. "
+msgstr "صحیح۔ "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:10
+msgid "Incorrect. "
+msgstr "غلط۔ "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:12
+msgid "Partially Correct. "
+msgstr "جزوی طور پر صحیح۔ "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:15
+msgid " Yes, the answer is correct. "
+msgstr " ہاں، جواب درست ہے۔ "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:17
+msgid " No, the answer is incorrect. "
+msgstr " نہیں، جواب غلط ہے۔ "
+
+#. Confirmation text for the answer given to a question by a student.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:19
+msgid " The answer is partially correct. "
+msgstr " جواب جزوی طور پر درست ہے۔ "
+
+#. The title for section showing the correct answer
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:22
+msgid "The correct answer is:"
+msgstr "صحیح جواب یہ ہے:"
+
+#. The title for section showing feedback related to the answer given
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:24
+msgid "Targeted Feedback:"
+msgstr "ہدف کردہ تاثرات:"
+
+#. The title for section showing overall feedback
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:26
+msgid "Feedback:"
+msgstr "تاثرات:"
+
+#. Text appearing at the bottom of a lesson page after the student asks for it
+#. to be graded.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:29
+msgid " Your score is: "
+msgstr " آپ کا اسکور ہے: "
+
+#. Error message that is shown to a student when they are using a browser that
+#. does not have JavaScript enabled.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:36
+msgid " JavaScript should be enabled to grade this question. "
+msgstr " اس سوال کو گریڈ دینے کیلئے JavaScript فعال ہونا چاہئے۔ "
+
+#. Alt text for image representing student progress.
+#. Alt text for image showing student progress.
+#. Text shown after an assignment whose review has been completed.
+#. Shown in the student profile page, next to an assessment title. States
+#. whether the assessment has been completed.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:44
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:45
+#: experimental/coursebuilder/views/macros.html:22
+#: experimental/coursebuilder/views/review_dashboard.html:60
+#: experimental/coursebuilder/views/student_data_table.html:40
+msgid "Completed"
+msgstr "مکمل کردہ"
+
+#. Alt text for image representing student progress.
+#. Alt text for image showing student progress.
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:49
+#: experimental/coursebuilder/modules/assessment_tags/templates/base_assessment_tag.html:50
+#: experimental/coursebuilder/views/macros.html:11
+msgid "Not yet started"
+msgstr "ابھی تک شروع نہیں ہوا"
+
+#. Displayed next to a question. Indicates that the question is worth 1 point.
+#: experimental/coursebuilder/modules/assessment_tags/templates/mc_question.html:10
+#: experimental/coursebuilder/modules/assessment_tags/templates/sa_question.html:10
+msgid "1 point"
+msgstr "1 پوائنٹ"
+
+#. Displayed next to a question to indicate its point value. In this particular
+#. message, the number of points will be plural.
+#: experimental/coursebuilder/modules/assessment_tags/templates/mc_question.html:13
+#: experimental/coursebuilder/modules/assessment_tags/templates/sa_question.html:13
+#, python-format
+msgid "%(points)s points"
+msgstr "%(points)s پوائنٹس"
+
+#. Text on the button for checking a student's answer.
+#. Text on the button for checking an answer.
+#: experimental/coursebuilder/modules/assessment_tags/templates/mc_question.html:37
+#: experimental/coursebuilder/modules/assessment_tags/templates/question_group.html:20
+#: experimental/coursebuilder/modules/assessment_tags/templates/sa_question.html:41
+#: experimental/coursebuilder/views/base.html:19
+msgid " Check Answer "
+msgstr " جواب چیک کریں "
+
+#. Text on the button for requesting a hint to a question.
+#: experimental/coursebuilder/modules/assessment_tags/templates/sa_question.html:32
+msgid " Hint "
+msgstr " اشارہ "
+
+#. This is an error message to an author of an online course.
+#. The problem is that course assignments that are to be graded
+#. by other students (peers) cannot be configured to be added
+#. as content to external web pages. (I.e., some external site wants
+#. to use this assignment as part of a page's content, but this
+#. is not permitted)
+#: experimental/coursebuilder/modules/assessments/assessments.py:123
+msgid "Peer-review assignments cannot be embedded in external pages."
+msgstr "ہمسر کے جائزے کی تفویضات کو خارجی صفحات میں سرایت نہیں کیا جاسکتا ہے۔"
+
+#. Text shown to students when they visit an assignment page for which the due
+#. date has passed.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:39
+#, python-format
+msgid ""
+"The due date for submitting this assignment has passed. It was due on "
+"%(submission_due_date)s."
+msgstr ""
+"اس اسائنمنٹ کو جمع کرانے کی آخری تاریخ گزر چکی ہے۔ اس کو "
+"%(submission_due_date)s کو جمع کرانا تھا۔"
+
+#. Shown to the student on the assignment page.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:44
+msgid "Due date for this assignment: "
+msgstr "اس اسائنمنٹ کیلئے آخری تاریخ: "
+
+#. Text telling students what their recorded email address is.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:53
+msgid "Your answers have been recorded under the email"
+msgstr "آپ کے جوابات کو ای میل کے تحت ریکارڈ کر لیا گیا ہے"
+
+#. Text telling students there are not answers recorded for them.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:57
+msgid "You have not submitted any answers to this assignment under the email"
+msgstr "آپ نے ای میل کے تحت اس اسائنمنٹ کا کوئی جواب جمع نہیں کرایا ہے"
+
+#. Text telling students what their recorded email address is.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:62
+msgid "Your answers will be recorded under the email"
+msgstr "آپ کے جوابات کو ای میل کے تحت ریکارڈ کر لیا جائے گا"
+
+#. Text telling students what their total score is.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:72
+msgid "Score:"
+msgstr "اسکور:"
+
+#. Instructions to the student for a peer-reviewed assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:83
+msgid ""
+"You may only submit this assignment once. After you submit it, the "
+"assignment will become read-only, and you will not be able to modify your"
+" answers. The answers you submit here will be reviewed by your peers."
+msgstr ""
+"آپ اس اسائنمنٹ کو صرف ایک بار جمع کروا سکتے ہیں۔ اسے جمع کروا دینے کے "
+"بعد، یہ اسائنمنٹ صرف پڑھنے کیلئے ہو جائے گی اور آپ اپنے جوابات میں ترمیم "
+"نہیں کرسکیں گے۔ آپ یہاں جو جوابات جمع کراتے ہیں ان کا آپ کے ہمسروں کے "
+"ذریعہ جائزہ لیا جائے گا۔"
+
+#. Header text for a previously-submitted assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:98
+msgid "Submitted assignment"
+msgstr "جمع کرائی ہوئی اسائنمنٹ"
+
+#. Text telling students the date their answers were submitted
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:103
+msgid "Submitted on"
+msgstr "جمع کرانے کی تاریخ"
+
+#. Header text for the list of reviews received for an assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:128
+msgid "Reviews received"
+msgstr "موصول شدہ جائزے"
+
+#. Text shown below a student's peer-reviewed assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:135
+msgid ""
+"After you have completed the required number of peer reviews for this "
+"assignment, the reviews you have received will appear here."
+msgstr ""
+"اس اسائنمنٹ کیلئے ہمسروں کے جائزوں کی مطلوبہ تعداد مکمل کر لینے کے بعد، "
+"آپ کے موصول شدہ جائزے یہاں ظاہر ہونگے۔"
+
+#. Text shown on a button that allows the student to navigate from an
+#. assignment submission page to the peer review dashboard for that assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:142
+msgid "Go to the review dashboard"
+msgstr "جائزہ کے ڈیش بورڈ پر جائیں"
+
+#. Text shown below a student's peer-reviewed assignment.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:147
+msgid "You have not received any peer reviews yet."
+msgstr "آپ کو ابھی تک ہمسروں کے کوئی جائزے موصول نہیں ہوئے ہیں۔"
+
+#. Text shown for an assessment that has not been made public.
+#: experimental/coursebuilder/modules/assessments/templates/assessment.html:180
+msgid "This assessment is not available."
+msgstr "یہ تشخیص دستیاب نہیں ہے۔"
+
+#. Text on the button for saving a draft answer.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_html_content.html:38
+#: experimental/coursebuilder/views/base.html:35
+msgid " Save Draft "
+msgstr " مسودہ محفوظ کریں "
+
+#. Text on the button for submitting a peer review.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_html_content.html:41
+#: experimental/coursebuilder/views/base.html:47
+msgid " Submit Review "
+msgstr " جائزہ جمع کرائیں "
+
+#. Text on the button for checking a set of answers.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_html_content.html:49
+#: experimental/coursebuilder/views/base.html:23
+msgid " Check Answers "
+msgstr " جوابات چیک کریں "
+
+#. Text on the button for submitting answers.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_html_content.html:58
+#: experimental/coursebuilder/views/base.html:39
+msgid " Submit Answers "
+msgstr " جوابات جمع کرائیں "
+
+#. Title of the webpage.
+#: experimental/coursebuilder/modules/assessments/templates/assessment_page.html:15
+msgid "Assessment"
+msgstr "جائزہ"
+
+#. Message to a student taking a course that they have
+#. successfully submitted answers to an assessment (an assessment
+#. is an examination, test, quiz, or similar.)
+#: experimental/coursebuilder/modules/assessments/templates/assessment_page.html:39
+msgid "Assessment submitted."
+msgstr "تفویض جمع کرا دی گئی۔"
+
+#. Shown on the assignment submission confirmation page when the student has
+#. submitted a duplicate assignment.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:25
+msgid ""
+"You have already submitted this assignment. Your latest attempt has not "
+"been saved."
+msgstr ""
+"آپ نے یہ اسائنمنٹ پہلے ہی جمع کرا دی ہے۔ آپ کی تازہ ترین کوشش محفوظ نہیں "
+"ہوئی ہے۔"
+
+#. Shown on the assignment submission confirmation page when the student has
+#. successfully submitted an assignment.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:28
+msgid ""
+"Thank you for completing this assignment. Your work was successfully "
+"submitted."
+msgstr ""
+"یہ اسائنمنٹ مکمل کرنے کیلئے آپ کا شکریہ۔ آپ کا کام کامیابی کے ساتھ جمع "
+"ہوگیا تھا۔"
+
+#. Text shown on the assignment submission confirmation page after the student
+#. has submitted a peer-reviewed assignment.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:32
+msgid "Review your peers' assignments by clicking on the button below."
+msgstr "ذیل کے بٹن پر کلک کرکے اپنے ہمسروں کی اسائنمنٹس کا جائزہ لیں۔"
+
+#. Text for the button on the assignment submission confirmation page.
+#. Displayed in the course contents page. Indicates a page to
+#. which students can go to review other students' assignments.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:39
+#: experimental/coursebuilder/modules/courses/unit_outline.py:439
+msgid "Review peer assignments"
+msgstr "ہمسر کی اسائنمنٹس کا جائزہ لیں"
+
+#. Text for the button on the assignment submission confirmation page.
+#. Shown after the student has submitted an assessment. This button allows the
+#. student to navigate back to the main course page.
+#: experimental/coursebuilder/modules/assessments/templates/reviewed_assessment_confirmation.html:44
+#: experimental/coursebuilder/modules/assessments/templates/test_confirmation.html:27
+msgid "Back to Course page"
+msgstr "کورس کے صفحہ پر واپس جائیں"
+
+#. Message fragment on a certificate of course completion.
+#. Title line indicating what this page is.
+#. Title on page certifying that user has satisfied the requirements of a
+#. class.
+#: experimental/coursebuilder/modules/certificate/certificate.py:133
+#: experimental/coursebuilder/modules/certificate/templates/certificate.html:18
+msgid "Certificate of Completion"
+msgstr "تکمیل کا سرٹیفکیٹ"
+
+#. Message fragment on a certificate of course completion.
+#. On a separate line, preceding the name of the student.  Indicates
+#. that the certificate is being presented to someone.
+#. Phrase introducing the name of a student to whom a certificate is being
+#. awarded.
+#: experimental/coursebuilder/modules/certificate/certificate.py:141
+#: experimental/coursebuilder/modules/certificate/templates/certificate.html:21
+msgid "Presented to"
+msgstr "پیش کی جا رہی ہے بنام"
+
+#. Message fragment on a certificate of course completion.
+#. Indicates that the student has successfully completed something.
+#. Phrase signifying that a student has successfully completed a course.
+#: experimental/coursebuilder/modules/certificate/certificate.py:146
+#: experimental/coursebuilder/modules/certificate/templates/certificate.html:28
+msgid "for successfully completing the"
+msgstr "کامیابی سے"
+
+#. Message fragment on a certificate of course completion.
+#. Gives the name of the course, followed by the word "course".
+#. Phrase giving the name of an instructional course.
+#: experimental/coursebuilder/modules/certificate/certificate.py:149
+#: experimental/coursebuilder/modules/certificate/templates/certificate.html:32
+#, python-format
+msgid "%(course)s course"
+msgstr "%(course)s کورس مکمل کرنے پر"
+
+#. Title of section on page showing certificates for course completion.
+#: experimental/coursebuilder/modules/certificate/certificate.py:281
+msgid "Certificate"
+msgstr "سرٹیفکیٹ"
+
+#. Label on control to navigate to page showing certificate
+#: experimental/coursebuilder/modules/certificate/certificate.py:291
+msgid "Click for certificate"
+msgstr "سرٹیفکیٹ کیلئے کلک کریں"
+
+#. Link for a PDF.
+#: experimental/coursebuilder/modules/certificate/certificate.py:299
+msgid "Download PDF"
+msgstr "PDF ڈاؤن لوڈ کریں"
+
+#. Text indicating student has not yet completed a course.
+#: experimental/coursebuilder/modules/certificate/certificate.py:307
+msgid ""
+"You have not yet met the course requirements for a certificate of "
+"completion."
+msgstr "آپ نے ابھی تک تکمیل کے سرٹیفکیٹ کیلئے کورس کے تقاضوں کو پورا نہیں کیا ہے۔"
+
+#. Shown in list of news item titles (short descriptions)
+#. when student has earned a course completion certificate.
+#: experimental/coursebuilder/modules/certificate/certificate.py:510
+msgid "Course completion certificate earned!"
+msgstr "کورس کی تکمیل کا سرٹیفکیٹ حاصل کیا!"
+
+#. Shown when a student is attempting to re-enroll in a
+#. course soon after un-enrolling.  It takes up to several
+#. hours to remove their data, and they are prevented from
+#. re-enrolling during that time to prevent problems.
+#: experimental/coursebuilder/modules/data_removal/data_removal.py:273
+msgid ""
+"You cannot re-register for this course at the current time, because "
+"deletion of your previous data is still in progress.  Please try again in"
+" in a few hours."
+msgstr ""
+"آپ اس کورس کیلئے اس وقت دوبارہ رجسٹر نہیں کر سکتے ہیں، کیونکہ آپ کا سابقہ"
+" ڈیٹا ابھی بھی حذف ہو رہا ہے۔  براہ کرم چند گھنٹے بعد دوبارہ کوشش کریں۔"
+
+#. Gives a link on the footer of the page to permit the user
+#. to delete their personal data.  This link only appears for users
+#. who are currently enrolled in the course or who were enrolled
+#. but still have personal data present in the course.
+#: experimental/coursebuilder/modules/data_removal/data_removal.py:427
+msgid "Delete My Data"
+msgstr "میرا ڈیٹا حذف کریں"
+
+#. Shown when a student is unenrolling from a
+#. course.  Gives the student the option to have all
+#. their data permanently removed.
+#: experimental/coursebuilder/modules/data_removal/data_removal.py:446
+msgid "Delete all associated data"
+msgstr "سبھی وابستہ ڈیٹا حذف کریں"
+
+#. Warns a student that they are about to remove all of              data
+#. collected from this student during the course.  This              deletion
+#. cannot be un-done.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:27
+msgid "Once you delete your data, there is no way to recover it."
+msgstr ""
+"جب آپ اپنا ڈیٹا حذف کر دیتے ہیں تو اسے بازیاب کرنے کا کوئی طریقہ نہیں "
+"ہوتا ہے۔"
+
+#. When a student deletes their data, this warning appears
+#. indicating that the deletion applies only to the current course,
+#. not anything else.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:32
+msgid ""
+"Deleting your content in this course will not delete your content from "
+"other courses.  You must delete your content for each course separately."
+msgstr ""
+"اس کورس میں موجود مواد کو حذف کرنے سے دوسرے کورسز سے آپ کا مواد حذف نہیں "
+"ہوگا۔ آپ کو ہر کورس کیلئے اپنا مواد علیحدہ طور پر حذف کرنا ہوگا۔"
+
+#. When a student deletes their data from a course, this              warning
+#. appears to indicate that data is removed only for that              specific
+#. course, not other courses and not other Google              products or
+#. services.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:38
+msgid ""
+"This will also not delete your content in other products and services.  "
+"For example, if you made a post in Google Groups or shared a Google Drive"
+" document, you may wish to delete those posts or update your sharing "
+"settings in those products."
+msgstr ""
+"یہ دوسرے پروڈکٹس اور سروسز میں موجود آپ کے مواد کو بھی حذف نہیں کرے گا۔  "
+"مثلاً، اگر آپ نے Google Groups میں ایک اشاعت کی ہے یا Google Drive "
+"دستاویز کا اشتراک کیا ہے تو ہو سکتا ہے کہ آپ ان اشاعتوں کو حذف کرنا یا ان"
+" پروڈکٹس میں اپنی اشتراک کی ترتیبات کو اپ ڈیٹ کرنا چاہیں۔"
+
+#. Confirmation button, indicating that the student does              want to
+#. have all data about them removed from the course.
+#. Confirmation button, shown when a student has unenrolled from a course.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:58
+#: experimental/coursebuilder/views/unenroll_confirmation.html:30
+msgid "OK"
+msgstr "ٹھیک ہے"
+
+#. Cancellation button, indicating that the student does not              want
+#. to have all data about them removed from the course.
+#: experimental/coursebuilder/modules/data_removal/delete_confirmation.html:63
+msgid "Cancel"
+msgstr "منسوخ کریں"
+
+#. Page title when there is a problem enrolling the user in the course
+#. that contains their requested content.
+#: experimental/coursebuilder/modules/embed/templates/v1/enroll_error.html:7
+msgid "Enrollment error"
+msgstr "اندراج میں خرابی"
+
+#. Sentence fragment printed after the current user's email address,
+#. indicating they have no rights to see the requested content, and
+#. that they should contact an administrator to ask for access if they
+#. think they should be able to see the content.
+#: experimental/coursebuilder/modules/embed/templates/v1/enroll_error.html:15
+msgid ""
+"has no rights to see this content. Please contact the content\n"
+"                owner to request access."
+msgstr ""
+
+#. When a user is authenticating with an external identity provider    (e.g.,
+#. Facebook, Twitter), this prompt indicates the user should select    one of
+#. these accounts to use to continue the login process.
+#: experimental/coursebuilder/modules/gitkit/templates/branding.html:4
+msgid "Pick an account to continue."
+msgstr "جاری رکھنے کیلئے ایک اکاؤنٹ منتخب کریں۔"
+
+#. Page title for the email confirmation HTML message, starting with
+#. a parenthesized note that this is an example implementation.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:6
+msgid "(SAMPLE) Please confirm your email change"
+msgstr "(نمونہ) براہ کرم اپنی ای میل کی تبدیلی کی توثیق کریں"
+
+#. Page header text indicating that this is an example
+#. implementation.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:12
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:12
+msgid "SAMPLE"
+msgstr "نمونہ"
+
+#. sentence fragment beginning the message that an email address
+#. has changed from one value to another.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:16
+msgid "An email change has been requested from"
+msgstr "ای میل کی تبدیلی کی درخواست کی گئی ہے منجانب"
+
+#. sentence fragment connecting the old email address and the new email
+#. address.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:19
+msgid "to"
+msgstr "تا"
+
+#. sentence fragment beginning the text of the sentence providing the
+#. link for users to confirm email change.
+#. link for users to confirm the password change.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:22
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:19
+msgid "Please visit"
+msgstr "براہ کرم ملاحظہ کریں"
+
+#. sentence fragment concluding the text of the sentence providing the
+#. link for users to confirm email change.
+#. link for users to confirm the password change.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:26
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:23
+msgid "to confirm this change."
+msgstr "اس تبدیلی کی توثیق کرنے کیلئے۔"
+
+#. message introducing the list of available diagnostic pieces of
+#. information.
+#: experimental/coursebuilder/modules/gitkit/templates/change_email.html:32
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:29
+msgid "Diagnostic information:"
+msgstr "ڈائیگاسٹک معلومات:"
+
+#. Page title for the password reset HTML message, starting with a
+#. parenthesized note that this is an example implementation.
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:6
+msgid "(SAMPLE) Password reset confirmation"
+msgstr "(نمونہ) پاس ورڈ دوبارہ ترتیب دیے جانے کی توثیق"
+
+#. sentence fragment beginning the message that a password reset has
+#. been requested.
+#: experimental/coursebuilder/modules/gitkit/templates/reset_password.html:16
+msgid "A password change has been requested for"
+msgstr "اس کیلئے پاس ورڈ کی تبدیلی کی درخواست کی گئی ہے"
+
+#. Error indicating no email addresses were submitted.
+#: experimental/coursebuilder/modules/invitation/invitation.py:276
+msgid "Error: Empty email list"
+msgstr "خرابی: ای میل کی خالی فہرست"
+
+#. Error indicating that the user cannot add the desired
+#. list of additional email addresses to the list of invitations;
+#. the total size of the list with the additions would be more
+#. than any single user is allowed to send.  No email addresses
+#. were added to the list to send, and no further email messages
+#. were sent.
+#: experimental/coursebuilder/modules/invitation/invitation.py:290
+#, python-format
+msgid ""
+"This exceeds your email cap. Number of remaining invitations: %s. No "
+"messages sent."
+msgstr ""
+"یہ آپ کی ای میل بھیجنے کی حد سے زیادہ ہے۔ باقی دعوتوں کی تعداد: ‎%s۔ کوئی"
+" پیغامات نہیں بھیجے گئے۔"
+
+#. Error indicating an email addresses is not well-formed.
+#: experimental/coursebuilder/modules/invitation/invitation.py:299
+#, python-format
+msgid "Error: Invalid email \"%s\""
+msgstr "خرابی: غلط ای میل \"‎%s\""
+
+#. Error indicating an email addresses is already known.
+#: experimental/coursebuilder/modules/invitation/invitation.py:303
+#, python-format
+msgid "Error: You have already sent an invitation email to \"%s\""
+msgstr "خرابی: آپ نے پہلے ہی ایک دعوتی ای میل \"‎%s\" کو بھیجی ہے"
+
+#. Error indicating not all email messages were sent.
+#: experimental/coursebuilder/modules/invitation/invitation.py:320
+#, python-format
+msgid "Not all messages were sent (%s / %s):"
+msgstr "سبھی پیغامات نہیں بھیجے گئے (‎%s / %s):"
+
+#. Success message indicating number of emails sent.
+#: experimental/coursebuilder/modules/invitation/invitation.py:328
+#, python-format
+msgid "OK, %s messages sent"
+msgstr "ٹھیک ہے، ‎%s پیغامات بھیجے گئے"
+
+#. Title encouraging user to invite friends to join a course
+#: experimental/coursebuilder/modules/invitation/invitation.py:374
+msgid "Invite Friends"
+msgstr "دوستوں کو مدعو کریں"
+
+#. Label on control asking user to invite friends to join.
+#: experimental/coursebuilder/modules/invitation/invitation.py:379
+msgid "Click to send invitations to family and friends"
+msgstr "خاندان اور دوستوں کو دعوتیں بھیجنے کیلئے کلک کریں"
+
+#. Inviting friends to join a course is not currently enabled.
+#: experimental/coursebuilder/modules/invitation/invitation.py:383
+msgid "Invitations not currently available"
+msgstr "دعوتیں فی الحال دستیاب نہیں ہیں"
+
+#. Control allowing user to subscribe/unsubscribe from email invitation
+#: experimental/coursebuilder/modules/invitation/invitation.py:395
+msgid "Subscribe/Unsubscribe"
+msgstr "سبسکرائب/اَن سبسکرائب کریں"
+
+#. Message - user has unsubscribed from email invitations.
+#: experimental/coursebuilder/modules/invitation/invitation.py:402
+msgid "You are currently unsubscribed from course-related emails."
+msgstr "آپ فی الحال کورس سے متعلق ای میلز سے اَن سبسکرائب کردہ ہیں۔"
+
+#. Control allowing user to re-subscribe to email invitations.
+#: experimental/coursebuilder/modules/invitation/invitation.py:406
+msgid "Click here to re-subscribe."
+msgstr "دوبارہ سبسکرائب کرنے کیلئے یہاں کلک کریں۔"
+
+#. Text indicating user has opted in to email invitations.
+#: experimental/coursebuilder/modules/invitation/invitation.py:411
+msgid "You are currently receiving course-related emails. "
+msgstr "آپ فی الحال کورس سے متعلق ای میلز موصول کر رہے ہیں۔ "
+
+#. Control allowing user to unsubscribe from email invitations.
+#: experimental/coursebuilder/modules/invitation/invitation.py:415
+msgid "Click here to unsubscribe."
+msgstr "اَن سبسکرائب کرنے کیلئے یہاں کلک کریں۔"
+
+#. Title of the course progress webpage.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:19
+#: experimental/coursebuilder/views/student_profile.html:13
+msgid "Course Progress"
+msgstr "کورس کی پیشرفت"
+
+#. title on page requesting user to invite friends to a course.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:30
+msgid "Invite friends or family members to join the course"
+msgstr "کورس میں شامل ہونے کیلئے دوستوں یا خاندان کے افراد کو مدعو کریں"
+
+#. Block of text inviting users to invite friends to a course.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:33
+msgid ""
+"Do you know other people who might want to join this course? Enter their "
+"email addresses below and click \"Send\". They will receive an email from"
+" you with the text shown below."
+msgstr ""
+"کیا آپ ایسے دیگر لوگوں کو جانتے ہیں جن کا اس کورس میں شامل ہونے کا امکان "
+"ہے؟ ذیل میں ان کے ای میل پتے درج کریں اور \"بھیجیں\" پر کلک کریں۔ انہیں "
+"آپ کی جانب سے ذیل میں دکھائے گئے متن کے ساتھ ایک ای میل موصول ہوگی۔"
+
+#. Instructions on how to fill out email addresses in a form.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:43
+msgid ""
+"Enter recipients' email addresses separated by commas. E.g., "
+"alice@gmail.com, ben@gmail.com"
+msgstr ""
+"وصول کنندگان کے کوما سے علیحدہ کردہ ای میل پتے درج کریں۔ مثلاً، "
+"alice@gmail.com, ben@gmail.com"
+
+#. Label on control submitting a form with email addresses
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:52
+msgid "Send"
+msgstr "بھیجیں"
+
+#. Section title indicating an example of an email.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:57
+msgid "Sample Email"
+msgstr "نمونہ ای میل"
+
+#. Example subject line of an email to be sent.
+#: experimental/coursebuilder/modules/invitation/templates/invitation.html:60
+msgid "Subject:"
+msgstr "موضوع:"
+
+#. Text for a button allowing user to manually mark themselves          as
+#. having completed a lesson in an educational course.
+#: experimental/coursebuilder/modules/manual_progress/templates/manual_progress.html:12
+msgid "I have completed this lesson."
+msgstr "میں نے یہ سبق مکمل کر لیا ہے۔"
+
+#. Text for a button allowing user to manually mark themselves          as
+#. having completed a unit in an educational course.
+#: experimental/coursebuilder/modules/manual_progress/templates/manual_progress.html:26
+msgid "I have completed this unit."
+msgstr "میں نے یہ یونٹ مکمل کر لیا ہے۔"
+
+#. Text for a button allowing user to manually mark themselves          as
+#. having completed an educational course.
+#: experimental/coursebuilder/modules/manual_progress/templates/manual_progress.html:41
+msgid "I have completed this course."
+msgstr "میں نے یہ کورس مکمل کر لیا ہے۔"
+
+#. Message to show the user was not allowed to access to resource
+#. Message displayed to non-logged in user
+#: experimental/coursebuilder/modules/questionnaire/questionnaire.py:198
+#: experimental/coursebuilder/modules/rating/rating.py:96
+msgid "Access denied."
+msgstr "رسائی مسترد کر دی گئی۔"
+
+#. Message to acknowledge successful submission of the
+#. questionnaire
+#: experimental/coursebuilder/modules/questionnaire/questionnaire.py:202
+msgid "Response submitted."
+msgstr "جواب جمع ہو گیا۔"
+
+#. This message appears on a page where a student could            submit
+#. answers to a questionnaire.  Students may only submit            the
+#. questionnaire once.  This message appears when viewing            the page
+#. after the first subission.
+#: experimental/coursebuilder/modules/questionnaire/templates/questionnaire.html:15
+msgid "Only one submission of this form is allowed."
+msgstr "اس فارم کو صرف ایک بار جمع کرانے کی اجازت ہے۔"
+
+#. This message appears on a page where a student could            submit
+#. answers to a questionnaire.  The user viewing the            page is not a
+#. registered student, and gets a message            indicating the situation.
+#: experimental/coursebuilder/modules/questionnaire/templates/questionnaire.html:28
+msgid "Only registered students can submit answers."
+msgstr "صرف رجسٹرڈ طلباء جوابات جمع کرا سکتے ہیں۔"
+
+#. Button label to submit the responses to a questionnaire.
+#: experimental/coursebuilder/modules/questionnaire/templates/questionnaire.html:34
+msgid "Submit answers"
+msgstr "جوابات جمع کرائیں"
+
+#. Message displayed when user submits written comments
+#: experimental/coursebuilder/modules/rating/rating.py:156
+msgid "Thank you for your feedback."
+msgstr "آپ کے تاثرات کا شکریہ۔"
+
+#. Header on 5-point scale for student feedback on the lesson.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:5
+msgid "Rate this lesson:"
+msgstr "اس سبق کو درجہ دیں:"
+
+#. Lowest rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:12
+msgid "Not at all useful"
+msgstr "بالکل بھی مفید نہیں"
+
+#. Second-lowest rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:18
+msgid "Not very useful"
+msgstr "بہت مفید نہیں"
+
+#. Middle rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:24
+msgid "Somewhat useful"
+msgstr "کسی حد تک مفید"
+
+#. Second-highest rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:30
+msgid "Very useful"
+msgstr "بہت مفید"
+
+#. Highest rating on a 5-point scale.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:36
+msgid "Extremely useful"
+msgstr "انتہائی مفید"
+
+#. Indicate location to type additional comments
+#: experimental/coursebuilder/modules/rating/templates/widget.html:42
+msgid "Additional comments..."
+msgstr "اضافی تبصرے…"
+
+#. Label on a button to submit feedback.
+#: experimental/coursebuilder/modules/rating/templates/widget.html:45
+msgid "Submit"
+msgstr "جمع کرائیں"
+
+#. Displayed in search results; denotes a lesson link.
+#. Navigation breadcrumb.
+#: experimental/coursebuilder/modules/search/resources.py:358
+#: experimental/coursebuilder/views/unit.html:84
+msgid "Lesson"
+msgstr "سبق"
+
+#. Displayed in search results; denotes an announcement link.
+#: experimental/coursebuilder/modules/search/resources.py:725
+msgid "Announcement"
+msgstr "اعلان"
+
+#. Title of the webpage.
+#: experimental/coursebuilder/modules/search/search.html:5
+msgid "Search"
+msgstr "تلاش کریں"
+
+#. Status message above search results.
+#: experimental/coursebuilder/modules/search/search.html:17
+#, python-format
+msgid "Results for \"%(query)s\""
+msgstr "\"%(query)s\" کے نتائج"
+
+#. The amount of time the search took, displayed above search results.
+#: experimental/coursebuilder/modules/search/search.html:20
+#, python-format
+msgid "Search took %(num_seconds)s seconds."
+msgstr "تلاش میں %(num_seconds)s سیکنڈز لگے۔"
+
+#. Link to the previous page.
+#: experimental/coursebuilder/modules/search/search.html:31
+msgid "Previous"
+msgstr "پچھلا"
+
+#. Indicator for current page in search results.
+#: experimental/coursebuilder/modules/search/search.html:36
+#, python-format
+msgid "Page %(number)s of %(total)s"
+msgstr "صفحہ %(number)s از %(total)s"
+
+#. Link to the next page.
+#: experimental/coursebuilder/modules/search/search.html:42
+msgid "Next"
+msgstr "اگلا"
+
+#. The search returned no results.
+#: experimental/coursebuilder/modules/search/search.html:49
+#, python-format
+msgid "No results for \"%(query)s\""
+msgstr "\"%(query)s\" کے کوئی نتائج نہیں ہیں"
+
+#. Message displayed on search results page when error occurs.
+#: experimental/coursebuilder/modules/search/search.py:81
+msgid "Search is currently unavailable."
+msgstr "تلاش فی الحال ‏دستیاب نہیں ہے۔"
+
+#. Title of a link on a search result page.  Link goes to        the part of
+#. the course where the search result, which is a        video, is part of a
+#. unit or lesson.
+#: experimental/coursebuilder/modules/search/results_templates/youtube.html:6
+msgid "View In Course"
+msgstr "کورس میں دیکھیں"
+
+#. Header describing the skills for this lesson
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:20
+msgid "Taught in this lesson:"
+msgstr "اس سبق میں پڑھائی گئیں:"
+
+#. Header describing list of skills this lesson depends on
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:44
+msgid "Depends on:"
+msgstr "ان پر منحصر ہے:"
+
+#. Describe an empty set of prerequisite skills
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:48
+msgid "This lesson doesn't have any prerequisites."
+msgstr "اس سبق کیلئے کوئی لازمی شرائط نہیں ہیں۔"
+
+#. Header describing list of skills this lesson leads to
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:63
+msgid "Leads to:"
+msgstr "اس سے درج ذیل صلاحیتیں حاصل ہوتی ہیں:"
+
+#. Describe an empty set of follow-on skills
+#: experimental/coursebuilder/modules/skill_map/templates/lesson_header.html:67
+msgid "This lesson isn't a prerequisite for any other lesson."
+msgstr "یہ سبق کسی دیگر سبق کیلئے شَرطِ اَوّل نہیں ہے۔"
+
+#. Header for list of links to lessons
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:18
+#: experimental/coursebuilder/modules/student_skills_ui/javascript_tests/fixture.html:25
+#: experimental/coursebuilder/modules/student_skills_ui/templates/unit_header.html:25
+msgid "Lessons"
+msgstr "اسباق"
+
+#. Text for empty list of lessons
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:31
+#: experimental/coursebuilder/modules/student_skills_ui/javascript_tests/fixture.html:28
+#: experimental/coursebuilder/modules/student_skills_ui/templates/unit_header.html:29
+msgid "Not taught"
+msgstr "نہیں پڑھائے گئے"
+
+#. Header for skill proficiency legend
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:42
+msgid "Proficiency level"
+msgstr "مہارت کی سطح"
+
+#. Label for low skill proficiency
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:48
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:51
+msgid "low"
+msgstr "کم"
+
+#. Label for high skill proficiency
+#: experimental/coursebuilder/modules/skill_map/templates/skill_card.html:55
+msgid "high"
+msgstr "زیادہ"
+
+#. Header for skills progress section
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:19
+msgid "Skills Progress"
+msgstr "اہلیتوں کی پیشرفت"
+
+#. List of acquired skills for a student
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:30
+msgid "Achievements"
+msgstr "حصولیابیاں"
+
+#. Describe an empty set of acquired skills
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:34
+msgid "Currently, no acquired skills."
+msgstr "فی الحال، حاصل کی گئی کوئی اہلیتیں نہیں ہیں۔"
+
+#. List of skills recommended to a student to learn
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:51
+msgid "Recommended Next"
+msgstr "اگلی کی تجویز کی گئی"
+
+#. Describe an empty set of recommended skills
+#: experimental/coursebuilder/modules/skill_map/templates/skills_progress.html:55
+msgid "Currently, you have no recommended skills."
+msgstr "فی الحال، آپ کے پاس کوئی تجویز کردہ اہلیتیں نہیں ہیں۔"
+
+#. Notification indicating that the user has subscribed to email notifications
+#. from an instructional course.
+#: experimental/coursebuilder/modules/unsubscribe/templates/resubscribe.html:17
+msgid ""
+"The following email address has been subscribed to receive emails for "
+"this course:"
+msgstr ""
+"اس کورس کیلئے ای میلز موصول کرنے کیلئے مندرجہ ذیل ای میل پتہ سبسکرائب کر "
+"لیا گیا ہے:"
+
+#. Indicates that a user will no longer recieve email about a course
+#: experimental/coursebuilder/modules/unsubscribe/templates/unsubscribe.html:25
+msgid ""
+"The following email address has been unsubscribed from emails for this "
+"course:"
+msgstr ""
+"مندرجہ ذیل ای میل پتہ کو اس کورس کیلئے ای میلز سے اَن سبسکرائب کر دیا گیا"
+" ہے:"
+
+#. After a user has unsubscribed from email notifications, indicate that
+#. re-subscribing is possible using a control lower on the page.
+#: experimental/coursebuilder/modules/unsubscribe/templates/unsubscribe.html:34
+msgid ""
+"If you prefer to continue receiving notifications, please click below to "
+"resubscribe."
+msgstr ""
+"اگر آپ اطلاعات موصول کرنا جاری رکھنے کو ترجیح دیتے ہیں تو دوبارہ سبسکرائب"
+" کرنے کیلئے براہ کرم ذیل میں کلک کریں۔"
+
+#. Button at the bottom of the page to resubscribe to notifications.
+#: experimental/coursebuilder/modules/unsubscribe/templates/unsubscribe.html:44
+msgid "Resubscribe"
+msgstr "دوبارہ سبسکرائب کریں"
+
+#. Error message for failed student file upload.
+#. The selected file was empty.
+#: experimental/coursebuilder/modules/upload/upload.py:90
+msgid "File is empty."
+msgstr "فائل خالی ہے۔"
+
+#. Error message for failed student file upload.
+#. The selected file was not a text file.
+#: experimental/coursebuilder/modules/upload/upload.py:102
+msgid ""
+"Wrong file format, only text files (.txt) with unicode contents are "
+"allowed."
+msgstr "غلط فائل فارمیٹ، صرف یونیکوڈ مواد والی ٹیکسٹ فائلز (‎.txt) کی اجازت ہے۔"
+
+#. Error message for failed student file upload.
+#. The selected file was too large.
+#: experimental/coursebuilder/modules/upload/upload.py:110
+msgid "File too large, only files smaller than 1MB are allowed."
+msgstr "فائل بہت بڑی ہے، صرف 1MB سے چھوٹی فائلوں کی اجازت ہے۔"
+
+#. Error message for failed student file upload.
+#. Generic upload error.
+#: experimental/coursebuilder/modules/upload/upload.py:117
+msgid "Unable to save student submission."
+msgstr "طالب علم کی جمع آوری محفوظ کرنے سے قاصر۔"
+
+#. Message shown to the user telling them they have already submitted an item,
+#. and submitting a new item will overwrite their previous item.
+#: experimental/coursebuilder/modules/upload/templates/form.html:18
+msgid "You have already submitted; submit again to replace your previous entry."
+msgstr ""
+"آپ نے پہلے ہی جمع کرا دیا ہے؛ اپنا سابقہ اندراج تبدیل کرنے کیلئے دوبارہ "
+"جمع کرائیں۔"
+
+#. Warning shown to the user telling them that the file they select for upload
+#. should be at most 1MB in size
+#: experimental/coursebuilder/modules/upload/templates/form.html:23
+msgid "Maximum file size is 1MB."
+msgstr "فائل کا زیادہ سے زیادہ سائز 1MB ہے۔"
+
+#. Shown when a user submits a file successfully.
+#: experimental/coursebuilder/modules/upload/templates/result.html:7
+msgid "Your file has been successfully uploaded."
+msgstr "آپ کی فائل کو کامیابی کے ساتھ اپ لوڈ کر دیا گیا ہے۔"
+
+#. Shown to tell the user an error occurred during submission.
+#: experimental/coursebuilder/modules/upload/templates/result.html:10
+msgid "An error occurred."
+msgstr "ایک خرابی پیش آگئی۔"
+
+#. Text of the link to take the user back to the previous page.
+#: experimental/coursebuilder/modules/upload/templates/result.html:20
+msgid "Return to the previous page."
+msgstr "پچھلے صفحہ پر واپس جائیں۔"
+
+#. Text of the link to take the user back to the previous page so they can try
+#. submitting again.
+#: experimental/coursebuilder/modules/upload/templates/result.html:25
+msgid "Go back and try again."
+msgstr "پیچھے جائیں اور دوبارہ کوشش کریں۔"
+
+#. Text after the link to take the user back to the previous page so they can
+#. try submitting again.
+#: experimental/coursebuilder/modules/upload/templates/result.html:28
+msgid "If the problem persists, contact your administrator."
+msgstr "اگر مسئلہ برقرار رہتا ہے تو اپنے منتظم سے رابطہ کریں۔"
+
+#. Message on page indicating that a resource is not available.        The
+#. current user is not logged in with a Google identity, which        is very
+#. likely the reason the resource is not available to this        person.
+#: experimental/coursebuilder/views/404.html:7
+msgid ""
+"This resource does not exist, or access to it requires that you be logged"
+" in."
+msgstr "یہ وسیلہ موجود نہیں ہے یا اس تک رسائی کیلئے آپ کے لاگ ان ہونے کی ضرورت ہے۔"
+
+#. Message on page indicating that a resource is not available.        Either
+#. the requested item really does not exist, or the currently        logged-in
+#. user does not have access to the requested item.  It may        be that
+#. logging in as a different user would grant access.
+#: experimental/coursebuilder/views/404.html:16
+msgid ""
+"This resource does not exist, or cannot be accessed by the current user."
+"  You are currently logged in as {email}."
+msgstr ""
+"یہ وسیلہ موجود نہیں ہے یا موجودہ صارف اس تک رسائی حاصل نہیں کر سکتا ہے۔ "
+"آپ فی الحال {email} کے بطور لاگ ان ہیں۔"
+
+#. Text for a link on a page indicating that some desired       resource was
+#. not available.  Suggest that the user should log in       in the hopes that
+#. that will grant additional access to the item.
+#: experimental/coursebuilder/views/404.html:27
+msgid "Log in as another user"
+msgstr "کسی دوسرے صارف کے بطور لاگ ان کریں"
+
+#. Text for a link on a page indicating that some desired          resource was
+#. not available.  Following the link will log out the          current user
+#. for this site only (by unsetting cookies), and then          forward them to
+#. a page where they may log in with a different          identity.
+#: experimental/coursebuilder/views/404.html:34
+msgid "Log in"
+msgstr "لاگ ان کریں"
+
+#. Text for a link on a page indicating that some desired        resource was
+#. not available.  Following the link will go to the        base page in the
+#. course.  It may be the that the current user has        access to that
+#. pgage.
+#: experimental/coursebuilder/views/404.html:44
+msgid "Go to the home page for {course_title}"
+msgstr "{course_title} کیلئے ہوم صفحہ پر جائیں"
+
+#. Title of the webpage.
+#. Navbar tab.
+#: experimental/coursebuilder/views/announcements.html:5
+#: experimental/coursebuilder/views/base_course.html:38
+msgid "Announcements"
+msgstr "اعلانات"
+
+#. Shown if the list of announcements is empty.
+#: experimental/coursebuilder/views/announcements.html:37
+msgid "Currently, there are no announcements."
+msgstr "فی الحال، کوئی اعلانات نہیں ہیں۔"
+
+#. Text on the button for showing the answer to a question.
+#: experimental/coursebuilder/views/base.html:27
+msgid " Skip and Show Answer "
+msgstr " نظر انداز کریں اور جواب دکھائیں "
+
+#. Text on the button for saving answers to a question.
+#: experimental/coursebuilder/views/base.html:31
+msgid " Save Answers "
+msgstr " جوابات محفوظ کریں "
+
+#. Text on the button for submitting a peer-reviewed assignment.
+#: experimental/coursebuilder/views/base.html:43
+msgid " Submit Assignment "
+msgstr " اسائنمنٹ جمع کرائیں "
+
+#. Text to prompt the student to select a multiple-choice answer.
+#: experimental/coursebuilder/views/base.html:51
+msgid " Please click one of the buttons for your answer. "
+msgstr " براہ کرم اپنے جواب کیلئے بٹنوں میں سے ایک پر کلک کریں۔ "
+
+#. Text appearing after the student has answered all questions correctly.
+#: experimental/coursebuilder/views/base.html:55
+msgid " All your answers are correct! "
+msgstr " آپ کے سبھی جوابات صحیح ہیں! "
+
+#. Text appearing after the student has answered all questions correctly.
+#: experimental/coursebuilder/views/base.html:59
+msgid " Number of questions you answered correctly "
+msgstr " ان سوالوں کی تعداد جن کا آپ نے صحیح جواب دیا "
+
+#. Text appearing after the student has submitted an assessment.
+#: experimental/coursebuilder/views/base.html:63
+msgid " You received a score on this assessment of "
+msgstr " آپ کو اس جائزہ پر ایک اسکور ملا جو متعلق ہے بہ "
+
+#. Text appearing after the student has checked his/her answers to an
+#. assessment.
+#: experimental/coursebuilder/views/base.html:67
+msgid " Here are lessons you could review to improve your score "
+msgstr " یہ وہ اسباق ہیں جن کا جائزہ آپ اپنا اسکور بہتر بنانے کیلئے لے سکتے ہیں "
+
+#. Text appearing after the student has checked his/her answers to an
+#. assessment.
+#: experimental/coursebuilder/views/base.html:71
+msgid ""
+" Congratulations! Press the \\'Submit Answers\\' button to submit your "
+"grade. "
+msgstr ""
+" مبارکباد! اپنا گریڈ جمع کرانے کیلئے \\'جوابات جمع کرائیں\\' بٹن کو "
+"دبائیں۔ "
+
+#. Text appearing after the student has checked his/her answers to an
+#. assessment.
+#: experimental/coursebuilder/views/base.html:75
+msgid ""
+" Press the \\'Submit Answers\\' button below to save your scores. You can"
+" also edit your answers above before clicking \\'Submit Answers\\'. "
+msgstr ""
+" اپنے اسکورز محفوظ کرنے کیلئے نیچے \\'جوابات جمع کرائیں\\' بٹن کو دبائیں۔"
+" \\'جوابات جمع کرائیں\\' پر کلک کرنے سے پہلے آپ اوپر اپنے جوابات میں "
+"ترمیم بھی کرسکتے ہیں۔ "
+
+#. Text appearing in a confirmation dialog after the student has tried to
+#. submit an assignment.
+#: experimental/coursebuilder/views/base.html:79
+msgid " Are you sure you want to submit this assignment? "
+msgstr " کیا آپ واقعی اس اسائنمنٹ کو جمع کرانا چاہتے ہیں؟ "
+
+#. Text appearing in a confirmation dialog after the student has tried to
+#. submit a review.
+#: experimental/coursebuilder/views/base.html:83
+msgid " Are you sure you want to submit this review? "
+msgstr " کیا آپ واقعی اس جائزے کو جمع کرانا چاہتے ہیں؟ "
+
+#. Text appearing in a confirmation dialog after 'Are you sure you want to
+#. submit this assignment/review?'
+#: experimental/coursebuilder/views/base.html:87
+msgid " You cannot edit or delete it after you have done so. "
+msgstr " ایسا کرنے کے بعد آپ اس میں ترمیم یا اسے حذف نہیں کر سکتے۔ "
+
+#. Text shown in parentheses next to the student's email address at the
+#. top-right of all course pages, if the student is logged in but not
+#. registered for the course he/she is currently browsing.
+#: experimental/coursebuilder/views/base.html:240
+msgid "Not registered"
+msgstr "رجسٹرڈ نہیں ہے"
+
+#. Navbar text.
+#: experimental/coursebuilder/views/base.html:249
+msgid "Logout"
+msgstr "لاگ آؤٹ کریں"
+
+#. Navbar text.
+#: experimental/coursebuilder/views/base.html:255
+msgid "Login"
+msgstr "لاگ ان کریں"
+
+#. Link at the bottom of each page to the privacy and 'Terms and Conditions'
+#. pages.
+#: experimental/coursebuilder/views/base.html:295
+msgid "Privacy & Terms"
+msgstr "رازداری اور شرائط"
+
+#. Text describing the locale selector.
+#: experimental/coursebuilder/views/base.html:302
+msgid "Language:"
+msgstr "زبان:"
+
+#. Title of the webpage.
+#. Navbar tab.
+#. Navigation breadcrumb.
+#: experimental/coursebuilder/views/base_course.html:7
+#: experimental/coursebuilder/views/base_course.html:42
+#: experimental/coursebuilder/views/unit.html:75
+msgid "Course"
+msgstr "کورس"
+
+#. Navbar tab.
+#. Title of the webpage.
+#: experimental/coursebuilder/views/base_course.html:47
+#: experimental/coursebuilder/views/forum.html:13
+msgid "Forum"
+msgstr "فورم"
+
+#. Navbar tab.
+#: experimental/coursebuilder/views/base_course.html:53
+msgid "Progress"
+msgstr "پیشرفت"
+
+#. Navbar tab.
+#: experimental/coursebuilder/views/base_course.html:58
+msgid "Registration"
+msgstr "رجسٹریشن"
+
+#. Text for title of navigation bar tab to reach list of
+#. courses the current user is enrolled in or whitelisted for.
+#: experimental/coursebuilder/views/base_course.html:86
+msgid "My Courses"
+msgstr "میرے کورسز"
+
+#. Text for title of navigation bar tab to reach list of all
+#. available courses when user is logged out.
+#: experimental/coursebuilder/views/base_course.html:92
+msgid "Explore Courses"
+msgstr "کورسز دریافت کریں"
+
+#. This is shown to the student in a popup after registration.
+#: experimental/coursebuilder/views/course.html:14
+msgid ""
+"Thank you for registering for the course. Click the Announcements tab for"
+" important information."
+msgstr ""
+"کورس کیلئے رجسٹر کرنے پر آپ کا شکریہ۔ اہم معلومات کیلئے اعلانات ٹیب پر "
+"کلک کریں۔"
+
+#. This is shown to the student in a popup if registrations for the course are
+#. not open.
+#: experimental/coursebuilder/views/course.html:19
+msgid "Registrations for this course are not open."
+msgstr "اس کورس کیلئے رجسٹریشنز بند ہیں۔"
+
+#. Title for the course syllabus on the main contents page.
+#: experimental/coursebuilder/views/course.html:45
+msgid "Syllabus"
+msgstr "نصاب"
+
+#. Error text for when a student has submitted a review after the deadline.
+#: experimental/coursebuilder/views/error.html:16
+#, python-format
+msgid ""
+"Your review has not been saved, because it was submitted on %(time_now)s."
+" The deadline for submitting reviews was %(review_due_date)s."
+msgstr ""
+"آپ  کا جائزہ محفوظ نہیں کیا گیا ہے کیونکہ اسے %(time_now)s پر جمع کرایا "
+"گیا۔ جائزے جمع کرانے کی آخری تاریخ %(review_due_date)s تھی۔"
+
+#. Error text for when a student submits an assignment after the deadline.
+#: experimental/coursebuilder/views/error.html:21
+#, python-format
+msgid ""
+"Your assignment has not been saved, because it was submitted on "
+"%(time_now)s. The deadline for submitting assignments was "
+"%(submission_due_date)s."
+msgstr ""
+"آپ کی اسائنمنٹ کو محفوظ نہیں کیا گیا ہے کیونکہ اسے %(time_now)s پر جمع "
+"کرایا گیا۔ اسائنمنٹس جمع کرانے کی آخری تاریخ %(submission_due_date)s تھی۔"
+
+#. Error text for when a student tries to get a new assignment to review before
+#. submitting his/her own assignment.
+#: experimental/coursebuilder/views/error.html:26
+msgid ""
+"You must submit the assignment for this unit before you can request new "
+"assignments to review."
+msgstr ""
+"جائزہ کیلئے نئی اسائنمنٹس کی درخواست کرنے سے پہلے آپ کا اس یونٹ کیلئے "
+"اسائنمنٹ جمع کرانا ضروری ہے۔"
+
+#. Error text for when a student tries to request a new assignment to review
+#. after the review submission deadline.
+#: experimental/coursebuilder/views/error.html:31
+msgid ""
+"The deadline for submitting reviews has already passed, so you cannot "
+"request a new assignment to review."
+msgstr ""
+"جائزے جمع کرانے کی آخری تاریخ پہلے ہی گزر چکی ہے اس لیے آپ جائزہ کیلئے "
+"ایک نئی اسائنمنٹ کی درخواست نہیں کر سکتے۔"
+
+#. Error text for when a student requests a new assignment to review, but needs
+#. to complete more peer reviews first before a new review can be allocated to
+#. him/her.
+#: experimental/coursebuilder/views/error.html:36
+msgid "You must complete all assigned reviews before you can request a new one."
+msgstr ""
+"نئے جائزے کی درخواست کرنے سے پہلے آپ کیلئے سبھی تفویض کردہ جائزوں کو مکمل"
+" کرنا ضروری ہے۔"
+
+#. Error text for when a student has already submitted a review, and tries to
+#. submit it again.
+#: experimental/coursebuilder/views/error.html:41
+msgid "You have already submitted this review. Your latest review was not saved."
+msgstr ""
+"یہ جائزہ آپ نے پہلے ہی جمع کرا دیا ہے۔ آپ کا حالیہ جائزہ محفوظ نہیں کیا "
+"گیا۔"
+
+#. Button at the bottom of a lesson page offering the student the opportunity
+#. to grade his/her answers.
+#: experimental/coursebuilder/views/lesson.html:10
+msgid "Grade Questions"
+msgstr "سوالات کو گریڈ دیں"
+
+#. Alt text for an embedded YouTube video player.
+#: experimental/coursebuilder/views/lesson.html:23
+#: experimental/coursebuilder/views/summary.html:26
+msgid "YouTube Video Player"
+msgstr "YouTube ویڈیو پلیئر"
+
+#. Link to a text version of a lesson video.
+#: experimental/coursebuilder/views/lesson_common.html:10
+msgid "Text Version"
+msgstr "متنی ورژن"
+
+#. Text shown for a lesson that has not been made public.
+#: experimental/coursebuilder/views/lesson_common.html:26
+msgid "This lesson is not available."
+msgstr "یہ سبق دستیاب نہیں ہے۔"
+
+#. Alt text for image showing student progress.
+#: experimental/coursebuilder/views/macros.html:8
+msgid "Not yet submitted"
+msgstr "ابھی تک جمع نہیں کرایا گیا"
+
+#. Alt text for image showing student progress.
+#: experimental/coursebuilder/views/macros.html:17
+msgid "In progress"
+msgstr "جاری ہے"
+
+#. Text appearing just before an input field containing a student's answer.
+#: experimental/coursebuilder/views/readonly_assessment.html:31
+#: experimental/coursebuilder/views/readonly_assessment.html:35
+msgid "Answer:"
+msgstr "جواب:"
+
+#. A question in the registration form.
+#: experimental/coursebuilder/views/register.html:54
+#: experimental/coursebuilder/views/register.html:60
+msgid "What is your name?"
+msgstr "آپ کا نام کیا ہے؟"
+
+#. Button at the end of the registration form for a course.
+#: experimental/coursebuilder/views/register.html:72
+msgid "Enroll"
+msgstr "اندراج کریں"
+
+#. Registration button on the main course page.
+#: experimental/coursebuilder/views/registration_module.html:7
+#: experimental/coursebuilder/views/registration_module.html:15
+msgid "Register"
+msgstr "رجسٹر کریں"
+
+#. Title of the webpage.
+#: experimental/coursebuilder/views/review.html:15
+msgid "Review"
+msgstr "جائزہ لیں"
+
+#. Link to return to the list of peer reviews.
+#: experimental/coursebuilder/views/review.html:54
+msgid "Back to the review dashboard."
+msgstr "جائزہ کے ڈیش بورڈ پر واپس جائیں۔"
+
+#. Text shown to students when they visit a review submission page for which
+#. the due date has passed.
+#: experimental/coursebuilder/views/review.html:62
+#, python-format
+msgid ""
+"The due date for submitting this review has passed. It was due on "
+"%(review_due_date)s."
+msgstr ""
+"اس جائزہ کو جمع کرانے کی آخری تاریخ گزر چکی ہے۔ اس کو %(review_due_date)s"
+" کو جمع کرانا تھا۔"
+
+#. Shown to a student who is asked to complete a peer review of another
+#. student's assignment.
+#: experimental/coursebuilder/views/review.html:67
+msgid "Due date for this review: "
+msgstr "اس جائزہ کیلئے آخری تاریخ: "
+
+#. Instructions to a student who is asked to complete a peer review of another
+#. student's assignment.
+#: experimental/coursebuilder/views/review.html:76
+msgid ""
+"The scores and comments you submit here will be viewed by your peers. "
+"Once you submit your review, you may not edit it."
+msgstr ""
+"آپ یہاں جو اسکورز اور تبصرے جمع کرائیں گے انہیں آپ کے ہمسر دیکھیں گے۔ "
+"اپنا جائزہ جمع کرانے کے بعد آپ اس میں ترمیم نہیں کر سکتے۔"
+
+#. Header text for a reviewed assignment.
+#: experimental/coursebuilder/views/review.html:85
+msgid "Reviewed assignment"
+msgstr "جائزہ لی گئی اسائنمنٹ"
+
+#. Header text for an assignment that a student still needs to review.
+#: experimental/coursebuilder/views/review.html:88
+msgid "Assignment to review"
+msgstr "جائزہ کیلئے اسائنمنٹ"
+
+#. Header text for a review the student has previously submitted.
+#: experimental/coursebuilder/views/review.html:115
+msgid "Submitted review"
+msgstr "جمع کرایا گیا جائزہ"
+
+#. Header text for a review form that a student has to complete when reviewing
+#. another student's assignment.
+#: experimental/coursebuilder/views/review.html:130
+msgid "Review form"
+msgstr "جائزہ فارم"
+
+#. Shown as confirmation to a reviewer that his/her review draft has been
+#. saved.
+#: experimental/coursebuilder/views/review_confirmation.html:15
+msgid "Your review has been saved."
+msgstr "آپ کا جائزہ محفوظ ہوگیا ہے۔"
+
+#. Shown as confirmation to a reviewer that his/her review draft has been
+#. submitted.
+#: experimental/coursebuilder/views/review_confirmation.html:18
+msgid "Your review has been submitted successfully."
+msgstr "آپ کا جائزہ کامیابی کے ساتھ جمع ہوگیا ہے۔"
+
+#. Text for the button shown on the review submission confirmation page that
+#. allows the student to return to the list of reviews.
+#: experimental/coursebuilder/views/review_confirmation.html:25
+msgid "Back to the review dashboard"
+msgstr "جائزہ کے ڈیش بورڈ پر واپس جائیں"
+
+#. Title of the webpage.
+#: experimental/coursebuilder/views/review_dashboard.html:14
+msgid "Review Dashboard"
+msgstr "جائزہ کا ڈیش بورڈ"
+
+#. Header text for a list of assignments that can be reviewed by the student.
+#: experimental/coursebuilder/views/review_dashboard.html:25
+msgid "Assignments for your review"
+msgstr "آپ کے جائزے کیلئے اسائنمنٹس"
+
+#. Text shown to students when they visit their list of reviews to be done, but
+#. the due date has passed.
+#: experimental/coursebuilder/views/review_dashboard.html:31
+msgid "The due date for submitting reviews has passed."
+msgstr "جائزوں کو جمع کرانے کی آخری تاریخ گزر چکی ہے۔"
+
+#. Instructions for a student being asked to do a review.
+#: experimental/coursebuilder/views/review_dashboard.html:40
+#, python-format
+msgid "All reviews are due by %(review_due_date)s."
+msgstr "سبھی جائزوں کی آخری تاریخ %(review_due_date)s ہے۔"
+
+#. Instructions for a student being asked to do a review.
+#: experimental/coursebuilder/views/review_dashboard.html:45
+msgid ""
+"In order to earn credit for this assignment, you must complete at least 1"
+" review by then."
+msgstr ""
+"اس اسائنمنٹ کیلئے کریڈٹ حاصل کرنے کیلئے، تب تک آپ کم از کم 1 جائزہ ضرور "
+"مکمل کریں۔"
+
+#. Instructions for a student being asked to do a review.
+#: experimental/coursebuilder/views/review_dashboard.html:48
+#, python-format
+msgid ""
+"In order to earn credit for this assignment, you must complete at least "
+"%(review_min_count)d reviews by then."
+msgstr ""
+"اس اسائنمنٹ کیلئے کریڈٹ حاصل کرنے کیلئے، تب تک آپ کم از کم "
+"%(review_min_count)d جائزے ضرور مکمل کریں۔"
+
+#. An item in a list of assignments.
+#: experimental/coursebuilder/views/review_dashboard.html:57
+#, python-format
+msgid "Assignment %(index)s"
+msgstr "اسائنمنٹ %(index)s"
+
+#. Text shown after an assignment whose review is still in draft state.
+#: experimental/coursebuilder/views/review_dashboard.html:63
+msgid "Draft"
+msgstr "مسودہ"
+
+#. Button that a student can click to request a new assignment to review.
+#: experimental/coursebuilder/views/review_dashboard.html:80
+msgid "Review a new assignment"
+msgstr "ایک نئی اسائنمنٹ کا جائزہ لیں"
+
+#. Button that a student can click to navigate back to review an assignment in
+#. a class.
+#: experimental/coursebuilder/views/review_dashboard.html:83
+msgid "Back to assignment"
+msgstr "اسائنمنٹ پر واپس جائیں"
+
+#. Text shown after a student has asked for a new assignment to review when
+#. there are no assignments left to review.
+#: experimental/coursebuilder/views/review_dashboard.html:89
+msgid ""
+"Sorry, there are no new submissions available for you to review at this "
+"time."
+msgstr "معذرت، اس وقت آپ کیلئے جائزے کیلئے کوئی نئی اسائنمنٹس دستیاب نہیں ہیں۔"
+
+#. Table header that states when a student enrolled in a course.
+#: experimental/coursebuilder/views/student_data_table.html:9
+msgid "Date enrolled"
+msgstr "اندراج کی تاریخ"
+
+#. Table header for the student's email address. This is a noun.
+#: experimental/coursebuilder/views/student_data_table.html:15
+msgid "Email"
+msgstr "ای میل"
+
+#. Table header for the student's name.
+#: experimental/coursebuilder/views/student_data_table.html:21
+msgid "Name"
+msgstr "نام"
+
+#. Table header for the student's assessment scores.
+#: experimental/coursebuilder/views/student_data_table.html:28
+msgid "Assessment scores"
+msgstr "جائزہ کے اسکورز"
+
+#. Shown in the student profile page, next to an assignment title, as the link
+#. text for a self- or peer-reviewed assignment.
+#: experimental/coursebuilder/views/student_data_table.html:43
+msgid "View assignment"
+msgstr "اسائنمنٹ دیکھیں"
+
+#. Table header for the student's overall score.
+#: experimental/coursebuilder/views/student_data_table.html:56
+msgid "Overall course score"
+msgstr "کورس کا مجموعی اسکور"
+
+#. Title of the student progress page.
+#: experimental/coursebuilder/views/student_profile.html:26
+msgid "Student Progress"
+msgstr "طالب علم کی پیشرفت"
+
+#. Label for the input field that allows the student to change the name on
+#. his/her certificate.
+#: experimental/coursebuilder/views/student_profile.html:39
+#: experimental/coursebuilder/views/student_profile.html:44
+msgid "New Name"
+msgstr "نیا نام"
+
+#. Text for a button that allows the student to save changes to his/her name
+#. for the certificate.
+#: experimental/coursebuilder/views/student_profile.html:52
+msgid "Change Name"
+msgstr "نام تبدیل کریں"
+
+#. Shown on the student profile page.
+#: experimental/coursebuilder/views/student_profile.html:59
+msgid "To leave the course permanently, click on Unenroll"
+msgstr "کورس مستقل طور پر چھوڑنے کیلئے، اندراج ختم کریں پر کلک کریں"
+
+#. Button that allows the student to unenroll from a course.
+#: experimental/coursebuilder/views/student_profile.html:65
+msgid "Unenroll"
+msgstr "اندراج ختم کریں"
+
+#. Shown when the student profile cannot be found in the database.
+#: experimental/coursebuilder/views/student_profile.html:71
+msgid "Student profile not found ..."
+msgstr "طالب علم کا پروفائل نہیں ملا…"
+
+#. Shown after the student has submitted an assessment.
+#: experimental/coursebuilder/views/test_confirmation_content.html:3
+#, python-format
+msgid ""
+"Thank you for taking the %(assessment_name)s. Your score for this "
+"assessment is %(score)s%%. If you wish, you may return to the assessment "
+"and take it again."
+msgstr ""
+"%(assessment_name)s میں شامل ہونے کیلئے آپ کا شکریہ۔ اس جائزہ کیلئے آپ کا"
+" اسکور %(score)s%% ہے۔ اگر آپ چاہیں تو جائزہ پر واپس جا سکتے اور اس میں "
+"دوبارہ شامل ہو سکتے ہیں۔"
+
+#. Shown after the student has submitted an assessment in a unit that contains
+#. assessments and where all unit contents are shown on a single HTML page.
+#. This button allows the student to navigate back to the unit main page.
+#: experimental/coursebuilder/views/test_confirmation_content.html:23
+msgid "Return to Unit"
+msgstr "یونٹ پر واپس جائیں"
+
+#. Title shown on the student profile page
+#: experimental/coursebuilder/views/track_selection.html:13
+msgid "Course Tracks"
+msgstr "کورس کے ٹریکس"
+
+#. Text indicating which units will be shown for the course
+#: experimental/coursebuilder/views/track_selection.html:28
+msgid "Course Components"
+msgstr "کورس کے اجزاء"
+
+#. Text indicating which course tracks the student has selected
+#: experimental/coursebuilder/views/track_selection.html:59
+msgid "My Tracks"
+msgstr "میرے ٹریکس"
+
+#. Text for a button to save selected course tracks for student.
+#: experimental/coursebuilder/views/track_selection.html:82
+msgid "Set Tracks"
+msgstr "ٹریکس کو سیٹ کریں"
+
+#. Text shown after a student has unenrolled from a course. It is followed by a
+#. course name.
+#: experimental/coursebuilder/views/unenroll_confirmation.html:24
+msgid "You have been unenrolled from "
+msgstr "آپ کا اس کورس سے اندراج ختم کردیا گیا ہے "
+
+#. Shown when a student has asked to unenroll from a course.
+#. Followed by a course name.
+#: experimental/coursebuilder/views/unenroll_confirmation_check.html:25
+msgid "Are you sure you want to unenroll from "
+msgstr "کیا آپ واقعی اس کورس سے اندراج ختم کرنا چاہتے ہیں "
+
+#. Response option to              'Are you sure you want to unenroll from
+#. COURSE_NAME'?
+#: experimental/coursebuilder/views/unenroll_confirmation_check.html:42
+msgid "Yes"
+msgstr "ہاں"
+
+#. Response option to              'Are you sure you want to unenroll from
+#. COURSE_NAME'?
+#: experimental/coursebuilder/views/unenroll_confirmation_check.html:47
+msgid "No"
+msgstr "نہیں"
+
+#. Label on a control to show a class syllabus.
+#: experimental/coursebuilder/views/unit.html:48
+msgid "Show Syllabus"
+msgstr "نصاب دکھائیں"
+
+#. Label on a control to hide a class syllabus.
+#: experimental/coursebuilder/views/unit.html:52
+msgid "Hide Syllabus"
+msgstr "نصاب چھپائیں"
+
+#. Navigation breadcrumb.
+#: experimental/coursebuilder/views/unit.html:86
+msgid "Activity"
+msgstr "سرگرمی"
+
+#. Text shown for a unit that contains no assessments, lessons, header or
+#. footer.
+#: experimental/coursebuilder/views/unit.html:112
+msgid "This unit has no content."
+msgstr "اس یونٹ میں کوئی مواد نہیں ہے۔"
+
+#. Text on the navigation button at the end of a lesson page.
+#: experimental/coursebuilder/views/unit.html:138
+msgid "Previous Page"
+msgstr "پچھلا صفحہ"
+
+#. Text on the navigation button at the end of a lesson page.
+#: experimental/coursebuilder/views/unit.html:144
+msgid "Next Page"
+msgstr "اگلا صفحہ"
+
+#. Text on the navigation button at the end of a lesson. It signals that the
+#. student has completed a unit (which is a series of lessons).
+#: experimental/coursebuilder/views/unit.html:147
+msgid "End"
+msgstr "اختتام"
+
+

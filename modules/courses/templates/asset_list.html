@@ -1,0 +1,76 @@
+{% if can_upload %}
+  <div class="gcb-button-toolbar">
+    <a  id="upload-button"
+        class="gcb-button gcb-icon-button"
+        href="{{ upload_url }}">
+      <span class="icon md-file-upload"></span>
+      <span> Upload</span>
+    </a>
+  </div>
+{% endif %}
+
+{% macro asset_row(asset) %}
+  <tr>
+    {% if links %}
+      <td>
+        <a
+          href="{{asset.external_url}}"
+          target="_blank"
+          class="material-icons gcb-list__icon gcb-list__icon--rowhover">
+          open_in_new
+        </a>
+      </td>
+    {% endif %}
+    <td>
+      <a href="{{asset.edit_url}}">
+        {{asset.name}}
+      </a>
+    </td>
+  </tr>
+{% endmacro %}
+
+<div class="gcb-list gcb-list--autostripe">
+  <table>
+    <thead>
+      <tr>
+        {% if links %}
+          <th class="gcb-list__cell--icon"></th>
+        {% endif %}
+        <th>My Items</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for asset in overridden_assets %}
+        {{ asset_row(asset) }}
+      {% endfor %}
+    </tbody>
+  </table>
+  {% if not overridden_assets|length %}
+    <div class="gcb-list__empty-message-wrapper">
+      <div class="gcb-list__empty-message">No items</div>
+    </div>
+  {% endif %}
+</div>
+
+<div class="gcb-list gcb-list--autostripe">
+  <table>
+    <thead>
+      <tr>
+        {% if links %}
+          <th class="gcb-list__cell--icon"></th>
+        {% endif %}
+        <th>Default Items</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for asset in inherited_assets %}
+        {{ asset_row(asset) }}
+      {% endfor %}
+    </tbody>
+  </table>
+  {% if not inherited_assets|length %}
+    <div class="gcb-list__empty-message-wrapper">
+      <div class="gcb-list__empty-message">No items</div>
+    </div>
+  {% endif %}
+</div>

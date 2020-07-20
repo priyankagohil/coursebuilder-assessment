@@ -1,0 +1,157 @@
+{% extends 'base_course.html' %}
+
+{% block gcb_page_info %}
+  if ('gcbSetPageInfo' in window) {
+    gcbSetPageInfo({
+      'page_type': '{{ page_type }}',
+      'unit_id': '{{ unit.unit_id }}',
+      {% if lesson %}
+        'lesson_id': '{{ lesson.lesson_id }}',
+      {% endif %}
+      {% if assessment %}
+        'assessment_id': '{{ assessment.unit_id }}',
+      {% endif %}
+    });
+  }
+{% endblock %}
+
+{% block subtitle %}
+  - {{ display_unit_title(unit) }}
+{% endblock subtitle %}
+
+{% block top_content %}
+{% endblock %}
+
+
+{% if is_read_write_course and is_course_admin %}
+  {% block assets %}
+    {{ super() }}
+    <script src="/modules/dashboard/resources/js/in_place_lesson_editor.js"></script>
+    <link rel="stylesheet" href="/modules/dashboard/_static/css/in_place_lesson_editor.css">
+    <link rel="stylesheet" href="/static/material-design-icons/css/material-design-iconic-font.min.css">
+  {% endblock %}
+{% endif %}
+
+{% block main_content %}
+
+<script>
+  var questionData = {};
+  questionData.scored = true;
+</script>
+
+
+<div id="gcb-main">
+  <div id="gcb-left-nav-toggle">
+    <a href="" class="gcb-button">
+      <span class='show'>
+        {# I18N: Label on a control to show a class syllabus. #}
+        {{ gettext('Show Syllabus') }}
+      </span>
+      <span class='hide'>
+        {# I18N: Label on a control to hide a class syllabus. #}
+        {{ gettext('Hide Syllabus') }}
+      </span>
+    </a>
+  </div>
+  <script>
+    $('#gcb-left-nav-toggle a').click(function(){
+        if ($(this).hasClass('show')) {
+            $(this).removeClass('show');
+            $('#gcb-nav-y').hide();
+            $('.gcb-unit-header').show('fast');
+            $('#gcb-nav-y + .gcb-article').show('fast');
+        } else {
+            $(this).addClass('show');
+            $('#gcb-nav-y').show('fast');
+            $('.gcb-unit-header').hide();
+            $('#gcb-nav-y + .gcb-article').hide();
+        }
+        return false;
+    });
+  </script>
+
+  <ul id="gcb-breadcrumb" class="gcb-breadcrumb">
+    {# I18N: Navigation breadcrumb. #}
+    <li><a href="course">{{ gettext('Course') }}</a></li>
+    <li><a href="unit?unit={{ unit.unit_id }}">
+      {{ display_short_unit_title(unit) }}</a></li>
+    {% if lesson %}
+      <li>
+        {% if activity %}
+        <a href="unit?unit={{ unit.unit_id }}&lesson={{ lesson.lesson_id }}">
+        {% endif %}
+          {# I18N: Navigation breadcrumb. #}
+          {{ gettext('Lesson') }} {{ lesson.index }}{% if activity %}</a>{% endif %}</li>
+      {% if activity %}
+        <li>{# I18N: Navigation breadcrumb. #} {{ gettext('Activity') }}</li>
+      {% endif %}
+    {% endif %}
+  </ul>
+
+  <div id="gcb-unit-header">
+    <h1 class="gcb-unit-header">
+      {{ display_unit_title(unit) }}
+      {% if is_read_write_course and is_course_admin %}
+        <a id="gcb-edit-unit-button" href="dashboard?action=edit_unit&key={{ unit.unit_id }}"
+           class="icon md-mode-edit gcb-edit-resource-button">
+        </a>
+      {% endif %}
+    </h1>
+  </div>
+
+  {% if course_outline %}
+    {% include 'lesson_navbar.html' %}
+  {% endif %}
+
+  <div id="gcb-main-article" class="gcb-article tab-content" role="main">
+    {{html_hooks.insert('unit.after_content_begins') | safe}}
+
+    {% if not display_content %}
+      <div class="gcb-aside gcb-button-box">
+        {# I18N: Text shown for a unit that contains no assessments, lessons, header or footer. #}
+        {{ gettext('This unit has no content.') }}
+      </div>
+    {% else %}
+
+      {% for item in display_content %}
+        <div class="gcb-aside gcb-button-box">
+          {{ item }}
+        </div><!-- /gcb-aside -->
+      {% endfor %}
+      {% for item in extra_content %}
+        <div class="gcb-aside gcb-button-box">
+          {{ item }}
+        </div><!-- /gcb-aside -->
+      {% endfor %}
+
+      <div id="gcb-nav-button-box" class="gcb-button-box">
+        {% if unit.show_contents_on_one_page or
+              (lesson and
+               course_info.unit.hide_lesson_navigation_buttons) or
+              (assessment and
+               not is_confirmation and
+               course_info.unit.hide_assessment_navigation_buttons) %}
+        {% else %}
+        <div class="gcb-prev-button">
+          {% if back_button_url %}
+            {# I18N: Text on the navigation button at the end of a lesson page. #}
+            <a href="{{ back_button_url }}"> {{ gettext('Previous Page') }} </a>
+          {% endif %}
+        </div>
+        <div class="gcb-next-button">
+          {% if next_button_url %}
+            {# I18N: Text on the navigation button at the end of a lesson page. #}
+            <a href="{{ next_button_url }}"> {{ gettext('Next Page') }} </a>
+          {% else %}
+            {# I18N: Text on the navigation button at the end of a lesson. It signals that the student has completed a unit (which is a series of lessons). #}
+            <a href="course"> {{ gettext('End') }} </a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {{html_hooks.insert('unit.before_content_ends') | safe}}
+  </div>
+</div>
+
+{% endblock %}

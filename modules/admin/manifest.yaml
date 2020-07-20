@@ -1,0 +1,39 @@
+registration:
+  main_module: modules.admin.admin
+
+tests:
+  functional:
+    - modules.admin.admin_tests.AdminCourseListTests = 1
+    - modules.admin.admin_tests.AdminDashboardTabTests = 9
+    - modules.admin.admin_unit_tests.GlobalAdminHandlerTests = 2
+    - modules.admin.enrollments_tests.EnrollmentsTests = 5
+    - modules.admin.enrollments_tests.EventHandlersTests = 1
+    - modules.admin.enrollments_tests.MapReduceTests = 2
+    - modules.admin.enrollments_tests.GraphTests = 5
+  integration:
+    - modules.admin.admin_integration_tests.CourseAdministrationTests = 1
+    - modules.admin.admin_integration_tests.CourseMultiEditSimpleTests = 2
+    - modules.admin.admin_integration_tests.CourseMultiEditTests = 12
+    - modules.admin.admin_integration_tests.CoursesEnrollmentsTests = 2
+    - modules.admin.admin_integration_tests.CoursesListSortingTests = 2
+  unit:
+    - modules.admin.admin_unit_tests.GlobalAdminHandlerTests = 2
+
+files:
+  - modules/admin/__init__.py
+  - modules/admin/_static/css/admin.css
+  - modules/admin/_static/css/courses.css
+  - modules/admin/_static/js/courses.js
+  - modules/admin/_static/js/enrollments.js
+  - modules/admin/admin.py
+  - modules/admin/admin_integration_tests.py
+  - modules/admin/admin_pageobjects.py
+  - modules/admin/admin_tests.py
+  - modules/admin/admin_unit_tests.py
+  - modules/admin/config.py
+  - modules/admin/enrollments.py
+  - modules/admin/enrollments_tests.py
+  - modules/admin/manifest.yaml
+  - modules/admin/templates/enrollments.html
+  - modules/admin/templates/courses.html
+  - modules/admin/templates/welcome.html

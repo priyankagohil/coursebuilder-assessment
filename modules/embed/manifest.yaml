@@ -1,0 +1,43 @@
+registration:
+  main_module: modules.embed.embed
+
+tests:
+  functional:
+    - modules.embed.embed_tests.DemoHandlerTest = 2
+    - modules.embed.embed_tests.EmbedSnippetTest = 3
+    - modules.embed.embed_tests.EnsureSessionTests = 1
+    - modules.embed.embed_tests.ExampleEmbedAndHandlerV1ChildCoursesTest = 5
+    - modules.embed.embed_tests.ExampleEmbedAndHandlerV1SingleCourseTest = 3
+    - modules.embed.embed_tests.FinishAuthHandlerTest = 1
+    - modules.embed.embed_tests.GlobalErrorsDemoHandlerTest = 2
+    - modules.embed.embed_tests.JsHandlersTest = 3
+    - modules.embed.embed_tests.LocalErrorsDemoHandlerTest = 2
+    - modules.embed.embed_tests.RegistryTest = 5
+    - modules.embed.embed_tests.StaticResourcesTest = 1
+    - modules.embed.embed_tests.UrlParserTest = 12
+  integration:
+    - modules.embed.embed_integration_tests.EmbedModuleTest = 4
+    - modules.embed.embed_integration_tests.EnsureSessionTest = 2
+
+files:
+  - modules/embed/__init__.py
+  - modules/embed/embed.py
+  - modules/embed/embed_integration_tests.py
+  - modules/embed/embed_pageobjects.py
+  - modules/embed/embed_tests.py
+  - modules/embed/ext/ensure-session-example.html
+  - modules/embed/ext/ensure-session.js
+  - modules/embed/manifest.yaml
+  - modules/embed/static/v1/embed.css
+  - modules/embed/static/v1/embed_child.css
+  - modules/embed/templates/v1/demo.html
+  - modules/embed/templates/v1/demo_child.html
+  - modules/embed/templates/v1/embed.js
+  - modules/embed/templates/v1/embed_child.js
+  - modules/embed/templates/v1/embed_lib.js
+  - modules/embed/templates/v1/enroll_error.html
+  - modules/embed/templates/v1/ensure_session_data.html
+  - modules/embed/templates/v1/example.html
+  - modules/embed/templates/v1/finish_auth.html
+  - modules/embed/templates/v1/global_errors.html
+  - modules/embed/templates/v1/local_errors.html

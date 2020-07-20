@@ -1,0 +1,221 @@
+<link rel="import" href="/static/polymer-1.2.0/polymer/polymer.html">
+<link rel="import" href="/static/polymer-1.2.0/iron-ajax/iron-ajax.html" />
+<link rel="import" href="/static/polymer-1.2.0/paper-spinner/paper-spinner.html" />
+<link rel="import" href="/modules/explorer/_static/components/utility/unsafe-html.html">
+<link rel="import" href="/modules/explorer/_static/components/utility/floating-sidebar.html">
+<link rel="import" href="/modules/explorer/_static/components/course-cards/course-card-grouper.html">
+<link rel="import" href="/modules/explorer/_static/components/filter-sidebar/filter-sidebar.html">
+<link rel="import" href="/modules/explorer/_static/components/top-bar/top-bar.html">
+
+<dom-module id="course-explorer">
+  <template>
+    <style>
+      #top-content {
+        background: white;
+        border-bottom: 1px solid rgb(229, 229, 229);
+      }
+
+      #content {
+        flex: 1;
+        padding-left: 48px;
+        padding-top: 32px;
+        position: relative;
+      }
+
+      #main {
+        display: flex;
+      }
+
+      paper-spinner {
+        position: absolute;
+        left: 32px;
+        top: 32px;
+      }
+    </style>
+
+    <iron-ajax
+      auto url="/modules/gql/query"
+      params="[[_getCoursesQuery()]]"
+      handle-as="json"
+      json-prefix=")]}'"
+      on-response="_onCoursesResponse"
+    ></iron-ajax>
+
+    <iron-ajax
+      auto url="/modules/gql/query"
+      params="[[_getBasicQuery()]]"
+      handle-as="json"
+      json-prefix=")]}'"
+      on-response="_onBasicResponse"
+    ></iron-ajax>
+
+    <div id="top-content">
+      <top-bar
+        site="[[site]]"
+        current-user="[[currentUser]]"
+      ></top-bar>
+
+      <unsafe-html
+        html="[[site.courseExplorer.extraContent]]"
+      ></unsafe-html>
+    </div>
+
+    <div id="main">
+      <floating-sidebar>
+        <filter-sidebar
+          filter-options="{{filterOptions}}"
+          categories="[[categories]]"
+        ></filter-sidebar>
+      </floating-sidebar>
+
+      <div id="content">
+        <paper-spinner active="{{!coursesLoaded}}"></paper-spinner>
+        <course-card-grouper
+          id="grouper"
+          courses="[[_filter(courses.edges, filterOptions.*)]]"
+        ></course-card-grouper>
+      </div>
+    </div>
+
+  </template>
+  <script>
+
+    var _textMatch = function(needle, haystack) {
+      return haystack.toUpperCase().indexOf(needle.toUpperCase()) != -1;
+    }
+
+    Polymer({
+      is: 'course-explorer',
+      properties: {
+        filterOptions: {
+          type: Object,
+          value: {
+            filter: '',
+            category: 'all',
+          },
+          notify: true,
+        },
+        courses: {
+          type: Array,
+        },
+        currentUser: {
+          type: Object,
+        },
+        site: {
+          type: Object,
+        },
+        categories: {
+          type: Array,
+          value: [],
+        },
+        coursesLoaded: {
+          type: Boolean,
+          value: false,
+        }
+      },
+
+      _getBasicQuery: function() {
+        return {q:
+            '{site {title, logo {url, altText},' +
+            '  courseExplorer {extraContent}}, ' +
+            'currentUser {' +
+            '  email, loggedIn, canViewDashboard, loginUrl (destUrl: "/"),' +
+            '  logoutUrl (destUrl: "/")}}'
+        }
+      },
+
+      _onBasicResponse: function(event) {
+        this.set('site', event.detail.response.data.site);
+        this.set('currentUser', event.detail.response.data.currentUser);
+      },
+
+      _getCoursesQuery: function() {
+        return {
+          q: '{allCourses {edges {node {' +
+             '  id, title, url, abstract, instructorDetails,' +
+             '  enrollment {enrolled}, openForRegistration, showInExplorer,' +
+             '  startDate, endDate, estimatedWorkload, category {name} }}}}',
+          expanded_gcb_tags: 'gcb-markdown'
+        };
+      },
+
+      _onCoursesResponse: function(event) {
+        this.set('courses', event.detail.response.data.allCourses);
+        this.set(
+          'filterOptions.status', this._enrolledInAny() ? 'enrolled' : 'all');
+        this.set('categories', this._getCategories().sort());
+        this.set('coursesLoaded', true);
+      },
+
+      _enrolledInAny: function() {
+        return this.courses.edges.some(function(course) {
+          return course.node.enrollment.enrolled;
+        })
+      },
+
+      _getCategories: function() {
+        var categories = []
+        this.courses.edges.forEach(function(edge) {
+          if (
+              edge.node.category &&
+              edge.node.category.name &&
+              categories.indexOf(edge.node.category.name) == -1 ) {
+            categories.push(edge.node.category.name);
+          }
+        })
+        return categories;
+      },
+
+      _filter: function(courses, filterOptionsPath) {
+        var filterOptions = filterOptionsPath.base;
+        var that = this;
+        return courses.filter(function(course) {
+          if (!course.node.showInExplorer) {
+            return false;
+          }
+
+          // Filter by status
+
+          // A course is "completed" from the point of view of the offering
+          // institution if it is visible but registration is no longer allowed
+          // (it it's now "over").
+          if (
+              filterOptions.status == 'enrolled' &&
+              !course.node.enrollment.enrolled) {
+            return false;
+          } else if (
+              filterOptions.status == 'ended' &&
+              course.node.openForRegistration) {
+            return false;
+          }
+
+          // Filter by category
+          if (
+              filterOptions.category != 'all' && (
+              !course.node.category ||
+              !course.node.category.name ||
+              course.node.category.name != filterOptions.category)) {
+            return false;
+          }
+
+          // Filter by text
+          if (filterOptions.filter) {
+            var text_fields = [
+              course.node.title,
+              course.node.abstract,
+              course.node.instructorDetails,
+            ]
+            function match(field) {
+              return field && _textMatch(filterOptions.filter, field);
+            }
+            if (!text_fields.some(match)) {
+              return false;
+            }
+          }
+
+          return true;
+        })
+      },
+    })
+  </script>
+</dom-module>

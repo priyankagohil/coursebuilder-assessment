@@ -1,0 +1,135 @@
+/*
+ *
+ * Copyright 2012 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ *
+ * Stylesheet for search bars and results
+ *
+ * @author: emichael@google.com (Ellis Michael)
+ */
+
+/* Search bar styles */
+.gcb-search-form {
+  margin-top: -5px;
+}
+
+.gcb-search-box {
+  padding-left: 5px;
+  width: 175px;
+}
+
+/* Search page styles */
+.gcb-search-info {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.gcb-search-time {
+  font-size: 13px;
+}
+
+.gcb-search-result {
+  padding-top: 20px;
+}
+
+.gcb-search-result-content-link {
+  font-size: 16px;
+  text-decoration: underline;
+  display: block;
+}
+
+.gcb-search-result-title {
+  font-size: 14px;
+}
+
+.gcb-search-url,
+.gcb-search-url:visited {
+  color: #0A0;
+}
+
+.gcb-search-youtube-info {
+  width: 350px;
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.gcb-search-result.youtube iframe.shown {
+  display: inline-block;
+  width: 560px;
+  height: 315px;
+}
+
+.gcb-search-result.youtube img.shown {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.gcb-search-result.youtube img.icon {
+    width: 48px;
+    height: 48px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 3px ridge rgb(204, 204, 204);
+    cursor: pointer;
+}
+
+.gcb-search-navigation-bar {
+  position: relative;
+  margin-top: 30px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.gcb-search-navigation-bar a,
+.gcb-search-navigation-bar div {
+  display: inline-block;
+}
+
+.gcb-search-navigation-bar a:visited {
+  color: rgb(17, 85, 204);
+}
+
+.gcb-search-previous {
+  position: absolute;
+  left: 0;
+}
+
+.gcb-search-next {
+  position: absolute;
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Search admin page */
+.gcb-index-status {
+  margin-top: 10px;
+  margin-bottom:10px;
+  padding: 10px;
+}
+
+.gcb-index-status div {
+  margin-bottom: 10px;
+}
+
+.gcb-bold-row {
+  font-weight: bold;
+}

@@ -1,0 +1,147 @@
+{% extends 'base_course.html' %}
+
+{% block gcb_page_info %}
+  if ('gcbSetPageInfo' in window) {
+    gcbSetPageInfo({
+      'page_type': 'review',
+      'unit_id': '{{ unit_id }}',
+      'review_step': '{{ review_step_key }}',
+    });
+  }
+{% endblock %}
+
+{% block subtitle %}
+  {# I18N: Title of the webpage. #}
+  - {{ gettext('Review') }}
+{% endblock subtitle %}
+
+{% block top_content %}
+{% endblock %}
+
+{% block assets %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/material-design-icons/css/material-design-iconic-font.min.css">
+{% endblock %}
+
+
+{% block main_content %}
+
+{% if model_version == '1.5' %}
+  {% import 'assessment_html_content.html' as html_assessment %}
+{% endif %}
+
+<div id="gcb-main">
+  <div class="gcb-article">
+    {% if assessment_script_src %}
+      <script src="{{ assessment_script_src }}"></script>
+    {% endif %}
+
+    <script>
+      assessmentXsrfToken = '{{ assessment_xsrf_token }}';
+
+      var assessmentGlobals = {};
+      assessmentGlobals.isReviewForm = true;
+      assessmentGlobals.unitId = '{{ unit_id }}';
+      assessmentGlobals.key = '{{ key }}';
+      {% if saved_answers %}
+        assessmentGlobals.savedAnswers = JSON.parse("{{saved_answers | js_string}}");
+      {% endif %}
+    </script>
+
+    <p>
+      <a href="reviewdashboard?unit={{ unit_id }}">
+        {# I18N: Link to return to the list of peer reviews. #}
+        {{ gettext('Back to the review dashboard.') }}
+      </a>
+    </p>
+
+    <p>
+      {% if due_date_exceeded %}
+        <strong>
+          {# I18N: Text shown to students when they visit a review submission page for which the due date has passed. #}
+          {{ gettext('The due date for submitting this review has passed. It was due on %(review_due_date)s.', review_due_date=review_due_date) }}
+        </strong>
+      {% else %}
+        <strong>
+          {# I18N: Shown to a student who is asked to complete a peer review of another student's assignment. #}
+          {{ gettext('Due date for this review: ') }}
+        </strong>
+        {{ review_due_date }}.
+      {% endif %}
+    </p>
+
+    <p>
+      <em>
+        {# I18N: Instructions to a student who is asked to complete a peer review of another student's assignment. #}
+        {{ gettext('The scores and comments you submit here will be viewed by your peers. Once you submit your review, you may not edit it.') }}
+      </em>
+    </p>
+
+    <hr>
+
+    <h3>
+      {% if readonly_review_form is defined %}
+        {# I18N: Header text for a reviewed assignment. #}
+        {{ gettext('Reviewed assignment') }}
+      {% else %}
+        {# I18N: Header text for an assignment that a student still needs to review. #}
+        {{ gettext('Assignment to review') }}
+      {% endif %}
+
+      {% if is_read_write_course and is_course_admin %}
+        <a href="dashboard?action=edit_assessment&key={{ unit_id }}"
+          class="icon md-mode-edit gcb-edit-resource-button">
+        </a>
+      {% endif %}
+    </h3>
+
+    {% import 'readonly_assessment.html' as readonly_assessment %}
+
+    <div class="gcb-border-box">
+        {% if model_version == '1.4' %}
+          {{ readonly_assessment.display(readonly_student_assessment) }}
+        {% elif model_version == '1.5' %}
+          {{
+            html_assessment.render(
+                unit_id, assessment_xsrf_token, html_reviewee_answers,
+                html_review_content, readonly=True,
+                transient_student=transient_student)
+          }}
+        {% endif %}
+    </div>
+
+    {% if readonly_review_form is defined %}
+      {# I18N: Header text for a review the student has previously submitted. #}
+      <h3>{{ gettext('Submitted review') }}</h3>
+      <div class="gcb-border-box">
+        {% if model_version == '1.4' %}
+          {{ readonly_assessment.display(readonly_review_form) }}
+        {% elif model_version == '1.5' %}
+          {{
+            html_assessment.render(
+                unit_id, assessment_xsrf_token, html_review_answers,
+                html_review_form, readonly=True,
+                transient_student=transient_student)
+          }}
+        {% endif %}
+      </div>
+    {% else %}
+      {# I18N: Header text for a review form that a student has to complete when reviewing another student's assignment. #}
+      <h3>{{ gettext('Review form') }}</h3>
+    {% endif %}
+
+    <div style="width: 970px;" id="assessmentContents"></div>
+
+    {% if model_version == '1.5' and not readonly_review_form %}
+      {{
+        html_assessment.render(
+            unit_id, assessment_xsrf_token, html_review_answers,
+            html_review_form, is_review_form=True, review_key=key,
+            transient_student=transient_student)
+      }}
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

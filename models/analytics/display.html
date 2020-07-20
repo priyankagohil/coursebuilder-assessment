@@ -1,0 +1,207 @@
+{% if not has_google_cloud_services_default_bucket %}
+  <style>
+  .gcb-butterbar-dashboard.butterbar-alike {
+    position: relative;
+    top: -18px;
+    text-align: center;
+  }
+  .gcb-butterbar-dashboard.butterbar-alike .gcb-butterbar {
+    opacity: 1;
+    left: inherit;
+  }
+
+  </style>
+  <div class="gcb-butterbar-dashboard butterbar-alike">
+    <div class="gcb-butterbar">
+      <p>
+        Analytics requires the use of the Google Cloud Storage default bucket.
+        Please
+        <a href="https://cloud.google.com/appengine/docs/python/googlecloudstorageclient/activate">
+        use these instructions
+        </a>
+        to enable Google Cloud Storage and create the default bucket.
+      </p>
+    </div>
+  </div>
+{% endif %}
+<style>
+  .not-displayed {
+    display: none;
+  }
+  .gcb-rest-source-options {
+    flex-direction: row;
+  }
+  .gcb-rest-source-options > * {
+    display: inline-flex;
+  }
+  .gcb-rest-source-filters {
+    vertical-align: middle;
+    padding-left: 1em;
+  }
+  .gcb-rest-source-filter-options {
+    display: inline-block;
+    flex-direction: column;
+  }
+  .gcb-rest-source-filter-options .option-title {
+    font-weight: bold;
+  }
+</style>
+
+<div class="section">
+  {% if any_generators %}
+    <div id="analytics-update-all"
+         class="gcb-button-toolbar {% if any_generator_running %}not-displayed{% endif %}">
+      <form id="gcb-generate-analytics-data"
+            action="analytics?action=run_visualizations"
+            method="POST">
+        <input type="hidden" name="r" value="{{ r }}">
+        <input type="hidden" name="xsrf_token" value="{{ xsrf_token_run }}">
+        {% for visualization in visualizations %}
+          <input type="hidden" name="visualization" value="{{ visualization }}">
+        {% endfor %}
+        <button class="gcb-button gcb-icon-button"
+                type="submit">
+          <span class="icon md-refresh"></span>
+          <span>Update All</span>
+        </button>
+      </form>
+    </div>
+    <div id="analytics-cancel-all"
+         class="gcb-button-toolbar {% if not any_generator_running %}not-displayed{% endif %}">
+      <form id="gcb-cancel-analytics-data"
+            action="analytics?action=cancel_visualizations"
+            method="POST">
+        <input type="hidden" name="r" value="{{ r }}">
+        <input type="hidden" name="xsrf_token" value="{{ xsrf_token_cancel }}">
+        {% for visualization in visualizations %}
+          <input type="hidden" name="visualization" value="{{ visualization }}">
+        {% endfor %}
+        <button class="gcb-button gcb-icon-button"
+                type="submit">
+          <span class="icon spinner md md-settings md-spin"></span>
+          <span>Cancel All</span>
+        </button>
+      </form>
+    </div>
+  {% endif %}
+
+{% if rest_sources %}
+  <div id="gcb_rest_source_errors">
+  </div>
+  {% if has_pagination %}
+    <h3>Data Navigation</h3>
+    <p>The statistics on this page use data sources that are too big
+      to show all at once.  Use the page navigation buttons below to
+      select which parts of the data to view.  These controls affect all
+      statistics on this page.</p>
+  {% endif %}
+  {% for rest_source in rest_sources|sort(attribute='title') %}
+    <div class="gcb-rest-source-options">
+    {% if rest_source.chunk_size > 0 %}
+      <span>{{ rest_source.title }}</span>
+      <button
+         class="gcb-button"
+         id="gcb_rest_source_page_request_zero_{{ rest_source.name }}"
+         onclick="gcbRestSourcePageRequest('{{ rest_source.name }}', 0);">
+        |&lt;&lt;
+      </button>
+      <button
+         class="gcb-button"
+         id="gcb_rest_source_page_request_minusten_{{ rest_source.name }}"
+         onclick="gcbRestSourcePageChange('{{ rest_source.name }}', -10);">
+        &lt;&lt;
+      </button>
+      <button
+         class="gcb-button"
+         id="gcb_rest_source_page_request_minusone_{{ rest_source.name }}"
+         onclick="gcbRestSourcePageChange('{{ rest_source.name }}', -1);">
+        &lt;
+      </button>
+      <span>Page:</span>
+      <span id="gcb_rest_source_page_number_{{ rest_source.name }}">
+        0
+      </span>
+      <button
+         class="gcb-button"
+         id="gcb_rest_source_page_request_plusone_{{ rest_source.name }}"
+         onclick="gcbRestSourcePageChange('{{ rest_source.name }}', 1);">
+        &gt;
+      </button>
+      <button
+         class="gcb-button"
+         id="gcb_rest_source_page_request_plusten_{{ rest_source.name }}"
+         onclick="gcbRestSourcePageChange('{{ rest_source.name }}', 10);">
+        &gt;&gt;
+      </button>
+      <span>Items per page:</span>
+      <!-- Use a form to permit <enter> to submit changed value for
+           number of items per page of data. -->
+      <form
+         action="#"
+         onsubmit="gcbRestSourcePageChange('{{ rest_source.name }}', 0);
+                   return false;">
+        <input type="text"
+               size="6"
+               id="gcb_rest_source_chunk_size_{{ rest_source.name }}"
+               value="{{ rest_source.chunk_size }}"
+               >
+      </form>
+    {% else %}
+      <!-- Data sources that are guaranteed to only have one page
+           get bogus items for the page number display and page
+           size control to simplify code in rest_visualizations.html -->
+      <input type="hidden"
+             id="gcb_rest_source_chunk_size_{{ rest_source.name }}"
+             value="0">
+      <span id="gcb_rest_source_page_number_{{ rest_source.name }}"
+            style="display:none;"></span>
+    {% endif %}
+    {% if rest_source.filters %}
+      <span class="gcb-rest-source-filters"
+            id="gcb_rest_source_filters_{{ rest_source.name }}">
+        {% for filter in rest_source.filters %}
+          {% if filter.get_kind() == 'enum' %}
+            {% set choices = filter.get_choices() %}
+            {% if choices %}
+              <div class="gcb-rest-source-filter-options">
+                <div class="option-title">
+                  {{ filter.get_title() }}
+                </div>
+                <div>
+                <form action="#">
+                  <select
+                     class="gcb-rest-source-filter"
+                     onchange="gcbRestSourcePageChange(
+                               '{{rest_source.name}}', 0);">
+                    <option label="-- Not Filtered --"
+                            value="{{ filter.get_name() }}="
+                            selected="true">
+                    {% for choice in choices %}
+                      <option label="{{ choice.label }}"
+                              value="{{ choice.value }}">
+                    {% endfor %}
+                  </select>
+                </form>
+                </div>
+              </div>
+            {% endif %}
+          {% elif filter.get_kind() == 'range' %}
+            Range-based filters not yet supported.
+            <!-- TODO(mgainer): support range-based filtering. -->
+          {% endif %}
+        {% endfor %}
+      </span>
+    {% endif %}
+    </div>
+    <div id="gcb_log_rest_source_{{ rest_source.name }}"></div>
+  {% endfor %}
+{% endif %}
+</div>
+
+{% for section in sections %}
+  {{ section }}
+{% endfor %}
+
+<script>
+{% include 'models/analytics/analytics.js' %}
+</script>

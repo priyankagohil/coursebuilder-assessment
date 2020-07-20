@@ -1,0 +1,76 @@
+/*
+  Copyright 2013 Google Inc. All Rights Reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*/
+
+/*
+  Stylesheet for embedded questions.
+
+  @author: sll@google.com (Sean Lip)
+*/
+
+.qt-question-item {
+  margin: 20px 0;
+}
+.qt-question, .qt-choices, .qt-feedback, .form-field {
+  margin: 10px 0;
+}
+.qt-feedback {
+  width: 600px;
+  font-style: italic;
+  color: #666;
+}
+.qt-hidden {
+  display: none !important;
+}
+div.qt-warning {
+  border: solid 1px #000;
+  padding: 4px;
+  background-color: #ffffb7;
+  color: #f00;
+}
+.qt-hint, .qt-check-answer {
+  display: inline-block;
+  margin: 10px 0;
+}
+.qt-points {
+  float: right;
+}
+
+.qt-grade-scored-lesson, .qt-grade-report, .qt-grade-assessment {
+  margin-bottom: 10px;
+}
+
+.feedback-header {
+  margin: 5px 0 0 0;
+  font-size: 100%;
+  font-style: normal;
+}
+.feedback-header .correct {
+  color: green;
+}
+.feedback-header .partially-correct {
+  color: #9D9724;
+}
+.feedback-header .incorrect {
+  color: red;
+}
+.feedback-header .correct-answer-heading {
+  font-weight: normal;
+}
+
+ul.correct-choices {
+  margin: 0;
+  list-style-type: none;
+}

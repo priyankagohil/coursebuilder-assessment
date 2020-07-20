@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/static/dependo-0.1.4/cb/dependency_graph.css">
+<link rel="stylesheet" href="/modules/skill_map/_static/css/skill_map.css">
+
+<a class="legend" href="modules/skill_map/rdf/v1/data">view as RDF</a>
+
+<div class="gcb-button-toolbar gcb-toggle-button-bar">
+  <button class="material-icons gcb-toggle-button clickable tabular-view" title="Show Skills table">
+    view_list
+  </button>
+  <button class="material-icons gcb-toggle-button selected" disabled>insert_chart</button>
+  <button class="material-icons gcb-toggle-button clickable reset-layout" title="Reset Graph Layout">
+    restore
+  </button>
+</div>
+
+<div class="control-zoom">
+  <a class="control-zoom-in" href="#" title="Zoom in"></a>
+  <a class="control-zoom-out" href="#" title="Zoom out"></a>
+</div>
+
+<div class="graph" data-nodes="{{ nodes }}" data-links="{{ links }}">
+</div>
+
+<script src="/static/d3-3.4.3/d3.min.js" charset="utf-8"></script>
+<script src="/static/underscore-1.4.3/underscore.min.js"></script>
+<script src="/static/dependo-0.1.4/cb/dependency_graph.js"></script>
+<script>
+  var getGraphData = function () {
+    return {
+      'directed': true,
+      'multigraph': false,
+      'graph': [],
+      'nodes': $.extend(true, [], $('div.graph').data('nodes')),
+      'links': $.extend(true, [], $('div.graph').data('links'))
+    };
+  };
+
+  $(function() {
+    $('.tabular-view').on('click', function () {
+      window.location.href = 'modules/skill_map?action=edit_skills_table'
+    });
+
+    setupGraph();
+
+    $('.reset-layout').on('click', function () {
+      $('.graph').empty();
+      setupGraph();
+    });
+  });
+</script>
+

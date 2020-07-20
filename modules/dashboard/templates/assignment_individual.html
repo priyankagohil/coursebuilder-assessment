@@ -1,0 +1,74 @@
+<h3>Assignment (with feedback) for {{reviewee_id}}</h3>
+
+{% if model_version == '1.4' %}
+  {% import 'readonly_assessment.html' as readonly_assessment %}
+{% elif model_version == '1.5' %}
+  <script src="/static/jquery/jquery.min.js"></script>
+  {% import 'readonly_html_assessment.html' as readonly_assessment %}
+{% endif %}
+
+<h4>Student's Assignment</h4>
+<div class="border-box"
+    data-question-batch-id="dashboard-assignment-review" data-scored="False">
+  {{ readonly_assessment.display(readonly_student_assessment) }}
+</div>
+
+
+<h4>Feedback Received</h4>
+
+<div>
+  <form id="add-reviewer" action="{{ add_reviewer_action }}" method="POST">
+    <input type="hidden" name="xsrf_token" value="{{ add_reviewer_xsrf_token|escape }}">
+    <input type="hidden" name="unit_id" value="{{ unit_id }}">
+    <input type="hidden" name="reviewee_id" value="{{ reviewee_id }}">
+
+    Add new reviewer: <input type="text" name="reviewer_id" placeholder="reviewer@example.com">
+    <button class="gcb-button gcb-button-action" type="submit">
+      Add New Reviewer
+    </button>
+  </form>
+
+  {% if not review_steps %}
+    (<em>No reviews received yet.</em>)
+  {% endif %}
+
+  <ul>
+    {% for review_step in review_steps %}
+      <li>
+        Review {{ loop.index }} from {{reviewers[loop.index0]}}
+        {% if review_step.removed %}
+          (<em>Removed</em>)
+        {% elif review_step.state == REVIEW_STATE_COMPLETED %}
+          (<em>Submitted</em>)
+        {% else %}
+          (<em>Draft</em>)
+        {% endif %}
+
+        {% if not review_step.removed %}
+          <form id='delete-reviewer-{{loop.index0}}' action='{{ delete_reviewer_action }}' method='POST'>
+            <input type="hidden" name="xsrf_token" value="{{ delete_reviewer_xsrf_token|escape }}">
+            <input type="hidden" name="unit_id" value="{{ unit_id }}">
+            <input type="hidden" name="reviewee_id" value="{{ reviewee_id }}">
+            <input type="hidden" name="key" value="{{ review_step.key }}">
+
+            <button class="gcb-button gcb-button-action right-button" type="submit"
+              onclick='return confirm("Remove this review?");'>
+              Remove This Review
+            </button>
+          </form>
+        {% endif %}
+
+        {% if review_step.state == REVIEW_STATE_COMPLETED %}
+          <br><br>
+          <div class="border-box {% if review_step.removed %}translucent{% endif %}"
+              data-question-batch-id="dashboard-review-report-{{ loop.index0 }}"
+              data-scored="False">
+            {{ readonly_assessment.display(reviews_params[loop.index0]) }}
+          </div>
+        {% endif %}
+
+        <br><br>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

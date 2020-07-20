@@ -1,0 +1,49 @@
+{% extends 'templates/base_assessment_tag.html' %}
+
+{% block question %}
+  <div id="{{instanceid}}"
+      class="qt-sa-question {% if embedded %}qt-embedded{% else %}qt-standalone{% endif %}">
+    <div class="qt-points">
+      <em>
+        {% if displayed_weight == 1 %}
+          {# I18N: Displayed next to a question. Indicates that the question is worth 1 point. #}
+          {{ gettext('1 point') }}
+        {% else %}
+          {# I18N: Displayed next to a question to indicate its point value. In this particular message, the number of points will be plural. #}
+          {{ gettext('%(points)s points', points=displayed_weight) }}
+        {% endif %}
+      </em>
+    </div>
+
+    <div class="qt-question">{{ question | gcb_tags }}</div>
+
+    <div class="qt-response">
+      {% if rows == 1 %}
+        <input type="text"/>
+      {% else %}
+        <textarea rows="{{rows}}" cols="{{columns}}"></textarea>
+      {% endif %}
+    </div>
+
+    {% if hint %}
+      <div class="qt-hint">
+        <button class="gcb-button qt-hint-button">
+          {# I18N: Text on the button for requesting a hint to a question. #}
+          {{ gettext(' Hint ') }}
+        </button>
+      </div>
+    {% endif %}
+
+    {% if not embedded %}
+      <div class="qt-check-answer">
+        <button class="gcb-button qt-check-answer-button">
+          {# I18N: Text on the button for checking a student's answer. #}
+          {{ gettext(' Check Answer ') }}
+        </button>
+      </div>
+    {% endif %}
+
+    <div class="qt-feedback qt-hidden" role="alert">
+    </div>
+  </div>
+{% endblock question %}

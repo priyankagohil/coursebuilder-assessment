@@ -1,0 +1,259 @@
+{% import 'menu_macros.html' as menu_macros with context %}
+<!DOCTYPE html>
+<html class="google" lang="en">
+  <head>
+    <base href="{{ gcb_course_base }}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>{{ header_title }}</title>
+
+    <link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.0/material.teal-indigo.min.css" />
+    <script src="//storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- import CodeMirror -->
+    <script src="/static/codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="/static/codemirror/lib/codemirror.css">
+    <script src="/static/codemirror/addon/mode/loadmode.js"></script>
+    <link rel="stylesheet" href="/modules/code_tags/resources/code_tags.css">
+
+    <!-- import jQuery -->
+    <script src="/static/jquery/jquery.min.js"></script>
+
+    <!--  import jQueryUI -->
+    <link rel="stylesheet" type="text/css"
+        href="/static/jqueryui/themes/smoothness/jquery-ui.css" />
+    <script src="/static/jqueryui/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="/static/material-design-icons/css/material-design-iconic-font.min.css">
+
+    <script src="/modules/core_ui/_static/core-ui.js"></script>
+    <script src="/modules/oeditor/_static/js/butterbar.js"></script>
+    <script src="/modules/dashboard/resources/js/view.js"></script>
+
+    <link rel="stylesheet" href="/modules/oeditor/_static/css/butterbar.css" media="screen" />
+    <link rel="stylesheet" href="/modules/dashboard/_static/css/mdl_undo.css"/>
+    <link rel="stylesheet" href="/modules/dashboard/_static/css/view.css"/>
+
+    {% for href in extra_css_href_list %}
+      <link rel="stylesheet" type="text/css" href="{{ href }}">
+    {% endfor %}
+
+    {% for href in extra_js_href_list %}
+      <script src="{{ href }}"></script>
+    {% endfor %}
+
+    {% if alerts %}
+      <script>
+        $(function() {
+          cbShowAlert("{{ alerts | js_string }}");
+        });
+      </script>
+    {% endif %}
+  </head>
+  <body>
+    {% for header in page_headers %}
+      {% if header %}{{ header }}{% endif %}
+    {% endfor %}
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+        mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">
+            {% if current_menu_item %}
+              {% if current_menu_item.group and current_menu_item.group.group %}
+                {{current_menu_item.group.group.title}}
+                &gt;
+              {% endif %}
+              {{current_menu_item.title}}
+            {% endif %}
+          </span>
+          <div class="mdl-layout-spacer"></div>
+
+          <div class="gcb-nav-bar-extras">{{ user_nav }}</div>
+
+          <!-- ButterBar -->
+          <div class="gcb-butterbar-container gcb-butterbar-dashboard">
+            <div id="gcb-butterbar-top" class="gcb-butterbar">
+              <p id="gcb-butterbar-message"></p>
+              <a id="gcb-butterbar-close">X</a>
+            </div>
+          </div>
+
+        </div>
+      </header>
+      <nav class="mdl-layout__drawer">
+        <header class="gcb-drawer-header">
+          <h1 class="mdl-layout-title">Course Builder</h1>
+        </header>
+
+        <div class="mdl-navigation gcb-accordion">
+
+          {% if courses_menu_item %}
+            <div class="gcb-menu gcb-menu__section">
+              {{menu_macros.render_menu_item(courses_menu_item)}}
+            </div>
+          {% endif %}
+
+          {% if app_context and course_app_contexts|length %}
+            <div class="gcb-menu gcb-menu__section">
+              <div class="gcb-collapse gcb-course-picker">
+                <div id="course-picker" class="mdl-navigation__link gcb-collapse__button">
+                  <i class="gcb-collapse__icon material-icons">expand_more</i>
+                  <span class="gcb-course-picker__text">
+                  {% if current_course %}
+                    {{ course_title }}
+                  {% else %}
+                    Course Picker
+                  {% endif %}
+                  </span>
+                </div>
+
+                <div id="gcb-course-picker-menu" class="gcb-collapse__content-wrapper gcb-menu">
+                  <div class="gcb-collapse__content mdl-animation--default">
+                    {% for course_app_context in course_app_contexts %}
+                      <a
+                          class="mdl-navigation__link
+                          {%- if course_app_context == app_context %}
+                            gcb-active
+                          {%- endif %}"
+                          {% if app_context and current_menu_item %}
+                          href="{{course_app_context.canonicalize_url('/' + current_menu_item.computed_href(app_context))}}"
+                          {% else %}
+                          href="{{course_app_context.canonicalize_url('/dashboard?action=outline')}}"
+                          {% endif %}
+                          >{{course_app_context.get_title()}}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="gcb-menu gcb-menu__section" id="nav-menu">
+            {{menu_macros.render_menu_group(root_menu_group, '')}}
+          </div>
+        </div>
+      </nav>
+
+      <div class="mdl-layout__content">
+        <div id='gcb-main-area'>
+          <div id='gcb-main-content'>
+            {% if sections %}
+              {% for section in sections %}
+              <div id='gcb-section'>
+                <div class='gcb-button-toolbar'>
+                  {% for action in section.actions %}
+                    {% if action.href %}
+                    <a id='{{ action.id }}' class="gcb-button" role="button"
+                        href="{{ action.href }}" >{{ action.caption }}</a>
+                    {% else %}
+                    <form id='{{ action.id }}' action='{{ action.action }}' method='POST'>
+                      <input type="hidden" name="xsrf_token" value="{{ action.xsrf_token }}">
+                      {% if action.params %}
+                        {% for name, value in action.params.iteritems() %}
+                          <input type="hidden" name="{{ name }}" value="{{ value }}">
+                        {% endfor %}
+                      {% endif %}
+                      <button class="gcb-button" type="submit">{{ action.caption }}</button>
+                    </form>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                {% if section.title %}
+                <h3>{{ section.title }}</h3>
+                {% endif %}
+                {% if section.description %}
+                  <p class="description">
+                    {{ section.description }}
+                  </p>
+                {% endif %}
+                {% if section.pre %}
+                  {{ section.pre }}
+                {% elif section.code %}
+                  <code class="codemirror-container-readonly" mode={{section.mode}}>{{ section.code }}</code>
+                {% else %}
+                  <ol>
+                    {% if not section.children %}
+                    &lt; none &gt;
+                    {% endif %}
+                    {% for item in section.children %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                  </ol>
+                {% endif %}
+              </div>
+              {% endfor %}
+            {% endif %}
+
+            {% if main_content %}
+                {{ main_content }}
+            {% endif %}
+          </div>
+
+        </div>
+        <div id='gcb-footer'>
+          Application {{ application_id }} version {{ application_version }}
+          {% if deployed_at %}
+          deployed at {{ deployed_at }} UTC
+          {% endif %}
+          &nbsp;|&nbsp;
+          Powered by
+          <a target='_blank' href="{{ powered_by_url }}">Course Builder</a>
+            {{ coursebuilder_version }}
+          as distributed under
+          <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">
+            Apache License Version 2.0
+          </a>
+          &nbsp;|&nbsp;
+          {{ page_footer }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Deprecated: Prefer modules/core_ui Lightbox -->
+    <div id='modal-window'>
+      <div id="modal-wrapper">
+        <div id='modal-background'></div>
+        <div id="modal-container">
+          <button class="close-button">X</button>
+          <div id='modal-body'></div>
+          <div id="add-to-group">{% include 'add_to_group.html' %}</div>
+        </div>
+      </div>
+    </div>
+    <!-- End-Deprecated: Prefer modules/core_ui Lightbox -->
+
+    {%- include 'question_filter.html' -%}
+
+    {%- if sections -%}
+      <script>
+        CodeMirror.modeURL = "/static/codemirror/mode/%N/%N.js";
+        $('.codemirror-container-readonly').each(function() {
+          var code = $(this).text();
+          $(this).empty();
+          var cmInstance = CodeMirror(this, {
+            value: code,
+            lineNumbers: true,
+            readOnly: true
+          });
+          var mode = this.getAttribute('mode');
+          cmInstance.setOption("mode", mode);
+          CodeMirror.autoLoadMode(cmInstance, mode);
+        });
+      </script>
+    {%- endif -%}
+    {% if page_uuid %}
+      <!-- For functional tests; please leave this section dead last. -->
+      <div id="page_uuid"
+           style="display: none"
+           data-value="{{ page_uuid }}"
+           data-loaded="false"
+           >
+      </div>
+      <script>
+        $(function(){ $("#page_uuid").attr("data-loaded", "true"); });
+      </script>
+    {% endif %}
+  </body>
+</html>

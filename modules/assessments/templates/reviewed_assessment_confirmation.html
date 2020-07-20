@@ -1,0 +1,52 @@
+{% extends 'base_course.html' %}
+
+{% block gcb_page_info %}
+  if ('gcbSetPageInfo' in window) {
+    gcbSetPageInfo({
+      'page_type': 'reviewed_assessment_confirmation',
+      'unit_id': '{{ unit_id }}',
+    });
+  }
+{% endblock %}
+
+{% block top_content %}
+{% endblock %}
+
+{% block main_content %}
+
+<div class="gcb-cols">
+  <div class="gcb-col-1">
+  </div>
+  <div class="gcb-col-7 gcb-aside gcb-button-box">
+
+    <p class="gcb-top-content" role="heading">
+      {% if previously_submitted %}
+        {# I18N: Shown on the assignment submission confirmation page when the student has submitted a duplicate assignment. #}
+        {{ gettext('You have already submitted this assignment. Your latest attempt has not been saved.') }}
+      {% else %}
+        {# I18N: Shown on the assignment submission confirmation page when the student has successfully submitted an assignment. #}
+        {{ gettext('Thank you for completing this assignment. Your work was successfully submitted.') }}
+      {% endif %}
+
+      {# I18N: Text shown on the assignment submission confirmation page after the student has submitted a peer-reviewed assignment. #}
+      {{ gettext('Review your peers\' assignments by clicking on the button below.') }}
+    </p>
+
+    <p>
+      {% if matcher == 'peer' %}
+        <a class="gcb-button" href="{{review_dashboard_url}}">
+          {# I18N: Text for the button on the assignment submission confirmation page. #}
+          {{ gettext('Review peer assignments') }}
+        </a>
+      {% else %}
+        <a class="gcb-button" href="course">
+          {# I18N: Text for the button on the assignment submission confirmation page. #}
+          {{ gettext('Back to Course page') }}
+        </a>
+      {% endif %}
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

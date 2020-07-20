@@ -1,0 +1,17 @@
+registration:
+  main_module: modules.upload.upload
+
+tests:
+  functional:
+    - modules.upload.upload_tests.TextFileUploadHandlerTestCase = 10
+    - modules.upload.upload_tests.TextFileUploadTagTestCase = 3
+
+files:
+  - modules/upload/__init__.py
+  - modules/upload/manifest.yaml
+  - modules/upload/messages.py
+  - modules/upload/resources/script_add.png
+  - modules/upload/templates/form.html
+  - modules/upload/templates/result.html
+  - modules/upload/upload.py
+  - modules/upload/upload_tests.py

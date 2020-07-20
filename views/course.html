@@ -1,0 +1,69 @@
+{% extends 'base_course.html' %}
+
+{% block gcb_page_info %}
+  if ('gcbSetPageInfo' in window) {
+    gcbSetPageInfo({
+      'page_type': 'course',
+    });
+  }
+{% endblock %}
+
+{% block top_content %}
+  <script>
+    {# I18N: This is shown to the student in a popup after registration. #}
+    var regConfirmationMsg = "{{ gettext('Thank you for registering for the course. Click the Announcements tab for important information.') | js_string }}";
+    if(window.location.hash == '#registration_confirmation') {
+      cbShowMsgAutoHide(regConfirmationMsg);
+    }
+    {# I18N: This is shown to the student in a popup if registrations for the course are not open. #}
+    var regClosedMsg = "{{ gettext('Registrations for this course are not open.') | js_string }}";
+    if(window.location.hash == '#registration_closed') {
+      cbShowMsgAutoHide(regClosedMsg);
+    }
+  </script>
+  <div class="gcb-cols">
+    <div class="gcb-col-11 gcb-aside">
+      {% include 'summary.html' %}
+
+      {% if transient_student %}
+        {% include 'registration_module.html' %}
+      {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block main_content %}
+  {% import 'macros.html' as macros %}
+    <div style="margin-top: 20px;" class="gcb-cols">
+      <div class="gcb-col-1">
+      </div>
+      <div class="gcb-col-9">
+
+        {% if course_outline %}
+          <h1 class="gcb-syllabus-headers">
+            {# I18N: Title for the course syllabus on the main contents page. #}
+            {{ gettext('Syllabus') }}
+          </h1>
+          <div id="gcb-main" role="main">
+            <div class="gcb-nav gcb-nav-full" id="gcb-nav-y">
+              <ul>
+                {% for outline_element in course_outline recursive %}
+                  {{ macros.render_outline_element(
+                         outline_element, can_see_drafts, course_availability,
+                         'li', '', 'p', 'gcb-top-content') }}
+                  {% if show_lessons_in_syllabus and outline_element.contents %}
+                    <ul>
+                      {{ loop(outline_element.contents) }}
+                    </ul>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+            {% for item in extra_content %}
+              {{ item }}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+{% endblock %}

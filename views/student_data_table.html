@@ -1,0 +1,71 @@
+<table class="gcb-student-data-table">
+  <colgroup>
+    <col style="width: 10%">
+    <col>
+  </colgroup>
+
+  <tr>
+    {# I18N: Table header that states when a student enrolled in a course. #}
+    <th align="left">{{ gettext('Date enrolled') }}</th>
+    <td>{{ date_enrolled }}</td>
+  </tr>
+
+  <tr>
+    {# I18N: Table header for the student's email address. This is a noun. #}
+    <th align="left">{{ gettext('Email') }}</th>
+    <td>{{ student.email }}</td>
+  </tr>
+
+  <tr>
+    {# I18N: Table header for the student's name. #}
+    <th align="left">{{ gettext('Name') }}</th>
+    <td>{{ student_name }}</td>
+  </tr>
+
+  <tr>
+    {# I18N: Table header for the student's assessment scores. #}
+    <th align="left" colspan=2>
+      {{ gettext('Assessment scores') }}
+    </th>
+  </tr>
+
+  {% for assessment in score_list %}
+    <tr>
+      <th align="left">&nbsp;&nbsp;&nbsp;{{ assessment['title'] }}</th>
+      <td>
+        {% if assessment['human_graded'] %}
+          <a href="assessment?name={{ assessment.id }}">
+            {% if assessment['completed'] %}
+              {# I18N: Shown in the student profile page, next to an assessment title. States whether the assessment has been completed. #}
+              {{ gettext('Completed') }}
+            {% else %}
+              {# I18N: Shown in the student profile page, next to an assignment title, as the link text for a self- or peer-reviewed assignment. #}
+              {{ gettext('View assignment') }}
+            {% endif %}
+          </a>
+        {% elif 'score' in assessment and assessment['score'] is defined %}
+          <span id="assessment-score-{{assessment['title']}}">{{ assessment['score'] }}</span>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+
+  {% if overall_score != None %}
+    <tr>
+      {# I18N: Table header for the student's overall score. #}
+      <th align="left">{{ gettext('Overall course score') }}</th>
+      <td>
+        <span id="assessment-score-overall">{{ overall_score }}</span>
+      </td>
+    </tr>
+  {% endif %}
+
+  {% for header, value in extra_student_data %}
+    {% if header or value %}
+      <tr>
+        <th align="left">{{ header }}</th>
+        <td>{{ value }}</td>
+      </tr>
+    {% endif %}
+  {% endfor %}
+</table>
